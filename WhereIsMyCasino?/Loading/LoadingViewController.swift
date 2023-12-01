@@ -14,7 +14,7 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+                        
     }
     
     override func viewWillLayoutSubviews() {
@@ -37,8 +37,6 @@ class LoadingViewController: UIViewController {
         loadingWheel.layer.removeAllAnimations()
         
         dismiss(animated: false)
-        
-        var n = UserDefaults().bool(forKey: "loaded")
         
         UserDefaults.standard.setValue(true, forKey: "loaded")
         

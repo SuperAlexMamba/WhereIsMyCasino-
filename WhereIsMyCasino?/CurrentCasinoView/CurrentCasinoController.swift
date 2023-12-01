@@ -10,39 +10,22 @@ import UIKit
 class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var mainScrollView: UIScrollView!
-    @IBOutlet weak var currentScrollView: UIScrollView!
+    
+    let imageNames = ["ImageCasino" , "ImageCasino" , "ImageCasino" , "ImageCasino"] // Num of news (no api)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Les Croupiers Casino Cardiff"
+        
+        navigationItem.titleView?.tintColor = .white
+        
         mainScrollView.contentSize = CGSize(width: mainScrollView.bounds.width, height: view.bounds.height)
         
-        mainScrollView.isDirectionalLockEnabled = true
-        
-        currentScrollView.delegate = self
-        currentScrollView.isPagingEnabled = true
-        
         
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        currentScrollView.contentSize = CGSize(width: currentScrollView.frame.width * CGFloat(3), height: currentScrollView.frame.height)
-        
-        // Добавление картинок в scrollView
-        
-            let imageView = UIImageView(image: UIImage(named: "locationImage"))
-            imageView.contentMode = .scaleAspectFill
-            imageView.clipsToBounds = true
-            imageView.frame = CGRect(x: CGFloat(3) * currentScrollView.frame.width, y: 0, width: currentScrollView.frame.width, height: currentScrollView.frame.height)
-            currentScrollView.addSubview(imageView)
-        
-    }
-    
-    
-    
-    
+
     @IBAction func closeButton(_ sender: UIBarButtonItem) {
         
         dismiss(animated: true)

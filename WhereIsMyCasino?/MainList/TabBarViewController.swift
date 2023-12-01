@@ -24,6 +24,7 @@ class TabBarViewController: UITabBarController {
             self.present(loadingVC, animated: false)
             
         }
+                
     }
     
     override func viewDidLoad() {
