@@ -15,7 +15,7 @@ class NewsListViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
-    let imageNames = ["ImageCasino" , "ImageCasino" , "ImageCasino" , "ImageCasino"] // Num of news (no api)
+    let imageNames = ["Image" , "Image" , "Image" , "Image"] // Num of news (no api)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,6 @@ class NewsListViewController: UIViewController {
         
         scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(imageNames.count), height: scrollView.frame.height)
         
-        // Добавление картинок в scrollView
         for (index, imageName) in imageNames.enumerated() {
             let imageView = UIImageView(image: UIImage(named: imageName))
             imageView.contentMode = .scaleAspectFill
@@ -44,7 +43,6 @@ class NewsListViewController: UIViewController {
             imageView.frame = CGRect(x: CGFloat(index) * scrollView.frame.width, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
             scrollView.addSubview(imageView)
             
-            // Добавление UILabel на каждую картинку
             let label = UILabel(frame: CGRect(x: 0, y: imageView.frame.height - 50, width: imageView.frame.width, height: 50))
             
             label.textColor = UIColor.white

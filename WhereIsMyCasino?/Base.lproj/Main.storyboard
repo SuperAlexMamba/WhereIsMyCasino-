@@ -771,7 +771,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="uid-Ah-Z2r" kind="showDetail" id="IyJ-tY-jtq"/>
+                                            <segue destination="uid-Ah-Z2r" kind="presentation" id="IyJ-tY-jtq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -829,7 +829,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageCasino" translatesAutoresizingMaskIntoConstraints="NO" id="5Ly-5T-ANq">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="5Ly-5T-ANq">
                                         <rect key="frame" x="16" y="26" width="382" height="214"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="382" id="JJa-12-SKf"/>
@@ -1205,6 +1205,7 @@
         <image name="CasinoV2" width="53" height="44"/>
         <image name="CloseButton" width="24" height="24"/>
         <image name="Globe" width="16" height="16.5"/>
+        <image name="Image" width="358" height="230"/>
         <image name="ImageCasino" width="420" height="363"/>
         <image name="LoadingWheel" width="90" height="90"/>
         <image name="Location" width="12" height="15.5"/>
