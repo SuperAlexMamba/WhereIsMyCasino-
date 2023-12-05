@@ -71,10 +71,10 @@ class OnboardingViewController: UIViewController {
             self.titleLabel.text = self.labelStrings[self.pageControl.currentPage]
         }
         
-        if pageControl.currentPage == 2 {
-            UserDefaults.standard.setValue(true, forKey: "showed")
+        if pageControl.currentPage == 3 {
             button.setTitle("Start", for: .normal)
             dismiss(animated: true)
+            UserDefaults.standard.setValue(true, forKey: "showed")
         }
         
     }

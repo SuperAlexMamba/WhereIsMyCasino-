@@ -9,13 +9,15 @@ import UIKit
 
 class RatingListViewController: UITableViewController {
 
+    var casino: Casino?
+    
     @IBOutlet weak var ratingView: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        ratingView.title = "\(4.8)"
+        ratingView.title = "\(casino?.rating ?? 0)"
         
     }
 
@@ -24,22 +26,27 @@ class RatingListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return casino?.feed_backs?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(12) reviews"
+        return "\(casino?.feed_backs?.count ?? 0) reviews"
     }
 
     @IBAction func close(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RatingListCustomCell
-
+        
+        let item = casino?.feed_backs?[indexPath.row]
+        
+        cell.profileNameLabel.text = item?.nickname
+        cell.starsView.rating = item?.mark ?? 0
+        cell.commentlabel.text = item?.text?.cons
         
 
         return cell

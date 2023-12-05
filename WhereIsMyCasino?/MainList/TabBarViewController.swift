@@ -9,24 +9,19 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        if UserDefaults.standard.bool(forKey: "loaded") != true {
+        if UserDefaults.standard.bool(forKey: "showed") == false {
             
-            guard let loadingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Loading") as? LoadingViewController else { return }
+            guard let onboardingViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Onboarding") as? OnboardingViewController else { return }
             
-            self.present(loadingVC, animated: false)
-            
+            present(onboardingViewController, animated: true)
         }
-                
+        
     }
-    
+                
     override func viewDidLoad() {
         super.viewDidLoad()
         

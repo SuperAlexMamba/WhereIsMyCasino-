@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import Cosmos
 
 class RatingListCustomCell: UITableViewCell {
     
     @IBOutlet weak var profileNameLabel: UILabel!
-    
-    @IBOutlet weak var profileImageView: UIImageView!
-    
+        
     @IBOutlet weak var commentlabel: UILabel!
+    
+    @IBOutlet weak var starsView: CosmosView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

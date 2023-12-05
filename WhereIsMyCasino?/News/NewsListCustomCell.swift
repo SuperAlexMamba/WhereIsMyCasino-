@@ -87,19 +87,14 @@ class NewsListCustomCell: UITableViewCell {
             casinoImage.heightAnchor.constraint(equalToConstant: 75),
             
             titleLabel.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: 0),
-            titleLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0),
+            titleLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 12),
             titleLabel.leftAnchor.constraint(equalTo: casinoImage.rightAnchor, constant: 12),
             
             dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
             dateLabel.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 18),
             dateLabel.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: 0),
             dateLabel.leftAnchor.constraint(equalTo: casinoImage.rightAnchor, constant: 12)
-            
-//            self.heightAnchor.constraint(equalTo: casinoImage.heightAnchor, multiplier: 12)
-        
+                    
         ])
-        
-        
     }
-    
 }

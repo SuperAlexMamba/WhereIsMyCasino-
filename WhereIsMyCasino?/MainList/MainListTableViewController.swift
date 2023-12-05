@@ -8,82 +8,113 @@
 import UIKit
 
 class MainListTableViewController: UITableViewController {
+        
+    var casino: [Casino]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        casino = CasinoModel.shared.casinosArray
+        
         self.title = "Casino"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         
-        guard let onboardingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as? OnboardingViewController else { return }
-        
-        if UserDefaults.standard.bool(forKey: "showed") == false {
-            present(onboardingVC, animated: true)
-        }
-                
     }
-
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return casino?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         return 121
     }
-
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+        
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedCasino = casino?[indexPath.row]
+        
+        guard let currentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrentCasino") as? CurrentCasinoController else { return }
+                    
+            currentVC.casino = selectedCasino
+            
+            self.navigationController?.pushViewController(currentVC, animated: true)
+                        
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomListMainTableCell
-
+        
+        cell.contentMode = .scaleAspectFit
+        
+        if let item = casino?[indexPath.row] {
+            
+            setupCell(cell, with: item, at: indexPath)
+            
+        }
+        
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func setupCell(_ cell: CustomListMainTableCell, with item: Casino, at indexPath: IndexPath) {
+        
+        cell.titleLabel.text = item.title
+        cell.locationLabel.text = "\(item.location.city),\(item.location.country)"
+        cell.ratingLabel.text = String(item.rating!)
+        
+        cell.imageOfCasino.image = nil
+        
+        cell.typesStackView.arrangedSubviews.forEach { view in
+            cell.typesStackView.removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+        
+        if let photo_url = item.photo_url {
+            
+            let cellIdentifire = "\(indexPath.section)-\(indexPath.row)-\(photo_url)"
+            cell.tag = cellIdentifire.hash
+            
+            cell.imageOfCasino.image = nil
+            
+            NetworkManager.shared.loadImages(url: photo_url) { [weak cell] image in
+                DispatchQueue.main.async {
+                    
+                    guard let cell = cell , let currentIndexPath = self.tableView.indexPath(for: cell) , currentIndexPath == indexPath else {
+                        return
+                    }
+                    
+                    cell.imageOfCasino.image = image
+                    cell.setupStack(types: item.types_games ?? [])
+                    cell.setNeedsLayout()
+                    
+                }
+            }
+        }
+        
+        else {
+            cell.imageOfCasino.image = UIImage(named: "ImageCasino")
+            cell.setupStack(types: item.types_games ?? [])
+            cell.setNeedsLayout()
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+        if segue.identifier == "ToCurrentVC" {
+            if let destination = segue.destination as? CurrentCasinoController {
+                destination.casino = sender as? Casino
+            }
+
+        }
+        
+    }
 }

@@ -7,10 +7,11 @@
 
 import UIKit
 
-
 class LoadingViewController: UIViewController {
 
     @IBOutlet weak var loadingWheel: UIImageView!
+    
+    var modelView = CasinoModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,18 +19,26 @@ class LoadingViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        
         startLoading()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.stopLoading()
         }
+        
     }
     
     
     func startLoading() {
+                
+        NetworkManager.shared.getCasinoList { casino in
+            self.modelView.casinosArray = casino ?? []
+        }
+        
         
         animateWheel()
-        
+
+                                
     }
     
     private func stopLoading() {
@@ -39,6 +48,8 @@ class LoadingViewController: UIViewController {
         dismiss(animated: false)
         
         UserDefaults.standard.setValue(true, forKey: "loaded")
+        
+        
         
     }
     

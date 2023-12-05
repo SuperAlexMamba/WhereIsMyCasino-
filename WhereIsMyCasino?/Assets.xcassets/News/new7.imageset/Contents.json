@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "location.png",
+      "filename" : "photo-1509478861672-91e9a2f90c04.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "location 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "location 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,8 +17,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "preserves-vector-representation" : true
   }
 }
