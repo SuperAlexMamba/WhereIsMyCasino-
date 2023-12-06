@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MainListTableViewController: UITableViewController {
         
@@ -14,13 +15,26 @@ class MainListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        casino = CasinoModel.shared.casinosArray
+        
+        casino = StorageManager.shared.loadCasinosFromFile()
         
         self.title = "Casino"
         
     }
     // MARK: - Table view data source
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return casino?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 20
+    }
+        
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return casino?.count ?? 0
     }
@@ -30,13 +44,10 @@ class MainListTableViewController: UITableViewController {
         return 121
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = .clear
-        
-        return headerView
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 121
     }
-    
+        
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selectedCasino = casino?[indexPath.row]
@@ -52,12 +63,11 @@ class MainListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomListMainTableCell
         
-        cell.contentMode = .scaleAspectFit
+        cell.layer.cornerRadius = 10
+        cell.clipsToBounds = true
         
         if let item = casino?[indexPath.row] {
-            
             setupCell(cell, with: item, at: indexPath)
-            
         }
         
         return cell
@@ -68,13 +78,16 @@ class MainListTableViewController: UITableViewController {
         cell.titleLabel.text = item.title
         cell.locationLabel.text = "\(item.location.city),\(item.location.country)"
         cell.ratingLabel.text = String(item.rating!)
-        
+                
         cell.imageOfCasino.image = nil
         
         cell.typesStackView.arrangedSubviews.forEach { view in
             cell.typesStackView.removeArrangedSubview(view)
             view.removeFromSuperview()
         }
+        
+        cell.setupStack(types: item.types_games ?? [])
+        cell.setNeedsLayout()
         
         if let photo_url = item.photo_url {
             
@@ -83,19 +96,25 @@ class MainListTableViewController: UITableViewController {
             
             cell.imageOfCasino.image = nil
             
-            NetworkManager.shared.loadImages(url: photo_url) { [weak cell] image in
-                DispatchQueue.main.async {
+            if let url = URL(string: photo_url) {
+                
+                cell.imageOfCasino.sd_setImage(with: url) { image, error, cashetype, url in
                     
-                    guard let cell = cell , let currentIndexPath = self.tableView.indexPath(for: cell) , currentIndexPath == indexPath else {
-                        return
+                    if let error = error {
+                        print("Ошибка загрузки \(error.localizedDescription)")
                     }
-                    
-                    cell.imageOfCasino.image = image
-                    cell.setupStack(types: item.types_games ?? [])
-                    cell.setNeedsLayout()
-                    
+                    else {
+                        print("Ok")
+                    }
                 }
+                
             }
+            else {
+                cell.imageOfCasino.image = UIImage(named: "ImageCasino")
+                cell.setupStack(types: item.types_games ?? [])
+                cell.setNeedsLayout()
+            }
+            
         }
         
         else {

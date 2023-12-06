@@ -22,23 +22,30 @@ class LoadingViewController: UIViewController {
         
         startLoading()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
             self.stopLoading()
         }
         
     }
-    
-    
     func startLoading() {
                 
         NetworkManager.shared.getCasinoList { casino in
-            self.modelView.casinosArray = casino ?? []
+            
+            guard let casino = casino else {
+                
+                showAlert(in: self)
+                return
+                
+            }
+            
+            self.modelView.casinosArray = casino
+            
+            StorageManager.shared.saveCasinosToFile(casinos: self.modelView.casinosArray)
+            
+            UserDefaults().set(true, forKey: "loadingViewControllerShown")
+            
         }
-        
-        
         animateWheel()
-
-                                
     }
     
     private func stopLoading() {
@@ -46,10 +53,6 @@ class LoadingViewController: UIViewController {
         loadingWheel.layer.removeAllAnimations()
         
         dismiss(animated: false)
-        
-        UserDefaults.standard.setValue(true, forKey: "loaded")
-        
-        
         
     }
     

@@ -36,7 +36,6 @@ class CurrentNewViewController: UIViewController {
         descriptionTextLabel.text = newItem?.description
         imageNew.image = newItem?.image
         dateLabel.text = newItem?.daysAgo
-        
+
     }
-    
 }

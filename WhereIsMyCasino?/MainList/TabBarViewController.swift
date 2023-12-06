@@ -25,6 +25,10 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBar.isTranslucent = true
+        tabBar.barTintColor = UIColor.black
+        tabBar.backgroundImage = UIImage()
+        
         let tabBarHeight: CGFloat = 200
         tabBar.frame.size.height = tabBarHeight
         
@@ -32,7 +36,7 @@ class TabBarViewController: UITabBarController {
             viewController.view.frame.size.height = view.frame.height - tabBarHeight
         }
         
-        self.tabBar.barTintColor = .white
+        self.tabBar.barTintColor = .black
         
         let maskLayer = CAShapeLayer()
         maskLayer.path = UIBezierPath(roundedRect: tabBar.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 20, height: 10)).cgPath

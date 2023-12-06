@@ -45,6 +45,8 @@
 		DD3413CE2B176EFC00A718E7 /* NewsListCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413CD2B176EFC00A718E7 /* NewsListCustomCell.swift */; };
 		DD3413D02B17896700A718E7 /* CurrentNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413CF2B17896700A718E7 /* CurrentNewViewController.swift */; };
 		DD3413D32B18723100A718E7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413D22B18723100A718E7 /* NetworkManager.swift */; };
+		DD6A98862B20CBDE005ABF4F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DD6A98852B20CBDE005ABF4F /* SDWebImage */; };
+		DD6A98882B20CBDE005ABF4F /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD6A98872B20CBDE005ABF4F /* SDWebImageMapKit */; };
 		DD877A3B2B18CEEA000253A7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD877A3A2B18CEEA000253A7 /* TabBarViewController.swift */; };
 		DD921A352B14EDA000DDAFC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A342B14EDA000DDAFC5 /* AppDelegate.swift */; };
 		DD921A372B14EDA000DDAFC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A362B14EDA000DDAFC5 /* SceneDelegate.swift */; };
@@ -52,7 +54,6 @@
 		DD921A3E2B14EDA300DDAFC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD921A3D2B14EDA300DDAFC5 /* Assets.xcassets */; };
 		DD921A412B14EDA300DDAFC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD921A3F2B14EDA300DDAFC5 /* LaunchScreen.storyboard */; };
 		DD921A492B15DC8700DDAFC5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A482B15DC8700DDAFC5 /* OnboardingViewController.swift */; };
-		DD921A4D2B15E80200DDAFC5 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A4C2B15E80200DDAFC5 /* ContentViewController.swift */; };
 		DD921A4F2B15EB5500DDAFC5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A4E2B15EB5500DDAFC5 /* WebViewController.swift */; };
 		DD921A512B15F14100DDAFC5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A502B15F14100DDAFC5 /* LoadingViewController.swift */; };
 		DD921A572B15FB9300DDAFC5 /* MainListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A562B15FB9300DDAFC5 /* MainListTableViewController.swift */; };
@@ -83,7 +84,6 @@
 		DD921A402B14EDA300DDAFC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD921A422B14EDA300DDAFC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD921A482B15DC8700DDAFC5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		DD921A4C2B15E80200DDAFC5 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		DD921A4E2B15EB5500DDAFC5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		DD921A502B15F14100DDAFC5 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		DD921A562B15FB9300DDAFC5 /* MainListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTableViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +104,7 @@
 				DD280D5E2B1DBE9100707971 /* FirebaseAnalyticsSwift in Frameworks */,
 				DD280D5A2B1DBE9100707971 /* FirebaseAnalytics in Frameworks */,
 				DD280D5C2B1DBE9100707971 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				DD6A98862B20CBDE005ABF4F /* SDWebImage in Frameworks */,
 				DD280D822B1DBE9100707971 /* FirebaseMLModelDownloader in Frameworks */,
 				DD280D762B1DBE9100707971 /* FirebaseFirestoreSwift in Frameworks */,
 				DD280D622B1DBE9100707971 /* FirebaseAppCheck in Frameworks */,
@@ -112,6 +113,7 @@
 				DD280D6A2B1DBE9100707971 /* FirebaseCrashlytics in Frameworks */,
 				DD280D8A2B1DBE9100707971 /* FirebaseRemoteConfigSwift in Frameworks */,
 				DD280D7C2B1DBE9100707971 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				DD6A98882B20CBDE005ABF4F /* SDWebImageMapKit in Frameworks */,
 				DD280D6E2B1DBE9100707971 /* FirebaseDatabaseSwift in Frameworks */,
 				DD280D782B1DBE9100707971 /* FirebaseFunctions in Frameworks */,
 				DD280D8E2B1DBE9100707971 /* FirebaseStorageCombine-Community in Frameworks */,
@@ -158,14 +160,14 @@
 			path = News;
 			sourceTree = "<group>";
 		};
-		DD3413D12B18721600A718E7 /* NetworkManager */ = {
+		DD3413D12B18721600A718E7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				DD3413D22B18723100A718E7 /* NetworkManager.swift */,
 				DD280D4D2B1B9EEE00707971 /* Model.swift */,
 				DD280D4F2B1BAD7E00707971 /* StorageManager.swift */,
 			);
-			path = NetworkManager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		DD921A282B14EDA000DDAFC5 = {
@@ -187,7 +189,7 @@
 		DD921A332B14EDA000DDAFC5 /* WhereIsMyCasino? */ = {
 			isa = PBXGroup;
 			children = (
-				DD3413D12B18721600A718E7 /* NetworkManager */,
+				DD3413D12B18721600A718E7 /* Managers */,
 				DD3413CA2B176EAA00A718E7 /* News */,
 				DD3413C72B17677B00A718E7 /* CurrentCasinoView */,
 				DD3413C42B1739D300A718E7 /* Map */,
@@ -211,7 +213,6 @@
 		DD921A522B15FA9B00DDAFC5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				DD921A4C2B15E80200DDAFC5 /* ContentViewController.swift */,
 				DD921A482B15DC8700DDAFC5 /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
@@ -297,6 +298,8 @@
 				DD280D8B2B1DBE9100707971 /* FirebaseStorage */,
 				DD280D8D2B1DBE9100707971 /* FirebaseStorageCombine-Community */,
 				DDA0470B2B1F5023000AC929 /* Cosmos */,
+				DD6A98852B20CBDE005ABF4F /* SDWebImage */,
+				DD6A98872B20CBDE005ABF4F /* SDWebImageMapKit */,
 			);
 			productName = 1;
 			productReference = DD921A312B14EDA000DDAFC5 /* WhereIsMyCasino?.app */;
@@ -329,6 +332,7 @@
 			packageReferences = (
 				DD280D582B1DBE9100707971 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				DDA0470A2B1F5023000AC929 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				DD6A98842B20CBDE005ABF4F /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = DD921A322B14EDA000DDAFC5 /* Products */;
 			projectDirPath = "";
@@ -360,7 +364,6 @@
 			files = (
 				DD921A512B15F14100DDAFC5 /* LoadingViewController.swift in Sources */,
 				DD921A572B15FB9300DDAFC5 /* MainListTableViewController.swift in Sources */,
-				DD921A4D2B15E80200DDAFC5 /* ContentViewController.swift in Sources */,
 				DD3413CC2B176EBA00A718E7 /* NewsListViewController.swift in Sources */,
 				DD877A3B2B18CEEA000253A7 /* TabBarViewController.swift in Sources */,
 				DD3413C32B1739CD00A718E7 /* RegionsViewController.swift in Sources */,
@@ -611,6 +614,14 @@
 				minimumVersion = 10.18.0;
 			};
 		};
+		DD6A98842B20CBDE005ABF4F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.18.6;
+			};
+		};
 		DDA0470A2B1F5023000AC929 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
@@ -756,6 +767,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD280D582B1DBE9100707971 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		DD6A98852B20CBDE005ABF4F /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD6A98842B20CBDE005ABF4F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		DD6A98872B20CBDE005ABF4F /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD6A98842B20CBDE005ABF4F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
 		};
 		DDA0470B2B1F5023000AC929 /* Cosmos */ = {
 			isa = XCSwiftPackageProductDependency;

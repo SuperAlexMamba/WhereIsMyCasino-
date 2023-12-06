@@ -33,7 +33,8 @@ class OnboardingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        setupView()
         pageControl.numberOfPages = 3
         
     }
@@ -46,8 +47,15 @@ class OnboardingViewController: UIViewController {
                         
     }
     
-    private func setupView() {
+    @objc func exitFunc() {
         
+        UserDefaults.standard.setValue(true, forKey: "showed")
+
+        dismiss(animated: true)
+    }
+    
+    private func setupView() {
+                
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
         
@@ -71,12 +79,17 @@ class OnboardingViewController: UIViewController {
             self.titleLabel.text = self.labelStrings[self.pageControl.currentPage]
         }
         
-        if pageControl.currentPage == 3 {
-            button.setTitle("Start", for: .normal)
-            dismiss(animated: true)
-            UserDefaults.standard.setValue(true, forKey: "showed")
-        }
         
+        
+        if pageControl.currentPage == 2 {
+            
+            let font = UIFont(name: "MuktaMahee Bold", size: 28)
+            
+            button.titleLabel?.font = font
+            button.setTitle("Start", for: .normal)
+            button.removeTarget(self, action: #selector(nextPage), for: .touchUpInside)
+            button.addTarget(self, action: #selector(exitFunc), for: .touchUpInside)
+        }
     }
     
 

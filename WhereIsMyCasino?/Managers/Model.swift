@@ -71,10 +71,12 @@ class Text: Codable {
 
 class Location: Codable {
     let city, country: String
-
-    init(city: String, country: String) {
+    let address: String?
+    
+    init(city: String, country: String, address: String) {
         self.city = city
         self.country = country
+        self.address = address
     }
 }
 
@@ -117,4 +119,10 @@ class CasinoModel {
     
     var imagesArray: [UIImage] = []
     
+}
+
+struct Region {
+    var country: String
+    var cities: [String]
+    var isExpanded: Bool
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import Cosmos
+import SDWebImage
 
 class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
     
@@ -25,7 +26,7 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var descriptionOfCasino: UILabel!
     
     @IBOutlet weak var mainScrollView: UIScrollView!
-        
+    
     @IBOutlet weak var imageOfCasino: UIImageView!
     
     @IBOutlet weak var ratingOfCasino: UILabel!
@@ -38,19 +39,17 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var starsView: CosmosView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-                 
+        
         setupView()
-                
+        
         navigationItem.titleView?.tintColor = .white
         
-        mainScrollView.contentSize = CGSize(width: mainScrollView.bounds.width, height: view.bounds.height)
-                
+        mainScrollView.contentSize = CGSize(width: mainScrollView.bounds.width, height: descriptionLabel.frame.maxY + 20)
+        
     }
-
+    
     @IBAction func closeButton(_ sender: UIBarButtonItem) {
         
         self.navigationController?.popViewController(animated: true)
@@ -67,8 +66,10 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    
     private func setupView() {
+        
+        mainScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        mainScrollView.bounces = false
         
         if casino?.feed_backs == nil {
             goToReviewsButton.isEnabled = false
@@ -81,7 +82,9 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
         title = casino?.title
         titleOfCasino.text = title
         if casino?.description == nil {
-            descriptionOfCasino.heightAnchor.constraint(equalToConstant: 0).isActive = true
+            descriptionOfCasino.numberOfLines = 0
+            descriptionOfCasino.lineBreakMode = .byWordWrapping
+            
             descriptionLabel.isHidden = true
         }
         else {
@@ -95,14 +98,10 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
         starsView.rating = casino?.rating ?? 0
         starsView.isUserInteractionEnabled = false
         
-        if casino?.photo_url != nil {
-            NetworkManager.shared.loadImages(url: (casino?.photo_url)!) { image in
-                
-                DispatchQueue.main.async {
-                    self.imageOfCasino.image = image
-                }
-            }
+        if let url = casino?.photo_url {
+            
+            imageOfCasino.sd_setImage(with: URL(string: url))
+            
         }
     }
-
 }

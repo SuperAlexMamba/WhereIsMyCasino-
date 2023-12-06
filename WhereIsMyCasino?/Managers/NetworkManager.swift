@@ -19,7 +19,6 @@ class NetworkManager {
         dataBase.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
             
             guard let casinoData = snapshot.value as? NSArray else {
-                print("Error: Unable to convert snapshot.value to [String: Any]")
                 completion(nil)
                 return
             }
@@ -32,7 +31,7 @@ class NetworkManager {
 
                 
             } catch {
-                print("Error decoding data: \(error.localizedDescription)")
+                print("Ошибка декодера: \(error.localizedDescription)")
                 completion(nil)
             }
         }
@@ -56,10 +55,8 @@ class NetworkManager {
                 return
             }
                         
-        }.resume()
-        
+        }
+        session.resume()
     }
-    
 
-    
 }
