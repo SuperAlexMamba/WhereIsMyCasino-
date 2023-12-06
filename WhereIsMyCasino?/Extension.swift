@@ -52,3 +52,15 @@ func showAlert(in vc: UIViewController ) {
     vc.present(alert, animated: true)
     
 }
+
+extension UILabel {
+    
+    func makeOpenSansExtraBold(size: CGFloat) {
+        self.font = UIFont(name: "OpenSans-Extrabold", size: size)
+    }
+    
+    func makeOpenSansSemiBold(size: CGFloat) {
+        self.font = UIFont(name: "OpenSans-Semibold", size: size)
+    }
+    
+}

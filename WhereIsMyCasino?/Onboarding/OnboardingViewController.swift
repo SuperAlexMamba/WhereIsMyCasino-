@@ -24,13 +24,15 @@ class OnboardingViewController: UIViewController {
                   UIImage(named: "Onboarding(3)")]
     
     let descriptionStrings = ["The excitement awaits! Embark on Your Casino Journey, it begins now!",
-                   "Explore the thrill of the game by locating casinos in different cities with our map",
-                   "Dive into the world of casinos with the latest news and updates about events and bonuses."]
+                              "Explore the thrill of the game by locating casinos in different cities with our map",
+                              "Dive into the world of casinos with the latest news and updates about events and bonuses."]
     
     let labelStrings = ["Ready To Play?",
                         "Discover Casinos Near You",
                         "Stay in the Loop with Casino News"]
-
+    
+    var attributedString: NSMutableAttributedString?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,18 +46,25 @@ class OnboardingViewController: UIViewController {
         UserDefaults.standard.setValue(true, forKey: "showed")
         
         dismiss(animated: true)
-                        
+        
     }
     
     @objc func exitFunc() {
         
         UserDefaults.standard.setValue(true, forKey: "showed")
-
+        
         dismiss(animated: true)
     }
     
     private func setupView() {
-                
+        
+        attributedString = NSMutableAttributedString(string: self.labelStrings[self.pageControl.currentPage])
+        
+        attributedString?.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: 8))
+        
+        titleLabel.attributedText = attributedString
+        
+        button.titleLabel?.makeOpenSansExtraBold(size: 28)
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
         
@@ -75,22 +84,42 @@ class OnboardingViewController: UIViewController {
             self.descriptionLabel.text = self.descriptionStrings[self.pageControl.currentPage]
         }
         
-        UIView.transition(with: descriptionLabel, duration: 0.5) {
-            self.titleLabel.text = self.labelStrings[self.pageControl.currentPage]
+        UIView.transition(with: titleLabel, duration: 0.5) {
+            
+            self.attributedString = NSMutableAttributedString(string: self.labelStrings[self.pageControl.currentPage])
+            self.titleLabel.attributedText = self.attributedString
+            
+            switch self.pageControl.currentPage {
+                
+            case 0:
+                self.attributedString?.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: 8))
+                self.titleLabel.attributedText = self.attributedString
+            case 1:
+                self.attributedString?.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: 16))
+                self.titleLabel.attributedText = self.attributedString
+            case 2:
+                self.attributedString?.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: 28))
+                self.titleLabel.attributedText = self.attributedString
+            default:
+                break
+            }
+            
         }
-        
-        
         
         if pageControl.currentPage == 2 {
             
-            let font = UIFont(name: "MuktaMahee Bold", size: 28)
+            let currentFont = button.titleLabel?.font
+            let currentTextColor = button.titleLabel?.textColor
             
-            button.titleLabel?.font = font
-            button.setTitle("Start", for: .normal)
+            let attributedTitle = NSAttributedString(string: "Start", attributes: [
+                .font: currentFont as Any,
+                .foregroundColor: UIColor.white as Any
+            ])
+
+            button.setAttributedTitle(attributedTitle, for: .normal)
+            
             button.removeTarget(self, action: #selector(nextPage), for: .touchUpInside)
             button.addTarget(self, action: #selector(exitFunc), for: .touchUpInside)
         }
     }
-    
-
 }

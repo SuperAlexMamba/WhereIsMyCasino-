@@ -36,6 +36,8 @@ class CustomListMainTableCell: UITableViewCell {
         imageOfCasino.layer.cornerRadius = 8
         imageOfCasino.clipsToBounds = true
         
+        titleLabel.makeOpenSansSemiBold(size: 20)
+        
     }
     
     override func prepareForReuse() {
@@ -65,8 +67,8 @@ class CustomListMainTableCell: UITableViewCell {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 76, height: 16))
         label.textColor = .white
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 10)
-        label.backgroundColor = #colorLiteral(red: 0.1579799056, green: 0.1174086407, blue: 0.1931741536, alpha: 0.8470588235)
+        label.makeOpenSansSemiBold(size: 1)
+        label.backgroundColor = #colorLiteral(red: 0.2352941176, green: 0.2039215686, blue: 0.262745098, alpha: 1)
         label.text = type.rawValue
         return label
     }
@@ -75,8 +77,8 @@ class CustomListMainTableCell: UITableViewCell {
         let moreLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 76, height: 16))
         moreLabel.textColor = .white
         moreLabel.textAlignment = .center
-        moreLabel.font = .systemFont(ofSize: 10)
-        moreLabel.backgroundColor = #colorLiteral(red: 0.1579799056, green: 0.1174086407, blue: 0.1931741536, alpha: 0.8470588235)
+        moreLabel.makeOpenSansSemiBold(size: 1)
+        moreLabel.backgroundColor = #colorLiteral(red: 0.2352941176, green: 0.2039215686, blue: 0.262745098, alpha: 1)
         moreLabel.text = "+\(count)"
         return moreLabel
     }

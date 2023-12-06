@@ -35,6 +35,8 @@ class CurrentNewViewController: UIViewController {
         titleLabel.text = newItem?.title
         descriptionTextLabel.text = newItem?.description
         imageNew.image = newItem?.image
+        imageNew.layer.cornerRadius = 10
+        imageNew.clipsToBounds = true
         dateLabel.text = newItem?.daysAgo
 
     }

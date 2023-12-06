@@ -27,10 +27,21 @@ class RegionsViewController: UIViewController {
         tableView.dataSource = self
         
         searchBar.delegate = self
+        
     }
-    
+        
     private func setupUI() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        searchBar.keyboardAppearance = .dark
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        
+        view.endEditing(true)
     }
     
     private func setupRegions() {
@@ -54,8 +65,8 @@ class RegionsViewController: UIViewController {
     
     @objc func toggleExpansion(sender: UIButton) {
         let section = sender.tag
-        regions[section].isExpanded.toggle()
-        tableView.reloadSections(IndexSet(integer: section), with: .automatic)
+        filteredRegions[section].isExpanded.toggle()
+        tableView.reloadSections(IndexSet(integer: section), with: .none)
     }
 }
 
@@ -103,7 +114,7 @@ extension RegionsViewController: UITableViewDelegate, UITableViewDataSource {
         regionButton.setTitle(regions[section].country, for: .normal)
         regionButton.setTitleColor(.white, for: .normal)
         
-        chevronButton.setImage(UIImage(systemName: regions[section].isExpanded ? "chevron.up" : "chevron.down"), for: .normal)
+        chevronButton.setImage(UIImage(systemName: filteredRegions[section].isExpanded ? "chevron.up" : "chevron.down"), for: .normal)
         chevronButton.tintColor = .white
         
         headerView.addSubview(regionButton)
@@ -155,7 +166,7 @@ extension RegionsViewController: UISearchBarDelegate {
         if searchText.isEmpty {
             filteredRegions = regions
         } else {
-            filteredRegions = regions.filter { $0.country.localizedCaseInsensitiveContains(searchText) || $0.cities.contains { $0.localizedCaseInsensitiveContains(searchText) } }
+            filteredRegions = regions.filter { $0.country.localizedCaseInsensitiveContains(searchText) || $0.cities.contains{ $0.localizedCaseInsensitiveContains(searchText) } }
         }
         tableView.reloadData()
     }
