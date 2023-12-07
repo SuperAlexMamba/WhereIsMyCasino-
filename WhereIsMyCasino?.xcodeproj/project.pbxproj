@@ -47,6 +47,9 @@
 		DD3413D32B18723100A718E7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413D22B18723100A718E7 /* NetworkManager.swift */; };
 		DD6A98862B20CBDE005ABF4F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DD6A98852B20CBDE005ABF4F /* SDWebImage */; };
 		DD6A98882B20CBDE005ABF4F /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD6A98872B20CBDE005ABF4F /* SDWebImageMapKit */; };
+		DD6A988D2B221A6E005ABF4F /* Open-Sans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD6A988B2B221A6D005ABF4F /* Open-Sans-Semibold.ttf */; };
+		DD6A988E2B221A6E005ABF4F /* Open-Sans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD6A988C2B221A6D005ABF4F /* Open-Sans-ExtraBold.ttf */; };
+		DD6A98902B221C2E005ABF4F /* Open-Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD6A988F2B221C2E005ABF4F /* Open-Sans-Regular.ttf */; };
 		DD877A3B2B18CEEA000253A7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD877A3A2B18CEEA000253A7 /* TabBarViewController.swift */; };
 		DD921A352B14EDA000DDAFC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A342B14EDA000DDAFC5 /* AppDelegate.swift */; };
 		DD921A372B14EDA000DDAFC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A362B14EDA000DDAFC5 /* SceneDelegate.swift */; };
@@ -75,6 +78,9 @@
 		DD3413CD2B176EFC00A718E7 /* NewsListCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListCustomCell.swift; sourceTree = "<group>"; };
 		DD3413CF2B17896700A718E7 /* CurrentNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentNewViewController.swift; sourceTree = "<group>"; };
 		DD3413D22B18723100A718E7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DD6A988B2B221A6D005ABF4F /* Open-Sans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open-Sans-Semibold.ttf"; sourceTree = "<group>"; };
+		DD6A988C2B221A6D005ABF4F /* Open-Sans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open-Sans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		DD6A988F2B221C2E005ABF4F /* Open-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open-Sans-Regular.ttf"; sourceTree = "<group>"; };
 		DD877A3A2B18CEEA000253A7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		DD921A312B14EDA000DDAFC5 /* WhereIsMyCasino?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WhereIsMyCasino?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD921A342B14EDA000DDAFC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +176,16 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		DD6A98912B221C53005ABF4F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DD6A988B2B221A6D005ABF4F /* Open-Sans-Semibold.ttf */,
+				DD6A988F2B221C2E005ABF4F /* Open-Sans-Regular.ttf */,
+				DD6A988C2B221A6D005ABF4F /* Open-Sans-ExtraBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		DD921A282B14EDA000DDAFC5 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +205,7 @@
 		DD921A332B14EDA000DDAFC5 /* WhereIsMyCasino? */ = {
 			isa = PBXGroup;
 			children = (
+				DD6A98912B221C53005ABF4F /* Fonts */,
 				DD3413D12B18721600A718E7 /* Managers */,
 				DD3413CA2B176EAA00A718E7 /* News */,
 				DD3413C72B17677B00A718E7 /* CurrentCasinoView */,
@@ -349,7 +366,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD921A412B14EDA300DDAFC5 /* LaunchScreen.storyboard in Resources */,
+				DD6A988E2B221A6E005ABF4F /* Open-Sans-ExtraBold.ttf in Resources */,
+				DD6A988D2B221A6E005ABF4F /* Open-Sans-Semibold.ttf in Resources */,
 				DD280D572B1DBDD600707971 /* GoogleService-Info.plist in Resources */,
+				DD6A98902B221C2E005ABF4F /* Open-Sans-Regular.ttf in Resources */,
 				DD921A3E2B14EDA300DDAFC5 /* Assets.xcassets in Resources */,
 				DD921A3C2B14EDA000DDAFC5 /* Main.storyboard in Resources */,
 			);

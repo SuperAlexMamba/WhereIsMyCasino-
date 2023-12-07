@@ -40,6 +40,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             geocoder.geocodeAddressString(addressString) { (placemarks, error) in
                 if let error = error {
                     print("Ошибка геокодра: \(error.localizedDescription)")
+                    showAlert(in: self)
                     return
                 }
                 

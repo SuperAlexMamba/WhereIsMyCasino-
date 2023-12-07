@@ -73,7 +73,6 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
         
         if casino?.feed_backs == nil {
             goToReviewsButton.isEnabled = false
-            goToReviewsButton.tintColor = .lightGray
         }
         imageOfCasino.layer.cornerRadius = 8
         ratingView.layer.cornerRadius = 10
