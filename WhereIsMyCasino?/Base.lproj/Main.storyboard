@@ -1000,36 +1000,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="pEF-Wj-RsE">
-                                <rect key="frame" x="41" y="85" width="333" height="113"/>
+                                <rect key="frame" x="40" y="48" width="334" height="124"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="Picture" translatesAutoresizingMaskIntoConstraints="NO" id="YuB-SL-Jkv">
-                                <rect key="frame" x="0.0" y="162" width="414" height="734"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="734" id="URg-Jo-rsq"/>
-                                    <constraint firstAttribute="width" constant="414" id="e4M-N8-1uw"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="229" width="414" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingWheel" translatesAutoresizingMaskIntoConstraints="NO" id="NaT-fq-3in">
-                                <rect key="frame" x="156" y="669" width="103" height="96"/>
+                                <rect key="frame" x="162" y="649" width="90" height="96"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="96" id="aA6-yZ-Fya"/>
-                                    <constraint firstAttribute="width" constant="103" id="nZD-B4-r7d"/>
+                                    <constraint firstAttribute="height" constant="96" id="4zl-6c-VwK"/>
+                                    <constraint firstAttribute="width" constant="90" id="Pxl-rY-ZMx"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SZM-hl-hS3"/>
                         <color key="backgroundColor" red="0.039215686274509803" green="0.0078431372549019607" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NaT-fq-3in" firstAttribute="leading" secondItem="SZM-hl-hS3" secondAttribute="leading" constant="156" id="HuB-8r-qdd"/>
-                            <constraint firstItem="SZM-hl-hS3" firstAttribute="trailing" secondItem="pEF-Wj-RsE" secondAttribute="trailing" constant="40" id="HvL-AE-yzt"/>
-                            <constraint firstAttribute="bottom" secondItem="YuB-SL-Jkv" secondAttribute="bottom" id="Ikx-2C-7zb"/>
-                            <constraint firstItem="pEF-Wj-RsE" firstAttribute="top" secondItem="SZM-hl-hS3" secondAttribute="top" constant="37" id="Pov-7j-hZq"/>
-                            <constraint firstItem="YuB-SL-Jkv" firstAttribute="trailing" secondItem="SZM-hl-hS3" secondAttribute="trailing" id="TTS-FE-63T"/>
-                            <constraint firstItem="YuB-SL-Jkv" firstAttribute="top" secondItem="pEF-Wj-RsE" secondAttribute="bottom" constant="-36" id="YtL-em-Ezt"/>
-                            <constraint firstItem="YuB-SL-Jkv" firstAttribute="leading" secondItem="SZM-hl-hS3" secondAttribute="leading" id="eCc-lD-1KI"/>
-                            <constraint firstItem="pEF-Wj-RsE" firstAttribute="leading" secondItem="SZM-hl-hS3" secondAttribute="leading" constant="41" id="hMp-h3-k78"/>
-                            <constraint firstItem="SZM-hl-hS3" firstAttribute="bottom" secondItem="NaT-fq-3in" secondAttribute="bottom" constant="97" id="sE4-KY-lgB"/>
-                            <constraint firstItem="SZM-hl-hS3" firstAttribute="trailing" secondItem="NaT-fq-3in" secondAttribute="trailing" constant="155" id="udy-M4-loc"/>
+                            <constraint firstItem="pEF-Wj-RsE" firstAttribute="top" secondItem="SZM-hl-hS3" secondAttribute="top" id="9Rn-XZ-zE2"/>
+                            <constraint firstItem="YuB-SL-Jkv" firstAttribute="leading" secondItem="SZM-hl-hS3" secondAttribute="leading" id="EFR-VU-XVA"/>
+                            <constraint firstItem="SZM-hl-hS3" firstAttribute="bottom" secondItem="NaT-fq-3in" secondAttribute="bottom" constant="117" id="OpS-1V-QHp"/>
+                            <constraint firstAttribute="bottom" secondItem="YuB-SL-Jkv" secondAttribute="bottom" id="P8W-Ar-3IY"/>
+                            <constraint firstItem="SZM-hl-hS3" firstAttribute="trailing" secondItem="pEF-Wj-RsE" secondAttribute="trailing" constant="40" id="Sx3-cX-2Ik"/>
+                            <constraint firstItem="pEF-Wj-RsE" firstAttribute="leading" secondItem="SZM-hl-hS3" secondAttribute="leading" constant="40" id="l2f-39-N6a"/>
+                            <constraint firstItem="NaT-fq-3in" firstAttribute="centerX" secondItem="0Ua-jX-mfq" secondAttribute="centerX" id="xCK-01-jrV"/>
+                            <constraint firstItem="YuB-SL-Jkv" firstAttribute="trailing" secondItem="SZM-hl-hS3" secondAttribute="trailing" id="yn8-qM-zff"/>
                         </constraints>
                     </view>
                     <connections>

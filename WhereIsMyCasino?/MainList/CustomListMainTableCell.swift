@@ -59,6 +59,7 @@ class CustomListMainTableCell: UITableViewCell {
         if types.count > maxTypesToShow {
             let remainingCount = types.count - maxTypesToShow
             let moreLabel = createMoreLabel(count: remainingCount)
+            typesStackView.alignment = .center
             typesStackView.addArrangedSubview(moreLabel)
         }
     }
@@ -66,7 +67,7 @@ class CustomListMainTableCell: UITableViewCell {
     func createLabel(for type: TypesGame) -> UILabel {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 76, height: 16))
         
-        let font = UIFont.boldSystemFont(ofSize: 12)
+        let font = UIFont.systemFont(ofSize: 11)
         
         label.textColor = .white
         label.textAlignment = .center
@@ -74,20 +75,19 @@ class CustomListMainTableCell: UITableViewCell {
         label.font = font
         label.backgroundColor = #colorLiteral(red: 0.2352941176, green: 0.2039215686, blue: 0.262745098, alpha: 1)
         label.text = type.rawValue
+                
+        label.layer.cornerRadius = 6
+        label.clipsToBounds = true
         
         label.sizeToFit()
-        
-        var frame = label.frame
-        frame.size.width += 5
-        label.frame = frame
-        
+                
         return label
     }
 
     func createMoreLabel(count: Int) -> UILabel {
         let moreLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 76, height: 16))
         
-        let font = UIFont.boldSystemFont(ofSize: 12)
+        let font = UIFont.systemFont(ofSize: 11)
         
         moreLabel.font = font
         

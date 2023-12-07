@@ -17,7 +17,7 @@ class NewsListViewController: UIViewController {
     
     var newsArray: [News] = []
         
-    let imageNames = ["New9" , "New10" , "New11" , "New12"]
+    let imageNames = ["New8" , "New9" , "New10" , "New11"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,19 +67,26 @@ class NewsListViewController: UIViewController {
             imageView.contentMode = .scaleAspectFill
             imageView.layer.cornerRadius = 10
             imageView.clipsToBounds = true
-            imageView.frame = CGRect(x: CGFloat(index) * scrollView.frame.width, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
+            imageView.frame = CGRect(x: CGFloat(index) * scrollView.frame.width, y: 0, width: self.view.frame.width, height: scrollView.frame.height)
             scrollView.addSubview(imageView)
             
-            let label = UILabel(frame: CGRect(x: 0, y: imageView.frame.height - 50, width: imageView.frame.width, height: 50))
+            let label = UILabel(frame: CGRect(x: 0, y: imageView.frame.height - 70, width: imageView.frame.width, height: 50))
             
             label.textColor = UIColor.white
+            
+            label.layer.shadowRadius = 2.5
+            label.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+            label.layer.shadowOpacity = 0.5
+            label.layer.shadowColor = UIColor.black.cgColor
+            
+            label.font = .boldSystemFont(ofSize: 20)
             
             switch index {
             case 0:
                 label.text = "Las Vegas Sands to spend almost 2 billion to buy Sands China Ltd shares in Macau"
                 
             case 1:
-                label.text = "In the USA, a nun who stole $ 800 thousand from a school for a casino was sent to prison"
+                label.text = "In the USA, a nun who stole $800 thousand from a school for a casino was sent to prison"
                 
             case 2:
                 label.text = "UK Gambling Revenue increased by 7% in fiscal Year 2023"
@@ -88,7 +95,8 @@ class NewsListViewController: UIViewController {
                 label.text = "A bill on combating match-fixing has been prepared in Peru"
             }
             label.textAlignment = .center
-            label.numberOfLines = 2
+            label.numberOfLines = 3
+            label.sizeToFit()
             imageView.addSubview(label)
         }
         

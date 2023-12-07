@@ -79,6 +79,7 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
         ratingView.layer.cornerRadius = 10
         ratingView.clipsToBounds = true
         imageOfCasino.clipsToBounds = true
+        
         title = casino?.title
         titleOfCasino.text = title
         if casino?.description == nil {
