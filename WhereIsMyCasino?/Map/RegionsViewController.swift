@@ -35,17 +35,10 @@ class RegionsViewController: UIViewController {
         
         searchBar.keyboardAppearance = .dark
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
-        
-        view.endEditing(true)
     }
     
     private func setupRegions() {
-        guard let casinosArray = StorageManager.shared.loadCasinosFromFile() else {return}
+        guard let casinosArray = StorageManager.shared.loadCasinosFromFile() else { return }
         
         var uniqueCitiesByCountry: [String: Set<String>] = [:]
         
@@ -169,6 +162,12 @@ extension RegionsViewController: UISearchBarDelegate {
             filteredRegions = regions.filter { $0.country.localizedCaseInsensitiveContains(searchText) || $0.cities.contains{ $0.localizedCaseInsensitiveContains(searchText) } }
         }
         tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        self.view.endEditing(true)
+        
     }
 }
 

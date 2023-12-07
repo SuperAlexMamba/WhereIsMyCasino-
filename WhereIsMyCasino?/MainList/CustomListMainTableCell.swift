@@ -76,7 +76,7 @@ class CustomListMainTableCell: UITableViewCell {
         label.backgroundColor = #colorLiteral(red: 0.2352941176, green: 0.2039215686, blue: 0.262745098, alpha: 1)
         label.text = type.rawValue
                 
-        label.layer.cornerRadius = 6
+        label.layer.cornerRadius = 3
         label.clipsToBounds = true
         
         label.sizeToFit()

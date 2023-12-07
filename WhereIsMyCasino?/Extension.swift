@@ -44,7 +44,7 @@ let newSeven = News(title: "Nevada’s Gaming Industry Hits a $1.31 Billion Reco
 
 func showAlert(in vc: UIViewController ) {
     
-    let alert = UIAlertController(title: "Error", message: "no internet connection", preferredStyle: .alert)
+    let alert = UIAlertController(title: "Error", message: "Data is nil", preferredStyle: .alert)
     let action = UIAlertAction(title: "OK", style: .cancel)
     
     alert.addAction(action)
