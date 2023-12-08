@@ -959,79 +959,93 @@
             <point key="canvasLocation" x="2928.985507246377" y="1530.8035714285713"/>
         </scene>
         <!--Current New View Controller-->
-        <scene sceneID="asL-fc-G3l">
+        <scene sceneID="tlO-CO-Zer">
             <objects>
-                <viewController storyboardIdentifier="CurrentNew" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uid-Ah-Z2r" customClass="CurrentNewViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KS2-uv-x54">
+                <tableViewController storyboardIdentifier="CurrentNew" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KvD-hx-F5g" customClass="CurrentNewViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="uoM-4i-i8L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 hour ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmI-A5-bzi">
-                                <rect key="frame" x="16" y="383" width="382" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="1sA-yf-wfn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veikkaus to Shutter 20 Gaming Venues, Could Fire 200 Before Christmas" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjS-et-qtV">
-                                <rect key="frame" x="16" y="278" width="382" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="zT0-xG-VmY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Extrabold" family="Open Sans Extrabold" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="5Ly-5T-ANq">
-                                <rect key="frame" x="16" y="48" width="382" height="220"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="I3s-MZ-LFs"/>
-                                    <constraint firstAttribute="width" constant="382" id="sHZ-4O-jxE"/>
-                                </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj9-5F-8Vj">
-                                <rect key="frame" x="16" y="406" width="382" height="410"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="410" id="U0j-2w-6uu"/>
-                                </constraints>
-                                <string key="text">Finland is moving forward with its plans to eliminate the monopoly status Veikkaus currently enjoys, but it will come at the cost of jobs. As the state-led gaming operator continues to restructure itself ahead of the upcoming shift, 200 people could be without work just weeks before Christmas.\nVeikkaus, which turned six at the beginning of the year, is undergoing substantial changes in preparation for the end of its monopoly in the country. One notable development is the closure of Casino Tampere, a facility that began operations less than two years ago. Set to shut its doors on December 9, this decision will impact the livelihoods of 80 employees associated with the casino.\nIn addition to the Casino Tampere closure, Veikkaus has outlined plans to cease operations at 19 out of its 65 gaming venues across Finland on December 22, including properties operating under the Playhouse and Turku brands</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="axt-Yz-DkI"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" systemColor="systemRedColor"/>
-                        <constraints>
-                            <constraint firstItem="cj9-5F-8Vj" firstAttribute="leading" secondItem="axt-Yz-DkI" secondAttribute="leading" constant="16" id="2ka-bu-0xm"/>
-                            <constraint firstItem="QjS-et-qtV" firstAttribute="leading" secondItem="axt-Yz-DkI" secondAttribute="leading" constant="16" id="8oz-5K-W4b"/>
-                            <constraint firstItem="cj9-5F-8Vj" firstAttribute="top" secondItem="nmI-A5-bzi" secondAttribute="bottom" constant="5" id="93d-Cj-SCW"/>
-                            <constraint firstItem="axt-Yz-DkI" firstAttribute="trailing" secondItem="cj9-5F-8Vj" secondAttribute="trailing" constant="16" id="K3F-mD-rE6"/>
-                            <constraint firstItem="nmI-A5-bzi" firstAttribute="top" secondItem="QjS-et-qtV" secondAttribute="bottom" constant="5" id="KyL-nz-966"/>
-                            <constraint firstItem="5Ly-5T-ANq" firstAttribute="top" secondItem="axt-Yz-DkI" secondAttribute="top" id="QHn-x9-gZV"/>
-                            <constraint firstItem="axt-Yz-DkI" firstAttribute="trailing" secondItem="5Ly-5T-ANq" secondAttribute="trailing" constant="16" id="Sjr-UL-3Dm"/>
-                            <constraint firstItem="nmI-A5-bzi" firstAttribute="leading" secondItem="axt-Yz-DkI" secondAttribute="leading" constant="16" id="X5g-7B-fVy"/>
-                            <constraint firstItem="QjS-et-qtV" firstAttribute="top" secondItem="5Ly-5T-ANq" secondAttribute="bottom" constant="10" id="aKK-5j-24O"/>
-                            <constraint firstItem="5Ly-5T-ANq" firstAttribute="leading" secondItem="axt-Yz-DkI" secondAttribute="leading" constant="16" id="fQl-d7-wcM"/>
-                            <constraint firstItem="axt-Yz-DkI" firstAttribute="trailing" secondItem="QjS-et-qtV" secondAttribute="trailing" constant="16" id="uOf-l3-wIz"/>
-                            <constraint firstItem="axt-Yz-DkI" firstAttribute="trailing" secondItem="nmI-A5-bzi" secondAttribute="trailing" constant="16" id="xlf-ee-MB7"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="0bG-0x-VPy"/>
+                        <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="Of9-KR-NdB">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="2450" id="l1L-hb-Ikz">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="2450"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l1L-hb-Ikz" id="Gqu-fU-tEk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="2450"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="psS-GM-1U0">
+                                                    <rect key="frame" x="16" y="11" width="382" height="220"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="382" id="hGD-fb-jCv"/>
+                                                        <constraint firstAttribute="height" constant="220" id="n5h-01-jNN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 hour ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmI-qT-1tF">
+                                                    <rect key="frame" x="16" y="344" width="382" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="vFj-TO-YAH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veikkaus to Shutter 20 Gaming Venues, Could Fire 200 Before Christmas" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-kz-Caa">
+                                                    <rect key="frame" x="16" y="239" width="382" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="aZ7-Sr-R2F"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Extrabold" family="Open Sans Extrabold" pointSize="24"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAw-rO-iw3">
+                                                    <rect key="frame" x="16" y="382" width="382" height="1612.5"/>
+                                                    <mutableString key="text">The decision of Mark Cuban to officially sell his large stake in the NBA’s Dallas Mavericks to the Adelson family brings his long-held idea to the fore.New proposal:According to his pitch, the proposal refers to an alliance with casino mogul Dr. Miriam Adelson and Las Vegas Sands Corp. owned by her family, to construct a new casino-resort in Dallas whose main attraction would be the new arena for the aforementioned team. However, the condition for this is the official legalization of gambling in Texas. Commenting on the proposal, Cuban said to the Dallas Morning News: “Texas is such an amazing state that we need to be a destination. And this is the way to do it.”Moreover, in addition to him, one more person sees uncommon potential in the idea. The person is David Cordish, the president and chief executive officer of Cordish Cos., developer of the famous Texas Live entertainment complex in Arlington, located next to the Texas Rangers’ Globe Life Field. In this regard, commenting in an email  when asked about the proposed casino-resort project of the aforementioned Cuban when asked, he said: “The idea of combining entertainment and mixed use around a casino is absolutely the winning formula.”In addition, he added, according to the Dallas Business Journal: “I don’t have enough information to comment on the specifics of Cuban’s plans in Dallas, but he has had success with similar concepts across the nation. My  company previously used this formula when it developed two Hard Rock casinos with hotels in Florida, two of the most successful casinos in America. My company has also developed casino/entertainment complexes in Maryland, Philadelphia and Pittsburgh and those created spectacular and transformative results in those areas.”The location is still unclear:As for the location, it stays hazy where the aforementioned proposed project in Dallas would be located. In this regard, commenting on the possible location, Zarin Gracey, a member of the Dallas City Council, said to the NBC 5: “It should be next to the future redevelopment of the Dallas Convention Center, a nearly $3 billion project in its own right.”However, also commenting on a location, Cuban said to the Morning News: “There’s no reason why we can’t build a huge resort destination in the city proper of Dallas. There’s plenty of places to do it.”Far from reality:At Chase’s Make Your Move Summit, Cuban expressed his wish for a casino-centered resorts to be located in Texas. However, the fact that Cuban is ready to accept casino gaming at resorts in the said state is a long way from reality because of a lengthy history of anti-industry lawmakers together with a nascent sports wagering market. On a related note, in order for casino games to be validated in Texas, a constitutional amendment is demanded, which would have to receive a minimum of two-thirds votes of the aforementioned lawmakers, meaning that 21 out of a total of 30 senators would have to validate the change.Also, sports wagering and the casino industry are struggling to “find favor“ with Texas lawmakers, Texas Lieutenant Governor Dan Patrick said, according to Covers.com.One more reason Cuban’s wish is so far from reality is that Texas residents will need to wait till 2025 to see any chance of being able to use sports wagering and casino gaming, since the state’s legislature just meets in odd-numbered years. Primarily because of this, gambling firms continue to bypass the opportunity-rich market of 30 million inhabitants.</mutableString>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="tAw-rO-iw3" firstAttribute="leading" secondItem="Gqu-fU-tEk" secondAttribute="leading" constant="16" id="3S3-3Z-eqV"/>
+                                                <constraint firstItem="psS-GM-1U0" firstAttribute="top" secondItem="Gqu-fU-tEk" secondAttribute="top" constant="11" id="Cx1-Ea-2mV"/>
+                                                <constraint firstItem="psS-GM-1U0" firstAttribute="centerX" secondItem="Gqu-fU-tEk" secondAttribute="centerX" id="FHo-8f-ULl"/>
+                                                <constraint firstAttribute="trailing" secondItem="MmI-qT-1tF" secondAttribute="trailing" constant="16" id="NDN-yq-mVK"/>
+                                                <constraint firstItem="hOM-kz-Caa" firstAttribute="top" secondItem="psS-GM-1U0" secondAttribute="bottom" constant="8" symbolic="YES" id="e5C-d3-zgi"/>
+                                                <constraint firstAttribute="trailing" secondItem="tAw-rO-iw3" secondAttribute="trailing" constant="16" id="hzQ-j8-1Jb"/>
+                                                <constraint firstAttribute="trailing" secondItem="hOM-kz-Caa" secondAttribute="trailing" constant="16" id="lmn-zH-r0n"/>
+                                                <constraint firstItem="tAw-rO-iw3" firstAttribute="top" secondItem="MmI-qT-1tF" secondAttribute="bottom" constant="20" id="vRb-nW-cJJ"/>
+                                                <constraint firstItem="hOM-kz-Caa" firstAttribute="leading" secondItem="Gqu-fU-tEk" secondAttribute="leading" constant="16" id="vUs-bu-3dI"/>
+                                                <constraint firstItem="MmI-qT-1tF" firstAttribute="top" secondItem="hOM-kz-Caa" secondAttribute="bottom" constant="5" id="zNo-F2-bSQ"/>
+                                                <constraint firstItem="MmI-qT-1tF" firstAttribute="leading" secondItem="Gqu-fU-tEk" secondAttribute="leading" constant="16" id="zOP-bV-2RF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="KvD-hx-F5g" id="vzh-1d-0cJ"/>
+                            <outlet property="delegate" destination="KvD-hx-F5g" id="PVP-FX-bI9"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="dateLabel" destination="nmI-A5-bzi" id="Ur8-e5-cA1"/>
-                        <outlet property="descriptionTextLabel" destination="cj9-5F-8Vj" id="h9T-Hu-3wh"/>
-                        <outlet property="imageNew" destination="5Ly-5T-ANq" id="YCg-wF-hHh"/>
-                        <outlet property="titleLabel" destination="QjS-et-qtV" id="ep4-xD-q1J"/>
+                        <outlet property="dateLabel" destination="MmI-qT-1tF" id="hsX-H1-uCc"/>
+                        <outlet property="descriptionLabel" destination="tAw-rO-iw3" id="eKc-Lb-tpD"/>
+                        <outlet property="imageNew" destination="psS-GM-1U0" id="czp-LW-4Gz"/>
+                        <outlet property="titleLabel" destination="hOM-kz-Caa" id="RD9-My-Xig"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VgF-vL-iQX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZAV-NF-FqG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3731.884057971015" y="1530.8035714285713"/>
+            <point key="canvasLocation" x="5508.6956521739139" y="975.66964285714278"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="CuS-ce-7iA">
@@ -1045,7 +1059,7 @@
                                 <rect key="frame" x="40" y="48" width="334" height="124"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="Picture" translatesAutoresizingMaskIntoConstraints="NO" id="YuB-SL-Jkv">
-                                <rect key="frame" x="0.0" y="229" width="414" height="667"/>
+                                <rect key="frame" x="0.0" y="174" width="414" height="722"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingWheel" translatesAutoresizingMaskIntoConstraints="NO" id="NaT-fq-3in">
                                 <rect key="frame" x="162" y="649" width="90" height="96"/>
@@ -1063,6 +1077,7 @@
                             <constraint firstItem="SZM-hl-hS3" firstAttribute="bottom" secondItem="NaT-fq-3in" secondAttribute="bottom" constant="117" id="OpS-1V-QHp"/>
                             <constraint firstAttribute="bottom" secondItem="YuB-SL-Jkv" secondAttribute="bottom" id="P8W-Ar-3IY"/>
                             <constraint firstItem="SZM-hl-hS3" firstAttribute="trailing" secondItem="pEF-Wj-RsE" secondAttribute="trailing" constant="40" id="Sx3-cX-2Ik"/>
+                            <constraint firstItem="YuB-SL-Jkv" firstAttribute="top" secondItem="pEF-Wj-RsE" secondAttribute="bottom" constant="2" id="kTD-nt-BCf"/>
                             <constraint firstItem="pEF-Wj-RsE" firstAttribute="leading" secondItem="SZM-hl-hS3" secondAttribute="leading" constant="40" id="l2f-39-N6a"/>
                             <constraint firstItem="NaT-fq-3in" firstAttribute="centerX" secondItem="0Ua-jX-mfq" secondAttribute="centerX" id="xCK-01-jrV"/>
                             <constraint firstItem="YuB-SL-Jkv" firstAttribute="trailing" secondItem="SZM-hl-hS3" secondAttribute="trailing" id="yn8-qM-zff"/>

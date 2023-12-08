@@ -27,6 +27,7 @@
                         <constraints>
                             <constraint firstItem="XS1-8m-8dq" firstAttribute="trailing" secondItem="Cjr-E6-tPg" secondAttribute="trailing" id="BLK-nD-AgV"/>
                             <constraint firstItem="XS1-8m-8dq" firstAttribute="leading" secondItem="Cjr-E6-tPg" secondAttribute="leading" id="SgE-fw-8t4"/>
+                            <constraint firstItem="XS1-8m-8dq" firstAttribute="top" secondItem="gSl-k4-79r" secondAttribute="bottom" constant="2" id="WU0-yJ-JUo"/>
                             <constraint firstItem="gSl-k4-79r" firstAttribute="top" secondItem="Cjr-E6-tPg" secondAttribute="top" id="XKq-pA-kyk"/>
                             <constraint firstItem="gSl-k4-79r" firstAttribute="leading" secondItem="Cjr-E6-tPg" secondAttribute="leading" constant="40" id="bZJ-7T-VRP"/>
                             <constraint firstItem="Cjr-E6-tPg" firstAttribute="trailing" secondItem="gSl-k4-79r" secondAttribute="trailing" constant="40" id="iSC-oq-YQw"/>
