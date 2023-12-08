@@ -33,7 +33,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="125" id="YU8-kr-rrl" customClass="CustomListMainTableCell" customModule="WhereIsMyCasino_" customModuleProvider="target">
                                 <rect key="frame" x="20" y="55.5" width="374" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YU8-kr-rrl" id="wZx-Me-qm9">
+                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YU8-kr-rrl" id="wZx-Me-qm9">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -88,8 +88,16 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="wcO-Ze-jjr">
-                                            <rect key="frame" x="153" y="63" width="206" height="20"/>
+                                            <rect key="frame" x="153" y="71" width="206" height="12"/>
                                         </stackView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="xzY-CM-ADK">
+                                            <rect key="frame" x="45" y="45" width="49" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="RIG-d6-x7q"/>
+                                                <constraint firstAttribute="width" constant="49" id="vKm-EW-m9u"/>
+                                            </constraints>
+                                            <color key="color" systemColor="linkColor"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.11764705882352941" green="0.086274509803921567" blue="0.14509803921568626" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -106,15 +114,19 @@
                                         <constraint firstItem="HyV-7U-G17" firstAttribute="top" secondItem="wZx-Me-qm9" secondAttribute="top" constant="95" id="WRV-K8-gNK"/>
                                         <constraint firstItem="HyV-7U-G17" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rLI-j4-Opc" secondAttribute="trailing" constant="8" symbolic="YES" id="ag2-El-2Bh"/>
                                         <constraint firstItem="lqB-Ni-zdm" firstAttribute="leading" secondItem="wZx-Me-qm9" secondAttribute="leading" constant="1" id="ajK-eE-nh3"/>
+                                        <constraint firstAttribute="bottom" secondItem="xzY-CM-ADK" secondAttribute="bottom" constant="30" id="hhx-hf-e65"/>
                                         <constraint firstItem="HyV-7U-G17" firstAttribute="top" secondItem="wcO-Ze-jjr" secondAttribute="bottom" constant="12" id="ivd-yZ-6GC"/>
                                         <constraint firstItem="Uqs-DM-G1S" firstAttribute="leading" secondItem="lqB-Ni-zdm" secondAttribute="trailing" constant="15" id="jdv-Td-82o"/>
-                                        <constraint firstItem="wcO-Ze-jjr" firstAttribute="top" secondItem="Uqs-DM-G1S" secondAttribute="bottom" constant="2" id="jjx-sg-1dt"/>
+                                        <constraint firstItem="wcO-Ze-jjr" firstAttribute="top" secondItem="Uqs-DM-G1S" secondAttribute="bottom" constant="10" id="jjx-sg-1dt"/>
+                                        <constraint firstItem="xzY-CM-ADK" firstAttribute="top" secondItem="wZx-Me-qm9" secondAttribute="top" constant="45" id="lwl-R0-Tuc"/>
                                         <constraint firstItem="lqB-Ni-zdm" firstAttribute="top" secondItem="wZx-Me-qm9" secondAttribute="top" constant="1" id="tJE-oa-UhQ"/>
+                                        <constraint firstItem="xzY-CM-ADK" firstAttribute="leading" secondItem="wZx-Me-qm9" secondAttribute="leading" constant="45" id="vaw-gL-N71"/>
                                         <constraint firstAttribute="trailing" secondItem="wcO-Ze-jjr" secondAttribute="trailing" constant="15" id="y5W-1M-ESi"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.1176470588" green="0.086274509799999996" blue="0.1450980392" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="activityView" destination="xzY-CM-ADK" id="KvV-lh-JiB"/>
                                     <outlet property="imageOfCasino" destination="lqB-Ni-zdm" id="Nd9-U2-7IF"/>
                                     <outlet property="locationLabel" destination="HyV-7U-G17" id="ccd-Xt-nUH"/>
                                     <outlet property="ratingLabel" destination="R1f-YQ-5yy" id="oTm-bV-DmT"/>
@@ -1354,6 +1366,9 @@
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

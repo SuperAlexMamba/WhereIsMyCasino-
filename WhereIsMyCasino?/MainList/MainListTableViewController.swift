@@ -95,6 +95,7 @@ class MainListTableViewController: UITableViewController {
             cell.tag = cellIdentifire.hash
             
             cell.imageOfCasino.image = nil
+            cell.activityView.startAnimating()
             
             if let url = URL(string: photo_url) {
                 
@@ -102,12 +103,21 @@ class MainListTableViewController: UITableViewController {
                     
                     if let error = error {
                         print("Ошибка загрузки \(error.localizedDescription)")
+                        
+                        if error.localizedDescription.contains("404") {
+                            DispatchQueue.main.async {
+                                cell.imageOfCasino.image = UIImage(named: "ImageCasino")
+                                cell.activityView.stopAnimating()
+                                print("404")
+                            }
+                        }
+                        
                     }
                     else {
+                        cell.activityView.stopAnimating()
                         print("Ok")
                     }
                 }
-                
             }
             else {
                 cell.imageOfCasino.image = UIImage(named: "ImageCasino")

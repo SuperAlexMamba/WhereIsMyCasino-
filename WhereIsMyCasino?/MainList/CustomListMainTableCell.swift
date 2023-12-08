@@ -21,6 +21,8 @@ class CustomListMainTableCell: UITableViewCell {
     
     @IBOutlet weak var typesStackView: UIStackView!
     
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
