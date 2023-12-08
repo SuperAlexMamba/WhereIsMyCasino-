@@ -9,7 +9,7 @@ import UIKit
 import Cosmos
 import SDWebImage
 
-class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
+class CurrentCasinoController: UITableViewController {
     
     var casino: Casino?
     
@@ -24,9 +24,7 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var descriptionOfCasino: UILabel!
-    
-    @IBOutlet weak var mainScrollView: UIScrollView!
-    
+        
     @IBOutlet weak var imageOfCasino: UIImageView!
     
     @IBOutlet weak var ratingOfCasino: UILabel!
@@ -45,9 +43,7 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
         setupView()
         
         navigationItem.titleView?.tintColor = .white
-        
-        mainScrollView.contentSize = CGSize(width: mainScrollView.bounds.width, height: descriptionLabel.frame.maxY + 20)
-        
+                
     }
     
     @IBAction func closeButton(_ sender: UIBarButtonItem) {
@@ -67,11 +63,9 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
     }
     
     private func setupView() {
-        
-        mainScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        mainScrollView.bounces = false
-        
+                
         if casino?.feed_backs == nil {
+            basedOnLabel.text = "No reviews"
             goToReviewsButton.isEnabled = false
         }
         imageOfCasino.layer.cornerRadius = 8
@@ -84,8 +78,8 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
         if casino?.description == nil {
             descriptionOfCasino.numberOfLines = 0
             descriptionOfCasino.lineBreakMode = .byWordWrapping
+            descriptionOfCasino.text = "No description"
             
-            descriptionLabel.isHidden = true
         }
         else {
             descriptionOfCasino.text = casino?.description
@@ -104,4 +98,21 @@ class CurrentCasinoController: UIViewController, UIScrollViewDelegate {
             
         }
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
 }

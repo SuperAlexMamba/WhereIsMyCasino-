@@ -63,6 +63,7 @@ class OnboardingViewController: UIViewController {
         attributedString?.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: 8))
         
         titleLabel.attributedText = attributedString
+        titleLabel.numberOfLines = 2
         
         button.titleLabel?.makeOpenSansExtraBold(size: 28)
         button.layer.cornerRadius = 10
