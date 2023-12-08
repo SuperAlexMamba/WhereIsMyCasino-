@@ -15,11 +15,9 @@ class MainListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         casino = StorageManager.shared.loadCasinosFromFile()
         
         self.title = "Casino"
-        
     }
     // MARK: - Table view data source
     
@@ -124,7 +122,6 @@ class MainListTableViewController: UITableViewController {
                 cell.setupStack(types: item.types_games ?? [])
                 cell.setNeedsLayout()
             }
-            
         }
         
         else {
@@ -142,8 +139,6 @@ class MainListTableViewController: UITableViewController {
             if let destination = segue.destination as? CurrentCasinoController {
                 destination.casino = sender as? Casino
             }
-
         }
-        
     }
 }

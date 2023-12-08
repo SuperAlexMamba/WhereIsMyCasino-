@@ -35,7 +35,6 @@ class CustomListMainTableCell: UITableViewCell {
         ratingView.layer.cornerRadius = 5
         ratingView.clipsToBounds = true
         
-        
         imageOfCasino.layer.cornerRadius = 8
         imageOfCasino.clipsToBounds = true
         
@@ -74,14 +73,11 @@ class CustomListMainTableCell: UITableViewCell {
         
         label.textColor = .white
         label.textAlignment = .center
-                
         label.font = font
         label.backgroundColor = #colorLiteral(red: 0.2352941176, green: 0.2039215686, blue: 0.262745098, alpha: 1)
         label.text = type.rawValue
-                
         label.layer.cornerRadius = 3
         label.clipsToBounds = true
-        
         label.sizeToFit()
                 
         return label
@@ -93,14 +89,11 @@ class CustomListMainTableCell: UITableViewCell {
         let font = UIFont.systemFont(ofSize: 11)
         
         moreLabel.font = font
-        
         moreLabel.textColor = .white
         moreLabel.textAlignment = .center
-        
         moreLabel.backgroundColor = #colorLiteral(red: 0.2352941176, green: 0.2039215686, blue: 0.262745098, alpha: 1)
         moreLabel.text = "+\(count)"
     
         return moreLabel
     }
-
 }
