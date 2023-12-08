@@ -26,14 +26,15 @@ class CustomListMainTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        typesStackView.frame.size = typesStackView.intrinsicContentSize
         typesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        typesStackView.spacing = 5
         
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 20
         ratingView.layer.cornerRadius = 5
         ratingView.clipsToBounds = true
         
-        typesStackView.spacing = 5
         
         imageOfCasino.layer.cornerRadius = 8
         imageOfCasino.clipsToBounds = true

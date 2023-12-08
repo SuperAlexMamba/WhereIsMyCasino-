@@ -7,17 +7,15 @@
 
 import UIKit
 
-class CurrentNewViewController: UIViewController {
+class CurrentNewViewController: UITableViewController {
 
     @IBOutlet weak var imageNew: UIImageView!
-    
-    @IBOutlet weak var scrollView: UIScrollView!
-    
+        
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var dateLabel: UILabel!
     
-    @IBOutlet weak var descriptionTextLabel: UITextView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     var newItem: News?
     
@@ -26,18 +24,35 @@ class CurrentNewViewController: UIViewController {
         setupView()
     }
     
-    @IBAction func exitAction(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     private func setupView() {
         
         titleLabel.text = newItem?.title
-        descriptionTextLabel.text = newItem?.description
+        descriptionLabel.text = newItem?.description
+        descriptionLabel.sizeToFit()
         imageNew.image = newItem?.image
         imageNew.layer.cornerRadius = 10
         imageNew.clipsToBounds = true
         dateLabel.text = newItem?.daysAgo
-
     }
+    
+    override func loadView() {
+        super.loadView()
+        
+        descriptionLabel.text = newItem?.description
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+                
+        return descriptionLabel.frame.height + imageNew.frame.height + titleLabel.frame.height + dateLabel.frame.height + 200
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
 }

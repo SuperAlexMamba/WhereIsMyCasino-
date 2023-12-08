@@ -44,7 +44,6 @@ class OnboardingViewController: UIViewController {
     @IBAction func exit(_ sender: UIButton) {
         
         UserDefaults.standard.setValue(true, forKey: "showed")
-        
         dismiss(animated: true)
         
     }
@@ -52,7 +51,6 @@ class OnboardingViewController: UIViewController {
     @objc func exitFunc() {
         
         UserDefaults.standard.setValue(true, forKey: "showed")
-        
         dismiss(animated: true)
     }
     
@@ -78,7 +76,6 @@ class OnboardingViewController: UIViewController {
         UIView.transition(with: onboardImage, duration: 0.5, options: .transitionFlipFromLeft) {
             
             self.onboardImage.image = self.images[self.pageControl.currentPage]
-            
         }
         
         UIView.transition(with: descriptionLabel, duration: 0.5) {
@@ -110,7 +107,6 @@ class OnboardingViewController: UIViewController {
         if pageControl.currentPage == 2 {
             
             let currentFont = button.titleLabel?.font
-            let currentTextColor = button.titleLabel?.textColor
             
             let attributedTitle = NSAttributedString(string: "Start", attributes: [
                 .font: currentFont as Any,
@@ -118,7 +114,6 @@ class OnboardingViewController: UIViewController {
             ])
 
             button.setAttributedTitle(attributedTitle, for: .normal)
-            
             button.removeTarget(self, action: #selector(nextPage), for: .touchUpInside)
             button.addTarget(self, action: #selector(exitFunc), for: .touchUpInside)
         }
