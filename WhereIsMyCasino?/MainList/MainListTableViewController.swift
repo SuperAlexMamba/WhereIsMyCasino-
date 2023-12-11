@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class MainListTableViewController: UITableViewController {
+class MainListTableViewController: UICollectionViewController {
         
     var casino: [Casino]?
     
@@ -19,47 +19,25 @@ class MainListTableViewController: UITableViewController {
         
         self.title = "Casino"
     }
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    // MARK: - Collectionview data source
+                
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return casino?.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 20
-    }
-        
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return casino?.count ?? 0
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 121
-    }
-    
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 121
-    }
-        
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let selectedCasino = casino?[indexPath.row]
         
         guard let currentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrentCasino") as? CurrentCasinoController else { return }
-                    
-            currentVC.casino = selectedCasino
-            
-            self.navigationController?.pushViewController(currentVC, animated: true)
-                        
+        
+        currentVC.casino = selectedCasino
+        
+        self.navigationController?.pushViewController(currentVC, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomListMainTableCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CustomListMainTableCell
         
         cell.layer.cornerRadius = 10
         cell.clipsToBounds = true
@@ -70,6 +48,8 @@ class MainListTableViewController: UITableViewController {
         
         return cell
     }
+    
+    
     
     func setupCell(_ cell: CustomListMainTableCell, with item: Casino, at indexPath: IndexPath) {
         
@@ -109,7 +89,6 @@ class MainListTableViewController: UITableViewController {
                                 print("404")
                             }
                         }
-                        
                     }
                     else {
                         cell.activityView.stopAnimating()
@@ -117,6 +96,7 @@ class MainListTableViewController: UITableViewController {
                     }
                 }
             }
+            
             else {
                 cell.imageOfCasino.image = UIImage(named: "ImageCasino")
                 cell.setupStack(types: item.types_games ?? [])

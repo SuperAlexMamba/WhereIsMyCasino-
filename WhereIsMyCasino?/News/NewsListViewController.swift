@@ -7,31 +7,47 @@
 
 import UIKit
 
+struct HotNews {
+    
+    let imageNames: [String] = ["New8", "New9", "New10", "New11"]
+    
+    let labelTexts: [String] = ["Las Vegas Sands to spend almost 2 billion to buy Sands China Ltd shares in Macau",
+                                
+        "In the USA, a nun who stole $800 thousand from a school for a casino was sent to prison",
+                                
+        "UK Gambling Revenue increased by 7% in fiscal Year 2023",
+                                
+        "A bill on combating match-fixing has been prepared in Peru"]
+    
+}
+
 class NewsListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-        
-    @IBOutlet weak var scrollView: UIScrollView!
+            
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var pageControl: UIPageControl!
     
     var newsArray: [News] = []
-        
-    let imageNames = ["New8" , "New9" , "New10" , "New11"]
+    
+    let hotNews = HotNews()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupModel()
-        setupView()
 
         tableView.delegate = self
         tableView.dataSource = self
         
-        scrollView.delegate = self
-        scrollView.isPagingEnabled = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    
+        pageControl.numberOfPages = hotNews.imageNames.count
         
-        pageControl.numberOfPages = imageNames.count
+        collectionView.layer.cornerRadius = 8
+        collectionView.clipsToBounds = true
         
     }
     
@@ -55,53 +71,7 @@ class NewsListViewController: UIViewController {
         let pageIndex = Int(round(scrollView.contentOffset.x / scrollView.frame.width))
         pageControl.currentPage = pageIndex
     }
-    
-    private func setupView() {
         
-        scrollView.layer.cornerRadius = 10
-        scrollView.clipsToBounds = true
-        scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(imageNames.count), height: scrollView.frame.height)
-        
-        for (index, imageName) in imageNames.enumerated() {
-            let imageView = UIImageView(image: UIImage(named: imageName))
-            imageView.contentMode = .scaleAspectFill
-            imageView.layer.cornerRadius = 10
-            imageView.clipsToBounds = true
-            imageView.frame = CGRect(x: CGFloat(index) * scrollView.frame.width, y: 0, width: self.view.frame.width, height: scrollView.frame.height)
-            scrollView.addSubview(imageView)
-            
-            let label = UILabel(frame: CGRect(x: 0, y: imageView.frame.height - 70, width: imageView.frame.width, height: 50))
-            
-            label.textColor = UIColor.white
-            
-            label.layer.shadowRadius = 2.5
-            label.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-            label.layer.shadowOpacity = 0.5
-            label.layer.shadowColor = UIColor.black.cgColor
-            
-            label.font = .boldSystemFont(ofSize: 20)
-            
-            switch index {
-            case 0:
-                label.text = "Las Vegas Sands to spend almost 2 billion to buy Sands China Ltd shares in Macau"
-                
-            case 1:
-                label.text = "In the USA, a nun who stole $800 thousand from a school for a casino was sent to prison"
-                
-            case 2:
-                label.text = "UK Gambling Revenue increased by 7% in fiscal Year 2023"
-                
-            default:
-                label.text = "A bill on combating match-fixing has been prepared in Peru"
-            }
-            label.textAlignment = .center
-            label.numberOfLines = 3
-            label.sizeToFit()
-            imageView.addSubview(label)
-        }
-        
-    }
-    
 }
 
 extension NewsListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -124,8 +94,7 @@ extension NewsListViewController: UITableViewDataSource, UITableViewDelegate {
         CurrentNew.newItem = currentNew
         
         self.navigationController?.pushViewController(CurrentNew, animated: true)
-        
-        
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -153,4 +122,25 @@ extension NewsListViewController: UITableViewDataSource, UITableViewDelegate {
         self.newsArray.append(newSeven)
         
     }
+}
+
+extension NewsListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return HotNews().imageNames.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCustomCell
+        
+        cell.hotNewLabel.text = hotNews.labelTexts[indexPath.row]
+        cell.imageView.image = UIImage(named: hotNews.imageNames[indexPath.row])
+
+        
+        
+        return cell
+    }
+
 }

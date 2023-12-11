@@ -19,14 +19,11 @@ class TabBarViewController: UITabBarController {
             
             present(onboardingViewController, animated: true)
         }
-        
     }
                 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
-        
     }
     
     private func setupView() {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomListMainTableCell: UITableViewCell {
+class CustomListMainTableCell: UICollectionViewCell {
 
     @IBOutlet weak var ratingView: UIView!
     
@@ -25,6 +25,9 @@ class CustomListMainTableCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.heightAnchor.constraint(equalToConstant: 121).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 342).isActive = true
         
         typesStackView.frame.size = typesStackView.intrinsicContentSize
         typesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }

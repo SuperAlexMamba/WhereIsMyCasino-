@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8dx-Vd-Bfs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,133 +23,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="iDF-Ec-dXf">
-            <objects>
-                <tableViewController storyboardIdentifier="MainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UyT-Se-98y" customClass="MainListTableViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="NAj-N8-uC1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="125" id="YU8-kr-rrl" customClass="CustomListMainTableCell" customModule="WhereIsMyCasino_" customModuleProvider="target">
-                                <rect key="frame" x="20" y="55.5" width="374" height="125"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YU8-kr-rrl" id="wZx-Me-qm9">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="125"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les Croupiers Casino Cardiff" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqs-DM-G1S">
-                                            <rect key="frame" x="153" y="11" width="205" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="4Vt-Mi-RAL"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="18"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageCasino" translatesAutoresizingMaskIntoConstraints="NO" id="lqB-Ni-zdm">
-                                            <rect key="frame" x="1" y="1" width="137" height="123"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="137" id="ElP-kc-oEi"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardiff, United Kingdom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyV-7U-G17">
-                                            <rect key="frame" x="178" y="95" width="191" height="16.5"/>
-                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location" translatesAutoresizingMaskIntoConstraints="NO" id="rLI-j4-Opc">
-                                            <rect key="frame" x="159" y="95" width="11" height="15.5"/>
-                                        </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6H-3C-auV">
-                                            <rect key="frame" x="11" y="6" width="35" height="16"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="4.8" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1f-YQ-5yy">
-                                                    <rect key="frame" x="15" y="2" width="16" height="11"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="11"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rating" translatesAutoresizingMaskIntoConstraints="NO" id="oek-c0-Vzi">
-                                                    <rect key="frame" x="2" y="3" width="10" height="10"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="R1f-YQ-5yy" secondAttribute="trailing" constant="4" id="02d-NY-2dB"/>
-                                                <constraint firstAttribute="bottom" secondItem="oek-c0-Vzi" secondAttribute="bottom" constant="3" id="8Ry-33-EvE"/>
-                                                <constraint firstAttribute="width" constant="35" id="IpH-cY-fuf"/>
-                                                <constraint firstItem="R1f-YQ-5yy" firstAttribute="top" secondItem="O6H-3C-auV" secondAttribute="top" constant="2" id="KAu-Q2-MXL"/>
-                                                <constraint firstItem="R1f-YQ-5yy" firstAttribute="leading" secondItem="oek-c0-Vzi" secondAttribute="trailing" constant="3" id="eGV-lV-fYm"/>
-                                                <constraint firstAttribute="height" constant="16" id="qHo-YQ-cgc"/>
-                                                <constraint firstItem="oek-c0-Vzi" firstAttribute="leading" secondItem="O6H-3C-auV" secondAttribute="leading" constant="2" id="sdR-uG-0LP"/>
-                                                <constraint firstAttribute="bottom" secondItem="R1f-YQ-5yy" secondAttribute="bottom" constant="3" id="uLz-A9-jtU"/>
-                                                <constraint firstItem="oek-c0-Vzi" firstAttribute="top" secondItem="O6H-3C-auV" secondAttribute="top" constant="3" id="xmt-yz-fuE"/>
-                                            </constraints>
-                                        </view>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="wcO-Ze-jjr">
-                                            <rect key="frame" x="153" y="71" width="206" height="12"/>
-                                        </stackView>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="xzY-CM-ADK">
-                                            <rect key="frame" x="45" y="45" width="49" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="43" id="RIG-d6-x7q"/>
-                                                <constraint firstAttribute="width" constant="49" id="vKm-EW-m9u"/>
-                                            </constraints>
-                                            <color key="color" systemColor="linkColor"/>
-                                        </activityIndicatorView>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.11764705882352941" green="0.086274509803921567" blue="0.14509803921568626" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="rLI-j4-Opc" firstAttribute="top" secondItem="Uqs-DM-G1S" secondAttribute="bottom" constant="34" id="0Z2-ge-I7w"/>
-                                        <constraint firstItem="wcO-Ze-jjr" firstAttribute="leading" secondItem="lqB-Ni-zdm" secondAttribute="trailing" constant="15" id="3BF-rJ-7wb"/>
-                                        <constraint firstItem="Uqs-DM-G1S" firstAttribute="top" secondItem="wZx-Me-qm9" secondAttribute="top" constant="11" id="4iD-7w-jME"/>
-                                        <constraint firstItem="lqB-Ni-zdm" firstAttribute="leading" secondItem="O6H-3C-auV" secondAttribute="leading" constant="-10" id="9uF-cE-yKj"/>
-                                        <constraint firstAttribute="bottom" secondItem="lqB-Ni-zdm" secondAttribute="bottom" constant="1" id="AUj-MQ-aGQ"/>
-                                        <constraint firstItem="rLI-j4-Opc" firstAttribute="leading" secondItem="lqB-Ni-zdm" secondAttribute="trailing" constant="21" id="BgV-qN-av3"/>
-                                        <constraint firstAttribute="trailing" secondItem="HyV-7U-G17" secondAttribute="trailing" constant="5" id="Neg-tu-pqt"/>
-                                        <constraint firstItem="HyV-7U-G17" firstAttribute="leading" secondItem="wZx-Me-qm9" secondAttribute="leading" constant="178" id="PLd-eE-tte"/>
-                                        <constraint firstItem="lqB-Ni-zdm" firstAttribute="top" secondItem="O6H-3C-auV" secondAttribute="top" constant="-5" id="UdR-To-B0I"/>
-                                        <constraint firstAttribute="trailing" secondItem="Uqs-DM-G1S" secondAttribute="trailing" constant="16" id="Vnv-Ov-WhC"/>
-                                        <constraint firstItem="HyV-7U-G17" firstAttribute="top" secondItem="wZx-Me-qm9" secondAttribute="top" constant="95" id="WRV-K8-gNK"/>
-                                        <constraint firstItem="HyV-7U-G17" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rLI-j4-Opc" secondAttribute="trailing" constant="8" symbolic="YES" id="ag2-El-2Bh"/>
-                                        <constraint firstItem="lqB-Ni-zdm" firstAttribute="leading" secondItem="wZx-Me-qm9" secondAttribute="leading" constant="1" id="ajK-eE-nh3"/>
-                                        <constraint firstAttribute="bottom" secondItem="xzY-CM-ADK" secondAttribute="bottom" constant="30" id="hhx-hf-e65"/>
-                                        <constraint firstItem="HyV-7U-G17" firstAttribute="top" secondItem="wcO-Ze-jjr" secondAttribute="bottom" constant="12" id="ivd-yZ-6GC"/>
-                                        <constraint firstItem="Uqs-DM-G1S" firstAttribute="leading" secondItem="lqB-Ni-zdm" secondAttribute="trailing" constant="15" id="jdv-Td-82o"/>
-                                        <constraint firstItem="wcO-Ze-jjr" firstAttribute="top" secondItem="Uqs-DM-G1S" secondAttribute="bottom" constant="10" id="jjx-sg-1dt"/>
-                                        <constraint firstItem="xzY-CM-ADK" firstAttribute="top" secondItem="wZx-Me-qm9" secondAttribute="top" constant="45" id="lwl-R0-Tuc"/>
-                                        <constraint firstItem="lqB-Ni-zdm" firstAttribute="top" secondItem="wZx-Me-qm9" secondAttribute="top" constant="1" id="tJE-oa-UhQ"/>
-                                        <constraint firstItem="xzY-CM-ADK" firstAttribute="leading" secondItem="wZx-Me-qm9" secondAttribute="leading" constant="45" id="vaw-gL-N71"/>
-                                        <constraint firstAttribute="trailing" secondItem="wcO-Ze-jjr" secondAttribute="trailing" constant="15" id="y5W-1M-ESi"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.1176470588" green="0.086274509799999996" blue="0.1450980392" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="activityView" destination="xzY-CM-ADK" id="KvV-lh-JiB"/>
-                                    <outlet property="imageOfCasino" destination="lqB-Ni-zdm" id="Nd9-U2-7IF"/>
-                                    <outlet property="locationLabel" destination="HyV-7U-G17" id="ccd-Xt-nUH"/>
-                                    <outlet property="ratingLabel" destination="R1f-YQ-5yy" id="oTm-bV-DmT"/>
-                                    <outlet property="ratingView" destination="O6H-3C-auV" id="ASB-JH-gFz"/>
-                                    <outlet property="titleLabel" destination="Uqs-DM-G1S" id="wN1-C6-BU6"/>
-                                    <outlet property="typesStackView" destination="wcO-Ze-jjr" id="ST2-78-Jwz"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="UyT-Se-98y" id="9Xk-oY-90k"/>
-                            <outlet property="delegate" destination="UyT-Se-98y" id="WNc-an-pGg"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="tXI-LJ-1Tl"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vDS-4d-C49" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2792.753623188406" y="130.58035714285714"/>
-        </scene>
         <!--Les Croupiers Casino Cardiff-->
         <scene sceneID="brf-nG-rjO">
             <objects>
@@ -755,33 +630,6 @@
             </objects>
             <point key="canvasLocation" x="5508.6956521739139" y="130.58035714285714"/>
         </scene>
-        <!--Casino-->
-        <scene sceneID="cTM-bz-ApI">
-            <objects>
-                <navigationController id="ORB-Lv-VLq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Casino" image="CasinoV2" id="h5w-oo-qmE">
-                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H3Y-RX-p7R">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="UyT-Se-98y" kind="relationship" relationship="rootViewController" id="CJT-IW-fpa"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gcE-RH-hG2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2019" y="130"/>
-        </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -904,18 +752,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" bouncesZoom="NO" id="uDf-pK-x5L">
-                                <rect key="frame" x="0.0" y="92" width="414" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="8wZ-Ry-aba"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="1yR-cP-2bx"/>
-                            </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WW7-ri-HqZ">
                                 <rect key="frame" x="20" y="382" width="374" height="431"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="431" id="73c-fj-vR7"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="143" id="IHZ-on-30l" customClass="NewsListCustomCell" customModule="WhereIsMyCasino_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="374" height="143"/>
@@ -929,6 +768,58 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V2Z-dh-r06">
+                                <rect key="frame" x="0.0" y="92" width="414" height="205"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="205" id="Wof-ef-kxw"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iwR-p0-AV8">
+                                    <size key="itemSize" width="414" height="204"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="r7A-q9-ZgV" customClass="CollectionViewCustomCell" customModule="WhereIsMyCasino_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="425" height="205"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="itk-f2-iVD">
+                                            <rect key="frame" x="0.0" y="0.0" width="425" height="205"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New8" translatesAutoresizingMaskIntoConstraints="NO" id="nNa-O9-Km2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="425" height="205"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the USA, a nun who stole $800 thousand from a school for a casino was sent to prison" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vih-cJ-AAk">
+                                                    <rect key="frame" x="8" y="125" width="409" height="72"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="72" id="Nlw-W5-W2i"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Vih-cJ-AAk" secondAttribute="trailing" constant="8" id="6fb-Wa-jrq"/>
+                                                <constraint firstAttribute="bottom" secondItem="Vih-cJ-AAk" secondAttribute="bottom" constant="8" id="99R-Qv-0sI"/>
+                                                <constraint firstItem="Vih-cJ-AAk" firstAttribute="leading" secondItem="itk-f2-iVD" secondAttribute="leading" constant="8" id="DUc-2a-ZE1"/>
+                                                <constraint firstItem="nNa-O9-Km2" firstAttribute="leading" secondItem="itk-f2-iVD" secondAttribute="leading" id="QyR-2l-5jJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="nNa-O9-Km2" secondAttribute="bottom" id="Zl0-fa-vw9"/>
+                                                <constraint firstAttribute="trailing" secondItem="nNa-O9-Km2" secondAttribute="trailing" id="jZR-nt-dTh"/>
+                                                <constraint firstItem="nNa-O9-Km2" firstAttribute="top" secondItem="itk-f2-iVD" secondAttribute="top" id="roM-Zk-Yiy"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="425" height="205"/>
+                                        <connections>
+                                            <outlet property="hotNewLabel" destination="Vih-cJ-AAk" id="umE-US-bVD"/>
+                                            <outlet property="imageView" destination="nNa-O9-Km2" id="uEr-9T-rf1"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="diK-sy-ELN"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -936,21 +827,23 @@
                         <constraints>
                             <constraint firstItem="WW7-ri-HqZ" firstAttribute="bottom" secondItem="diK-sy-ELN" secondAttribute="bottom" id="3MU-Tp-fI7"/>
                             <constraint firstItem="diK-sy-ELN" firstAttribute="trailing" secondItem="WW7-ri-HqZ" secondAttribute="trailing" constant="20" id="BXc-rR-JJO"/>
+                            <constraint firstItem="0PC-Vj-6S3" firstAttribute="top" secondItem="V2Z-dh-r06" secondAttribute="bottom" constant="8" symbolic="YES" id="Knz-w5-vfc"/>
                             <constraint firstItem="WW7-ri-HqZ" firstAttribute="top" secondItem="rOU-T1-TUV" secondAttribute="bottom" constant="22" id="N7z-6h-wVt"/>
-                            <constraint firstItem="0PC-Vj-6S3" firstAttribute="top" secondItem="uDf-pK-x5L" secondAttribute="bottom" constant="13" id="OUK-hw-e8F"/>
                             <constraint firstItem="0PC-Vj-6S3" firstAttribute="leading" secondItem="diK-sy-ELN" secondAttribute="leading" constant="149" id="QWd-ym-g3p"/>
                             <constraint firstItem="rOU-T1-TUV" firstAttribute="leading" secondItem="diK-sy-ELN" secondAttribute="leading" constant="18" id="VFi-mT-fR0"/>
-                            <constraint firstItem="0PC-Vj-6S3" firstAttribute="top" secondItem="uDf-pK-x5L" secondAttribute="bottom" constant="13" id="XAZ-3M-Uqy"/>
                             <constraint firstItem="rOU-T1-TUV" firstAttribute="top" secondItem="0PC-Vj-6S3" secondAttribute="bottom" constant="8" symbolic="YES" id="XHZ-p4-7gS"/>
+                            <constraint firstItem="V2Z-dh-r06" firstAttribute="trailing" secondItem="diK-sy-ELN" secondAttribute="trailing" id="aCy-xU-HZm"/>
+                            <constraint firstItem="V2Z-dh-r06" firstAttribute="leading" secondItem="diK-sy-ELN" secondAttribute="leading" id="bvU-rv-k5F"/>
                             <constraint firstItem="diK-sy-ELN" firstAttribute="trailing" secondItem="0PC-Vj-6S3" secondAttribute="trailing" constant="148.5" id="cw5-o0-THJ"/>
                             <constraint firstItem="WW7-ri-HqZ" firstAttribute="leading" secondItem="diK-sy-ELN" secondAttribute="leading" constant="20" id="ecz-ff-BKv"/>
+                            <constraint firstItem="V2Z-dh-r06" firstAttribute="top" secondItem="diK-sy-ELN" secondAttribute="top" id="fNr-Xi-GYo"/>
                             <constraint firstItem="diK-sy-ELN" firstAttribute="trailing" secondItem="rOU-T1-TUV" secondAttribute="trailing" constant="16" id="xYP-LW-ZEr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hot News" id="IDL-cf-qzr"/>
                     <connections>
+                        <outlet property="collectionView" destination="V2Z-dh-r06" id="bbf-Xg-dYV"/>
                         <outlet property="pageControl" destination="0PC-Vj-6S3" id="RFz-Jj-6u8"/>
-                        <outlet property="scrollView" destination="uDf-pK-x5L" id="b14-wo-HXH"/>
                         <outlet property="tableView" destination="WW7-ri-HqZ" id="8aj-JR-eol"/>
                     </connections>
                 </viewController>
@@ -1006,7 +899,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAw-rO-iw3">
                                                     <rect key="frame" x="16" y="382" width="382" height="1612.5"/>
-                                                    <mutableString key="text">The decision of Mark Cuban to officially sell his large stake in the NBA’s Dallas Mavericks to the Adelson family brings his long-held idea to the fore.New proposal:According to his pitch, the proposal refers to an alliance with casino mogul Dr. Miriam Adelson and Las Vegas Sands Corp. owned by her family, to construct a new casino-resort in Dallas whose main attraction would be the new arena for the aforementioned team. However, the condition for this is the official legalization of gambling in Texas. Commenting on the proposal, Cuban said to the Dallas Morning News: “Texas is such an amazing state that we need to be a destination. And this is the way to do it.”Moreover, in addition to him, one more person sees uncommon potential in the idea. The person is David Cordish, the president and chief executive officer of Cordish Cos., developer of the famous Texas Live entertainment complex in Arlington, located next to the Texas Rangers’ Globe Life Field. In this regard, commenting in an email  when asked about the proposed casino-resort project of the aforementioned Cuban when asked, he said: “The idea of combining entertainment and mixed use around a casino is absolutely the winning formula.”In addition, he added, according to the Dallas Business Journal: “I don’t have enough information to comment on the specifics of Cuban’s plans in Dallas, but he has had success with similar concepts across the nation. My  company previously used this formula when it developed two Hard Rock casinos with hotels in Florida, two of the most successful casinos in America. My company has also developed casino/entertainment complexes in Maryland, Philadelphia and Pittsburgh and those created spectacular and transformative results in those areas.”The location is still unclear:As for the location, it stays hazy where the aforementioned proposed project in Dallas would be located. In this regard, commenting on the possible location, Zarin Gracey, a member of the Dallas City Council, said to the NBC 5: “It should be next to the future redevelopment of the Dallas Convention Center, a nearly $3 billion project in its own right.”However, also commenting on a location, Cuban said to the Morning News: “There’s no reason why we can’t build a huge resort destination in the city proper of Dallas. There’s plenty of places to do it.”Far from reality:At Chase’s Make Your Move Summit, Cuban expressed his wish for a casino-centered resorts to be located in Texas. However, the fact that Cuban is ready to accept casino gaming at resorts in the said state is a long way from reality because of a lengthy history of anti-industry lawmakers together with a nascent sports wagering market. On a related note, in order for casino games to be validated in Texas, a constitutional amendment is demanded, which would have to receive a minimum of two-thirds votes of the aforementioned lawmakers, meaning that 21 out of a total of 30 senators would have to validate the change.Also, sports wagering and the casino industry are struggling to “find favor“ with Texas lawmakers, Texas Lieutenant Governor Dan Patrick said, according to Covers.com.One more reason Cuban’s wish is so far from reality is that Texas residents will need to wait till 2025 to see any chance of being able to use sports wagering and casino gaming, since the state’s legislature just meets in odd-numbered years. Primarily because of this, gambling firms continue to bypass the opportunity-rich market of 30 million inhabitants.</mutableString>
+                                                    <string key="text">The decision of Mark Cuban to officially sell his large stake in the NBA’s Dallas Mavericks to the Adelson family brings his long-held idea to the fore.New proposal:According to his pitch, the proposal refers to an alliance with casino mogul Dr. Miriam Adelson and Las Vegas Sands Corp. owned by her family, to construct a new casino-resort in Dallas whose main attraction would be the new arena for the aforementioned team. However, the condition for this is the official legalization of gambling in Texas. Commenting on the proposal, Cuban said to the Dallas Morning News: “Texas is such an amazing state that we need to be a destination. And this is the way to do it.”Moreover, in addition to him, one more person sees uncommon potential in the idea. The person is David Cordish, the president and chief executive officer of Cordish Cos., developer of the famous Texas Live entertainment complex in Arlington, located next to the Texas Rangers’ Globe Life Field. In this regard, commenting in an email  when asked about the proposed casino-resort project of the aforementioned Cuban when asked, he said: “The idea of combining entertainment and mixed use around a casino is absolutely the winning formula.”In addition, he added, according to the Dallas Business Journal: “I don’t have enough information to comment on the specifics of Cuban’s plans in Dallas, but he has had success with similar concepts across the nation. My  company previously used this formula when it developed two Hard Rock casinos with hotels in Florida, two of the most successful casinos in America. My company has also developed casino/entertainment complexes in Maryland, Philadelphia and Pittsburgh and those created spectacular and transformative results in those areas.”The location is still unclear:As for the location, it stays hazy where the aforementioned proposed project in Dallas would be located. In this regard, commenting on the possible location, Zarin Gracey, a member of the Dallas City Council, said to the NBC 5: “It should be next to the future redevelopment of the Dallas Convention Center, a nearly $3 billion project in its own right.”However, also commenting on a location, Cuban said to the Morning News: “There’s no reason why we can’t build a huge resort destination in the city proper of Dallas. There’s plenty of places to do it.”Far from reality:At Chase’s Make Your Move Summit, Cuban expressed his wish for a casino-centered resorts to be located in Texas. However, the fact that Cuban is ready to accept casino gaming at resorts in the said state is a long way from reality because of a lengthy history of anti-industry lawmakers together with a nascent sports wagering market. On a related note, in order for casino games to be validated in Texas, a constitutional amendment is demanded, which would have to receive a minimum of two-thirds votes of the aforementioned lawmakers, meaning that 21 out of a total of 30 senators would have to validate the change.Also, sports wagering and the casino industry are struggling to “find favor“ with Texas lawmakers, Texas Lieutenant Governor Dan Patrick said, according to Covers.com.One more reason Cuban’s wish is so far from reality is that Texas residents will need to wait till 2025 to see any chance of being able to use sports wagering and casino gaming, since the state’s legislature just meets in odd-numbered years. Primarily because of this, gambling firms continue to bypass the opportunity-rich market of 30 million inhabitants.</string>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1045,7 +938,148 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAV-NF-FqG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5508.6956521739139" y="975.66964285714278"/>
+            <point key="canvasLocation" x="3732" y="1531"/>
+        </scene>
+        <!--Casino-->
+        <scene sceneID="X0D-gD-iE7">
+            <objects>
+                <collectionViewController storyboardIdentifier="MainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="geP-1i-l0g" customClass="MainListTableViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Fwc-sO-Rqy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k4C-kX-IEq">
+                            <size key="itemSize" width="414" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gT5-bC-CNC" customClass="CustomListMainTableCell" customModule="WhereIsMyCasino_" customModuleProvider="target">
+                                <rect key="frame" x="36" y="0.0" width="342" height="121"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Fft-Ao-KO6">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="121"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cgi-Wq-pcm">
+                                            <rect key="frame" x="153" y="70" width="173" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="kdG-px-F8w"/>
+                                            </constraints>
+                                        </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageCasino" translatesAutoresizingMaskIntoConstraints="NO" id="LkQ-eK-T5H">
+                                            <rect key="frame" x="0.0" y="0.0" width="137" height="121"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="137" id="OOf-LO-IQc"/>
+                                            </constraints>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhH-l5-1i7">
+                                            <rect key="frame" x="8" y="8" width="35" height="16"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="4.8" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGC-Em-qrT">
+                                                    <rect key="frame" x="15" y="2" width="16" height="11"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rating" translatesAutoresizingMaskIntoConstraints="NO" id="LY9-pr-djX">
+                                                    <rect key="frame" x="2" y="3" width="10" height="10"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="LY9-pr-djX" firstAttribute="top" secondItem="dhH-l5-1i7" secondAttribute="top" constant="3" id="36O-oF-MlZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="eGC-Em-qrT" secondAttribute="trailing" constant="4" id="C5U-bS-Ts2"/>
+                                                <constraint firstItem="LY9-pr-djX" firstAttribute="leading" secondItem="dhH-l5-1i7" secondAttribute="leading" constant="2" id="P8O-hC-IcN"/>
+                                                <constraint firstAttribute="height" constant="16" id="Qoe-lG-2Jb"/>
+                                                <constraint firstItem="eGC-Em-qrT" firstAttribute="leading" secondItem="LY9-pr-djX" secondAttribute="trailing" constant="3" id="VM8-Qq-m90"/>
+                                                <constraint firstAttribute="bottom" secondItem="LY9-pr-djX" secondAttribute="bottom" constant="3" id="aME-8R-JzD"/>
+                                                <constraint firstAttribute="bottom" secondItem="eGC-Em-qrT" secondAttribute="bottom" constant="3" id="gbX-0T-5bE"/>
+                                                <constraint firstItem="eGC-Em-qrT" firstAttribute="top" secondItem="dhH-l5-1i7" secondAttribute="top" constant="2" id="m6F-ZV-cYd"/>
+                                                <constraint firstAttribute="width" constant="35" id="wWI-zm-M3c"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les Croupiers Casino Cardiff" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOx-Ky-ZUT">
+                                            <rect key="frame" x="153" y="8" width="173" height="54"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="55" id="fqA-Wi-sCI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="EOG-xh-k0A">
+                                            <rect key="frame" x="44" y="39" width="49" height="43"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="0Wc-UH-kMV"/>
+                                            </constraints>
+                                            <color key="color" systemColor="linkColor"/>
+                                        </activityIndicatorView>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardiff, United Kingdom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxp-Me-hbx">
+                                            <rect key="frame" x="167.5" y="97" width="158.5" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="QPq-sG-4NU"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location" translatesAutoresizingMaskIntoConstraints="NO" id="lzA-vs-4HN">
+                                            <rect key="frame" x="153" y="98" width="10.5" height="13.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="13.5" id="KxH-cG-xly"/>
+                                                <constraint firstAttribute="width" constant="10.5" id="mXH-ee-zei"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="LkQ-eK-T5H" secondAttribute="bottom" id="40e-rO-Wg8"/>
+                                        <constraint firstItem="EOG-xh-k0A" firstAttribute="top" secondItem="Fft-Ao-KO6" secondAttribute="top" constant="39" id="5AR-PO-aEu"/>
+                                        <constraint firstAttribute="trailing" secondItem="Rxp-Me-hbx" secondAttribute="trailing" constant="16" id="9O8-Pi-HTm"/>
+                                        <constraint firstItem="cgi-Wq-pcm" firstAttribute="leading" secondItem="LkQ-eK-T5H" secondAttribute="trailing" constant="16" id="AbC-0i-FeK"/>
+                                        <constraint firstAttribute="trailing" secondItem="cgi-Wq-pcm" secondAttribute="trailing" constant="16" id="Bjl-Pc-xrk"/>
+                                        <constraint firstItem="cgi-Wq-pcm" firstAttribute="top" secondItem="TOx-Ky-ZUT" secondAttribute="bottom" constant="8" id="Hc0-BK-ba5"/>
+                                        <constraint firstItem="Rxp-Me-hbx" firstAttribute="leading" secondItem="lzA-vs-4HN" secondAttribute="trailing" constant="4" id="MFt-sL-UcY"/>
+                                        <constraint firstAttribute="bottom" secondItem="EOG-xh-k0A" secondAttribute="bottom" constant="39" id="OkH-cO-yaN"/>
+                                        <constraint firstItem="LkQ-eK-T5H" firstAttribute="leading" secondItem="Fft-Ao-KO6" secondAttribute="leading" id="QM3-Ea-SzI"/>
+                                        <constraint firstItem="LkQ-eK-T5H" firstAttribute="trailing" secondItem="EOG-xh-k0A" secondAttribute="trailing" constant="44" id="V9j-YU-mre"/>
+                                        <constraint firstItem="lzA-vs-4HN" firstAttribute="leading" secondItem="LkQ-eK-T5H" secondAttribute="trailing" constant="16" id="VfF-q3-nqZ"/>
+                                        <constraint firstItem="Rxp-Me-hbx" firstAttribute="top" secondItem="cgi-Wq-pcm" secondAttribute="bottom" constant="7" id="Vwp-UV-QIN"/>
+                                        <constraint firstAttribute="bottom" secondItem="Rxp-Me-hbx" secondAttribute="bottom" constant="8" id="W9I-vZ-kAt"/>
+                                        <constraint firstItem="dhH-l5-1i7" firstAttribute="leading" secondItem="Fft-Ao-KO6" secondAttribute="leading" constant="8" id="cJt-rz-CDk"/>
+                                        <constraint firstItem="LkQ-eK-T5H" firstAttribute="top" secondItem="Fft-Ao-KO6" secondAttribute="top" id="cah-x6-wZL"/>
+                                        <constraint firstItem="lzA-vs-4HN" firstAttribute="top" secondItem="cgi-Wq-pcm" secondAttribute="bottom" constant="8" id="e0F-Mk-mhf"/>
+                                        <constraint firstItem="TOx-Ky-ZUT" firstAttribute="top" secondItem="Fft-Ao-KO6" secondAttribute="top" constant="8" id="gQz-U8-yKE"/>
+                                        <constraint firstAttribute="trailing" secondItem="TOx-Ky-ZUT" secondAttribute="trailing" constant="16" id="i3A-je-KoA"/>
+                                        <constraint firstItem="dhH-l5-1i7" firstAttribute="top" secondItem="Fft-Ao-KO6" secondAttribute="top" constant="8" id="w9n-KE-mz7"/>
+                                        <constraint firstItem="EOG-xh-k0A" firstAttribute="leading" secondItem="Fft-Ao-KO6" secondAttribute="leading" constant="44" id="wEh-Ss-dhI"/>
+                                        <constraint firstItem="TOx-Ky-ZUT" firstAttribute="leading" secondItem="LkQ-eK-T5H" secondAttribute="trailing" constant="16" id="xDd-tU-52c"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" red="0.1215686275" green="0.090196078430000007" blue="0.14901960780000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <size key="customSize" width="342" height="121"/>
+                                <connections>
+                                    <outlet property="activityView" destination="EOG-xh-k0A" id="3Z9-Gi-Xmt"/>
+                                    <outlet property="imageOfCasino" destination="LkQ-eK-T5H" id="7P0-mn-3da"/>
+                                    <outlet property="locationLabel" destination="Rxp-Me-hbx" id="ee5-iL-Ml5"/>
+                                    <outlet property="ratingLabel" destination="eGC-Em-qrT" id="JCC-W0-e6N"/>
+                                    <outlet property="ratingView" destination="dhH-l5-1i7" id="bx7-z7-oJf"/>
+                                    <outlet property="titleLabel" destination="TOx-Ky-ZUT" id="Adz-el-bcx"/>
+                                    <outlet property="typesStackView" destination="cgi-Wq-pcm" id="BHY-Ga-99z"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="geP-1i-l0g" id="NUW-YF-BgD"/>
+                            <outlet property="delegate" destination="geP-1i-l0g" id="hxh-mr-l2M"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Casino" id="Zl6-sF-egv"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s3M-uM-EtX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2793" y="131"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="CuS-ce-7iA">
@@ -1141,7 +1175,7 @@
                         </tabBarAppearance>
                     </tabBar>
                     <connections>
-                        <segue destination="ORB-Lv-VLq" kind="relationship" relationship="viewControllers" id="fIg-15-Q7h"/>
+                        <segue destination="V7J-Pi-Z1D" kind="relationship" relationship="viewControllers" id="zPk-CT-vtW"/>
                         <segue destination="scU-k0-CNf" kind="relationship" relationship="viewControllers" id="oPH-rN-log"/>
                         <segue destination="8r9-p1-EwJ" kind="relationship" relationship="viewControllers" id="7nf-l1-BTO"/>
                     </connections>
@@ -1350,6 +1384,30 @@
             </objects>
             <point key="canvasLocation" x="3732" y="131"/>
         </scene>
+        <!--Casino-->
+        <scene sceneID="tG4-Dl-YSE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V7J-Pi-Z1D" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Casino" image="CasinoV2" id="NRs-3v-AVF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pTw-if-KUF">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="geP-1i-l0g" kind="relationship" relationship="rootViewController" id="2ng-aE-i1L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dun-Yf-szV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2019" y="131"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1_star" width="180" height="24"/>
@@ -1368,6 +1426,7 @@
         <image name="Location" width="12" height="15.5"/>
         <image name="Logo" width="322" height="124"/>
         <image name="Map" width="24.5" height="24"/>
+        <image name="New8" width="2940" height="1960"/>
         <image name="News" width="24.5" height="24"/>
         <image name="Onboarding(1)" width="267.5" height="360"/>
         <image name="Phone" width="16" height="16.5"/>

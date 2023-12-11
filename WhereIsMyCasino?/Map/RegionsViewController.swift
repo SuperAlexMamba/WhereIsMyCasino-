@@ -11,7 +11,7 @@ class RegionsViewController: UIViewController {
     var regions: [Region] = []
     
     var filteredRegions: [Region] = []
-    
+        
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -60,6 +60,7 @@ class RegionsViewController: UIViewController {
         let section = sender.tag
         filteredRegions[section].isExpanded.toggle()
         tableView.reloadSections(IndexSet(integer: section), with: .none)
+        tableView.reloadData()
     }
 }
 
@@ -104,7 +105,7 @@ extension RegionsViewController: UITableViewDelegate, UITableViewDataSource {
         regionButton.translatesAutoresizingMaskIntoConstraints = false
         chevronButton.translatesAutoresizingMaskIntoConstraints = false
         
-        regionButton.setTitle(regions[section].country, for: .normal)
+        regionButton.setTitle(filteredRegions[section].country, for: .normal)
         regionButton.setTitleColor(.white, for: .normal)
         
         chevronButton.setImage(UIImage(systemName: filteredRegions[section].isExpanded ? "chevron.up" : "chevron.down"), for: .normal)
@@ -112,7 +113,7 @@ extension RegionsViewController: UITableViewDelegate, UITableViewDataSource {
         
         headerView.addSubview(regionButton)
         headerView.addSubview(chevronButton)
-        
+                
         NSLayoutConstraint.activate([
             chevronButton.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: 0),
             chevronButton.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10),
@@ -155,13 +156,28 @@ extension RegionsViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension RegionsViewController: UISearchBarDelegate {
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             filteredRegions = regions
         } else {
-            filteredRegions = regions.filter { $0.country.localizedCaseInsensitiveContains(searchText) || $0.cities.contains{ $0.localizedCaseInsensitiveContains(searchText) } }
+            let resultFilteredRegions = regions.filter { $0.country.localizedCaseInsensitiveContains(searchText) }
+            
+            let resultFilteredCities = regions.filter { $0.cities.contains { $0.localizedCaseInsensitiveContains(searchText) } }
+            
+            filteredRegions = resultFilteredRegions.isEmpty ? resultFilteredCities : resultFilteredRegions
+            
+            print("---▼---", "resultFilteredRegions")
+            resultFilteredRegions.forEach({ print($0.country )})
+            print("---▲---", "resultFilteredRegions")
+            
+            print("---▼---", "filteredRegions")
+            filteredRegions.forEach({ print($0.country )})
+            print("---▲---", "filteredRegions")
+        
         }
         tableView.reloadData()
+        tableView.reloadInputViews()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
