@@ -789,7 +789,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New8" translatesAutoresizingMaskIntoConstraints="NO" id="nNa-O9-Km2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="425" height="205"/>
+                                                    <rect key="frame" x="8" y="0.0" width="409" height="205"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the USA, a nun who stole $800 thousand from a school for a casino was sent to prison" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vih-cJ-AAk">
                                                     <rect key="frame" x="8" y="125" width="409" height="72"/>
@@ -805,9 +805,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="Vih-cJ-AAk" secondAttribute="trailing" constant="8" id="6fb-Wa-jrq"/>
                                                 <constraint firstAttribute="bottom" secondItem="Vih-cJ-AAk" secondAttribute="bottom" constant="8" id="99R-Qv-0sI"/>
                                                 <constraint firstItem="Vih-cJ-AAk" firstAttribute="leading" secondItem="itk-f2-iVD" secondAttribute="leading" constant="8" id="DUc-2a-ZE1"/>
-                                                <constraint firstItem="nNa-O9-Km2" firstAttribute="leading" secondItem="itk-f2-iVD" secondAttribute="leading" id="QyR-2l-5jJ"/>
+                                                <constraint firstItem="nNa-O9-Km2" firstAttribute="leading" secondItem="itk-f2-iVD" secondAttribute="leading" constant="8" id="QyR-2l-5jJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="nNa-O9-Km2" secondAttribute="bottom" id="Zl0-fa-vw9"/>
-                                                <constraint firstAttribute="trailing" secondItem="nNa-O9-Km2" secondAttribute="trailing" id="jZR-nt-dTh"/>
+                                                <constraint firstAttribute="trailing" secondItem="nNa-O9-Km2" secondAttribute="trailing" constant="8" id="jZR-nt-dTh"/>
                                                 <constraint firstItem="nNa-O9-Km2" firstAttribute="top" secondItem="itk-f2-iVD" secondAttribute="top" id="roM-Zk-Yiy"/>
                                             </constraints>
                                         </collectionViewCellContentView>
