@@ -781,7 +781,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="r7A-q9-ZgV" customClass="CollectionViewCustomCell" customModule="WhereIsMyCasino_" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="r7A-q9-ZgV" customClass="CollectionViewNewsCell" customModule="WhereIsMyCasino_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="425" height="205"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="itk-f2-iVD">
@@ -814,8 +814,8 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="425" height="205"/>
                                         <connections>
-                                            <outlet property="hotNewLabel" destination="Vih-cJ-AAk" id="umE-US-bVD"/>
-                                            <outlet property="imageView" destination="nNa-O9-Km2" id="uEr-9T-rf1"/>
+                                            <outlet property="hotNewLabel" destination="Vih-cJ-AAk" id="aMe-2Z-fJw"/>
+                                            <outlet property="imageView" destination="nNa-O9-Km2" id="OqG-Ys-n5g"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -45,7 +45,7 @@
 		DD3413CE2B176EFC00A718E7 /* NewsListCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413CD2B176EFC00A718E7 /* NewsListCustomCell.swift */; };
 		DD3413D02B17896700A718E7 /* CurrentNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413CF2B17896700A718E7 /* CurrentNewViewController.swift */; };
 		DD3413D32B18723100A718E7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413D22B18723100A718E7 /* NetworkManager.swift */; };
-		DD5B30762B271ADA005C2109 /* CollectionViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B30752B271ADA005C2109 /* CollectionViewCustomCell.swift */; };
+		DD5B30782B28587F005C2109 /* CollectionViewNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B30772B28587F005C2109 /* CollectionViewNewsCell.swift */; };
 		DD6A98862B20CBDE005ABF4F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DD6A98852B20CBDE005ABF4F /* SDWebImage */; };
 		DD6A98882B20CBDE005ABF4F /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD6A98872B20CBDE005ABF4F /* SDWebImageMapKit */; };
 		DD6A988D2B221A6E005ABF4F /* Open-Sans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD6A988B2B221A6D005ABF4F /* Open-Sans-Semibold.ttf */; };
@@ -79,7 +79,7 @@
 		DD3413CD2B176EFC00A718E7 /* NewsListCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListCustomCell.swift; sourceTree = "<group>"; };
 		DD3413CF2B17896700A718E7 /* CurrentNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentNewViewController.swift; sourceTree = "<group>"; };
 		DD3413D22B18723100A718E7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		DD5B30752B271ADA005C2109 /* CollectionViewCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCustomCell.swift; sourceTree = "<group>"; };
+		DD5B30772B28587F005C2109 /* CollectionViewNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewNewsCell.swift; sourceTree = "<group>"; };
 		DD6A988B2B221A6D005ABF4F /* Open-Sans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open-Sans-Semibold.ttf"; sourceTree = "<group>"; };
 		DD6A988C2B221A6D005ABF4F /* Open-Sans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open-Sans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		DD6A988F2B221C2E005ABF4F /* Open-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open-Sans-Regular.ttf"; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 				DD3413CB2B176EBA00A718E7 /* NewsListViewController.swift */,
 				DD3413CF2B17896700A718E7 /* CurrentNewViewController.swift */,
 				DD3413CD2B176EFC00A718E7 /* NewsListCustomCell.swift */,
-				DD5B30752B271ADA005C2109 /* CollectionViewCustomCell.swift */,
+				DD5B30772B28587F005C2109 /* CollectionViewNewsCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -387,7 +387,6 @@
 			files = (
 				DD921A512B15F14100DDAFC5 /* LoadingViewController.swift in Sources */,
 				DD921A572B15FB9300DDAFC5 /* MainListTableViewController.swift in Sources */,
-				DD5B30762B271ADA005C2109 /* CollectionViewCustomCell.swift in Sources */,
 				DD3413CC2B176EBA00A718E7 /* NewsListViewController.swift in Sources */,
 				DD877A3B2B18CEEA000253A7 /* TabBarViewController.swift in Sources */,
 				DD3413C32B1739CD00A718E7 /* RegionsViewController.swift in Sources */,
@@ -396,6 +395,7 @@
 				DD921A5E2B17260700DDAFC5 /* RatingListCustomCell.swift in Sources */,
 				DD280D552B1BB17E00707971 /* Extension.swift in Sources */,
 				DD921A4F2B15EB5500DDAFC5 /* WebViewController.swift in Sources */,
+				DD5B30782B28587F005C2109 /* CollectionViewNewsCell.swift in Sources */,
 				DD921A592B15FE6800DDAFC5 /* CustomListMainTableCell.swift in Sources */,
 				DD3413C62B175AAB00A718E7 /* MapViewController.swift in Sources */,
 				DD3413D32B18723100A718E7 /* NetworkManager.swift in Sources */,
