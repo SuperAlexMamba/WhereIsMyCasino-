@@ -11,9 +11,7 @@ class CollectionViewNewsCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    
     @IBOutlet weak var hotNewLabel: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +21,6 @@ class CollectionViewNewsCell: UICollectionViewCell {
         
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
-        
     }
 }
     

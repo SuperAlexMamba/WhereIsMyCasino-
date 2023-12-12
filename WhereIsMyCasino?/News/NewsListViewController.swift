@@ -133,7 +133,7 @@ extension NewsListViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCustomCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewNewsCell
         
         cell.hotNewLabel.text = hotNews.labelTexts[indexPath.row]
         cell.imageView.image = UIImage(named: hotNews.imageNames[indexPath.row])
