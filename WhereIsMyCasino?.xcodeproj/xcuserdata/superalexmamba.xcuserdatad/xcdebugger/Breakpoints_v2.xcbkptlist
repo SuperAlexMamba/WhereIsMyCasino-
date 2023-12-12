@@ -3,4 +3,70 @@
    uuid = "23E275C4-A782-4D31-B37F-B543941E8AE4"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62564260-89D1-421B-B4F9-899A09BEF1F7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhereIsMyCasino?/WebView/WebViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "62564260-89D1-421B-B4F9-899A09BEF1F7 - f2c37c8144062e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WhereIsMyCasino_.WebViewController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "WhereIsMyCasino?"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/superalexmamba/Desktop/WhereIsMyCasino%3F%20/WhereIsMyCasino%3F/WebView/WebViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1896">
+               </Location>
+               <Location
+                  uuid = "62564260-89D1-421B-B4F9-899A09BEF1F7 - f2c37c8144062e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WhereIsMyCasino_.WebViewController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "WhereIsMyCasino?"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/superalexmamba/Desktop/WhereIsMyCasino%3F%20/WhereIsMyCasino%3F/WebView/WebViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "2028">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "753932A9-3AD6-4357-9B0B-255D2D4F23D8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhereIsMyCasino?/WebView/WebViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
