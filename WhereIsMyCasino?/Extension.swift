@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import FirebaseCore
+import Firebase
+import OneSignalFramework
+import AppTrackingTransparency
+import AppsFlyerLib
+
 
 let newOne = News(title: "Mark Cuban’s Mavericks Sale To Adelson Family Motivated By Plans For Dallas Casino-Resort Project",
                   description: "The decision of Mark Cuban to officially sell his large stake in the NBA’s Dallas Mavericks to the Adelson family brings his long-held idea to the fore.New proposal:According to his pitch, the proposal refers to an alliance with casino mogul Dr. Miriam Adelson and Las Vegas Sands Corp. owned by her family, to construct a new casino-resort in Dallas whose main attraction would be the new arena for the aforementioned team. However, the condition for this is the official legalization of gambling in Texas. Commenting on the proposal, Cuban said to the Dallas Morning News: “Texas is such an amazing state that we need to be a destination. And this is the way to do it.”Moreover, in addition to him, one more person sees uncommon potential in the idea. The person is David Cordish, the president and chief executive officer of Cordish Cos., developer of the famous Texas Live entertainment complex in Arlington, located next to the Texas Rangers’ Globe Life Field. In this regard, commenting in an email  when asked about the proposed casino-resort project of the aforementioned Cuban when asked, he said: “The idea of combining entertainment and mixed use around a casino is absolutely the winning formula.”In addition, he added, according to the Dallas Business Journal: “I don’t have enough information to comment on the specifics of Cuban’s plans in Dallas, but he has had success with similar concepts across the nation. My  company previously used this formula when it developed two Hard Rock casinos with hotels in Florida, two of the most successful casinos in America. My company has also developed casino/entertainment complexes in Maryland, Philadelphia and Pittsburgh and those created spectacular and transformative results in those areas.”The location is still unclear:As for the location, it stays hazy where the aforementioned proposed project in Dallas would be located. In this regard, commenting on the possible location, Zarin Gracey, a member of the Dallas City Council, said to the NBC 5: “It should be next to the future redevelopment of the Dallas Convention Center, a nearly $3 billion project in its own right.”However, also commenting on a location, Cuban said to the Morning News: “There’s no reason why we can’t build a huge resort destination in the city proper of Dallas. There’s plenty of places to do it.”Far from reality:At Chase’s Make Your Move Summit, Cuban expressed his wish for a casino-centered resorts to be located in Texas. However, the fact that Cuban is ready to accept casino gaming at resorts in the said state is a long way from reality because of a lengthy history of anti-industry lawmakers together with a nascent sports wagering market. On a related note, in order for casino games to be validated in Texas, a constitutional amendment is demanded, which would have to receive a minimum of two-thirds votes of the aforementioned lawmakers, meaning that 21 out of a total of 30 senators would have to validate the change.Also, sports wagering and the casino industry are struggling to “find favor“ with Texas lawmakers, Texas Lieutenant Governor Dan Patrick said, according to Covers.com.One more reason Cuban’s wish is so far from reality is that Texas residents will need to wait till 2025 to see any chance of being able to use sports wagering and casino gaming, since the state’s legislature just meets in odd-numbered years. Primarily because of this, gambling firms continue to bypass the opportunity-rich market of 30 million inhabitants.",
@@ -53,6 +59,44 @@ func showAlert(in vc: UIViewController ) {
     
 }
 
+struct ResultObject: Codable {
+    
+    var response: String
+    
+}
+
+func oneSignalSetup(completion: @escaping (Result<[Casino] , Error>) -> Void) {
+    let dataBase = Database.database().reference()
+    
+    let error = NSError()
+    
+    dataBase.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
+        
+        guard let casinoData = snapshot.value as? NSArray else {
+            completion(.failure(error))
+            return
+        }
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: casinoData)
+            let decoder = JSONDecoder()
+            let casino = try decoder.decode([Casino].self, from: jsonData)
+            
+            if casino[1].description != nil {
+                completion(.success(casino))
+            }
+            else {
+                completion(.failure(error))
+            }
+
+            
+        } catch {
+            print("Ошибка декодера: \(error.localizedDescription)")
+            completion(.failure(error))
+        }
+    }
+}
+
 struct Orientation {
     
     static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
@@ -60,6 +104,115 @@ struct Orientation {
             delegate.orientationLock = orientation
         }
         UIDevice.current.setValue(orientation.rawValue, forKey: "orientation")
+    }
+}
+
+class Initialize {
+    
+    static let shared = Initialize()
+    
+    private init() {}
+    
+    let loadingViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Loading") as! LoadingViewController
+    let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+    
+    let webViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebView") as! WebViewController
+    
+    func loadControllers(in window: UIWindow?) {
+        
+        window?.rootViewController = loadingViewController
+        window?.makeKeyAndVisible()
+        
+        oneSignalSetup { result in
+            
+            switch result {
+            case .success(_):
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
+                    window?.rootViewController = self.tabBarController
+                    window?.makeKeyAndVisible()
+                }
+                
+            case .failure(_):
+                DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
+                    window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebView")
+                    window?.makeKeyAndVisible()
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+class InitializeFrameWorks {
+    
+    static let shared = InitializeFrameWorks()
+    
+    private init() {}
+    
+    @objc func didBecomeActiveNotification() {
+        AppsFlyerLib.shared().start()
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { (status) in
+                switch status {
+                case .denied:
+                    print("AuthorizationSatus is denied")
+                case .notDetermined:
+                    print("AuthorizationSatus is notDetermined")
+                case .restricted:
+                    print("AuthorizationSatus is restricted")
+                case .authorized:
+                    print("AuthorizationSatus is authorized")
+                @unknown default:
+                    fatalError("Invalid authorization status")
+                }
+            }
+        }
+    }
+    
+    func initial(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        
+        ATTrackingManager.requestTrackingAuthorization { status in
+            switch status {
+            case .notDetermined:
+                print("notDetermined")
+            case .restricted:
+                print("restricted")
+                
+            case .denied:
+                print("denied")
+                
+            case .authorized:
+                print("authorized")
+            }
+        }
+        
+        FirebaseApp.configure()
+        
+        OneSignal.Debug.setLogLevel(.LL_VERBOSE)
+        
+        OneSignal.initialize("90019e9a-651f-4533-9c68-8866a0e4b678", withLaunchOptions: launchOptions)
+        
+        OneSignal.Notifications.requestPermission({ accepted in
+            print("User accepted notifications: \(accepted)")
+        }, fallbackToSettings: true)
+        
+        
+        AppsFlyerLib.shared().appsFlyerDevKey = "<YOUR DEV KEY>"
+        AppsFlyerLib.shared().appleAppID = "<APP ID (without id prefix)>"
+        
+        AppsFlyerLib.shared().isDebug = true
+        
+        //Optional
+        AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didBecomeActiveNotification),
+                                               name: UIApplication.didBecomeActiveNotification,
+                                               object: nil)
+        
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD26640A2B2C543C0071CAFC /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = DD2664092B2C543C0071CAFC /* AppsFlyerLib */; };
 		DD280D4E2B1B9EEE00707971 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD280D4D2B1B9EEE00707971 /* Model.swift */; };
 		DD280D502B1BAD7E00707971 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD280D4F2B1BAD7E00707971 /* StorageManager.swift */; };
 		DD280D552B1BB17E00707971 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD280D542B1BB17E00707971 /* Extension.swift */; };
@@ -69,6 +70,7 @@
 		DD921A5C2B17255F00DDAFC5 /* RatingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A5B2B17255F00DDAFC5 /* RatingListViewController.swift */; };
 		DD921A5E2B17260700DDAFC5 /* RatingListCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A5D2B17260700DDAFC5 /* RatingListCustomCell.swift */; };
 		DDA0470C2B1F5023000AC929 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DDA0470B2B1F5023000AC929 /* Cosmos */; };
+		DDE541222B29F97A0091DB2C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DDE541212B29F97A0091DB2C /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,7 @@
 		DD921A582B15FE6800DDAFC5 /* CustomListMainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListMainTableCell.swift; sourceTree = "<group>"; };
 		DD921A5B2B17255F00DDAFC5 /* RatingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingListViewController.swift; sourceTree = "<group>"; };
 		DD921A5D2B17260700DDAFC5 /* RatingListCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingListCustomCell.swift; sourceTree = "<group>"; };
+		DDE541212B29F97A0091DB2C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,7 @@
 				DD6A98882B20CBDE005ABF4F /* SDWebImageMapKit in Frameworks */,
 				DD5B307C2B285F7F005C2109 /* OneSignalExtension in Frameworks */,
 				DD280D6E2B1DBE9100707971 /* FirebaseDatabaseSwift in Frameworks */,
+				DD26640A2B2C543C0071CAFC /* AppsFlyerLib in Frameworks */,
 				DD280D782B1DBE9100707971 /* FirebaseFunctions in Frameworks */,
 				DD280D8E2B1DBE9100707971 /* FirebaseStorageCombine-Community in Frameworks */,
 				DD280D882B1DBE9100707971 /* FirebaseRemoteConfig in Frameworks */,
@@ -216,6 +220,7 @@
 		DD921A332B14EDA000DDAFC5 /* WhereIsMyCasino? */ = {
 			isa = PBXGroup;
 			children = (
+				DDE541202B29F9350091DB2C /* Localize */,
 				DD6A98912B221C53005ABF4F /* Fonts */,
 				DD3413D12B18721600A718E7 /* Managers */,
 				DD3413CA2B176EAA00A718E7 /* News */,
@@ -281,6 +286,14 @@
 			path = Rating;
 			sourceTree = "<group>";
 		};
+		DDE541202B29F9350091DB2C /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				DDE541212B29F97A0091DB2C /* Localizable.xcstrings */,
+			);
+			path = Localize;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,6 +345,7 @@
 				DD5B307D2B285F7F005C2109 /* OneSignalFramework */,
 				DD5B307F2B285F7F005C2109 /* OneSignalInAppMessages */,
 				DD5B30812B285F7F005C2109 /* OneSignalLocation */,
+				DD2664092B2C543C0071CAFC /* AppsFlyerLib */,
 			);
 			productName = 1;
 			productReference = DD921A312B14EDA000DDAFC5 /* WhereIsMyCasino?.app */;
@@ -359,6 +373,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = DD921A282B14EDA000DDAFC5;
 			packageReferences = (
@@ -366,6 +381,7 @@
 				DDA0470A2B1F5023000AC929 /* XCRemoteSwiftPackageReference "Cosmos" */,
 				DD6A98842B20CBDE005ABF4F /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				DD2664082B2C543C0071CAFC /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
 			);
 			productRefGroup = DD921A322B14EDA000DDAFC5 /* Products */;
 			projectDirPath = "";
@@ -383,6 +399,7 @@
 			files = (
 				DD921A412B14EDA300DDAFC5 /* LaunchScreen.storyboard in Resources */,
 				DD6A988E2B221A6E005ABF4F /* Open-Sans-ExtraBold.ttf in Resources */,
+				DDE541222B29F97A0091DB2C /* Localizable.xcstrings in Resources */,
 				DD6A988D2B221A6E005ABF4F /* Open-Sans-Semibold.ttf in Resources */,
 				DD280D572B1DBDD600707971 /* GoogleService-Info.plist in Resources */,
 				DD6A98902B221C2E005ABF4F /* Open-Sans-Regular.ttf in Resources */,
@@ -574,6 +591,8 @@
 				DEVELOPMENT_TEAM = B8NB6YD92C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WhereIsMyCasino?/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need Camera";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need micro";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -603,6 +622,8 @@
 				DEVELOPMENT_TEAM = B8NB6YD92C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WhereIsMyCasino?/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need Camera";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need micro";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -645,6 +666,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DD2664082B2C543C0071CAFC /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = exactVersion;
+				version = 6.12.2;
+			};
+		};
 		DD280D582B1DBE9100707971 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -680,6 +709,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DD2664092B2C543C0071CAFC /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD2664082B2C543C0071CAFC /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
 		DD280D592B1DBE9100707971 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DD280D582B1DBE9100707971 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

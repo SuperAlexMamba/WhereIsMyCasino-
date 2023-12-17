@@ -5,12 +5,20 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>tg</string>
+		<string>https</string>
+		<string>http</string>
 	</array>
+	<key>NSAppDataUsageDescription</key>
+	<string>Need data usage</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Пожалуйста, предоставьте отслеживание</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>Schemes</key>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Open-Sans-Regular.ttf</string>
@@ -38,6 +46,8 @@
 	</dict>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>fetch</string>
+		<string>processing</string>
 		<string>remote-notification</string>
 	</array>
 </dict>
