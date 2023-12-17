@@ -1,7 +1,7 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
+class AdLoadController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     
     var webView: WKWebView!
     
