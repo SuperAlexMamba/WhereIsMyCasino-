@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD099F6E2B2F284D001D18EC /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = DD099F6D2B2F284D001D18EC /* OneSignalExtension */; };
+		DD099F702B2F284D001D18EC /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = DD099F6F2B2F284D001D18EC /* OneSignalFramework */; };
+		DD099F722B2F284D001D18EC /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = DD099F712B2F284D001D18EC /* OneSignalInAppMessages */; };
+		DD099F742B2F284D001D18EC /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = DD099F732B2F284D001D18EC /* OneSignalLocation */; };
 		DD26640A2B2C543C0071CAFC /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = DD2664092B2C543C0071CAFC /* AppsFlyerLib */; };
 		DD280D4E2B1B9EEE00707971 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD280D4D2B1B9EEE00707971 /* Model.swift */; };
 		DD280D502B1BAD7E00707971 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD280D4F2B1BAD7E00707971 /* StorageManager.swift */; };
@@ -47,10 +51,6 @@
 		DD3413D02B17896700A718E7 /* CurrentNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413CF2B17896700A718E7 /* CurrentNewViewController.swift */; };
 		DD3413D32B18723100A718E7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413D22B18723100A718E7 /* NetworkManager.swift */; };
 		DD5B30782B28587F005C2109 /* CollectionViewNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B30772B28587F005C2109 /* CollectionViewNewsCell.swift */; };
-		DD5B307C2B285F7F005C2109 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = DD5B307B2B285F7F005C2109 /* OneSignalExtension */; };
-		DD5B307E2B285F7F005C2109 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = DD5B307D2B285F7F005C2109 /* OneSignalFramework */; };
-		DD5B30802B285F7F005C2109 /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = DD5B307F2B285F7F005C2109 /* OneSignalInAppMessages */; };
-		DD5B30822B285F7F005C2109 /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = DD5B30812B285F7F005C2109 /* OneSignalLocation */; };
 		DD6A98862B20CBDE005ABF4F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DD6A98852B20CBDE005ABF4F /* SDWebImage */; };
 		DD6A98882B20CBDE005ABF4F /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD6A98872B20CBDE005ABF4F /* SDWebImageMapKit */; };
 		DD6A988D2B221A6E005ABF4F /* Open-Sans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD6A988B2B221A6D005ABF4F /* Open-Sans-Semibold.ttf */; };
@@ -63,7 +63,7 @@
 		DD921A3E2B14EDA300DDAFC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD921A3D2B14EDA300DDAFC5 /* Assets.xcassets */; };
 		DD921A412B14EDA300DDAFC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD921A3F2B14EDA300DDAFC5 /* LaunchScreen.storyboard */; };
 		DD921A492B15DC8700DDAFC5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A482B15DC8700DDAFC5 /* OnboardingViewController.swift */; };
-		DD921A4F2B15EB5500DDAFC5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A4E2B15EB5500DDAFC5 /* WebViewController.swift */; };
+		DD921A4F2B15EB5500DDAFC5 /* AdLoadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A4E2B15EB5500DDAFC5 /* AdLoadController.swift */; };
 		DD921A512B15F14100DDAFC5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A502B15F14100DDAFC5 /* LoadingViewController.swift */; };
 		DD921A572B15FB9300DDAFC5 /* MainListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A562B15FB9300DDAFC5 /* MainListTableViewController.swift */; };
 		DD921A592B15FE6800DDAFC5 /* CustomListMainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A582B15FE6800DDAFC5 /* CustomListMainTableCell.swift */; };
@@ -98,7 +98,7 @@
 		DD921A402B14EDA300DDAFC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD921A422B14EDA300DDAFC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD921A482B15DC8700DDAFC5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		DD921A4E2B15EB5500DDAFC5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		DD921A4E2B15EB5500DDAFC5 /* AdLoadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdLoadController.swift; sourceTree = "<group>"; };
 		DD921A502B15F14100DDAFC5 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		DD921A562B15FB9300DDAFC5 /* MainListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTableViewController.swift; sourceTree = "<group>"; };
 		DD921A582B15FE6800DDAFC5 /* CustomListMainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListMainTableCell.swift; sourceTree = "<group>"; };
@@ -112,7 +112,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD5B307E2B285F7F005C2109 /* OneSignalFramework in Frameworks */,
 				DD280D6C2B1DBE9100707971 /* FirebaseDatabase in Frameworks */,
 				DD280D7A2B1DBE9100707971 /* FirebaseFunctionsCombine-Community in Frameworks */,
 				DDA0470C2B1F5023000AC929 /* Cosmos in Frameworks */,
@@ -123,15 +122,15 @@
 				DD6A98862B20CBDE005ABF4F /* SDWebImage in Frameworks */,
 				DD280D822B1DBE9100707971 /* FirebaseMLModelDownloader in Frameworks */,
 				DD280D762B1DBE9100707971 /* FirebaseFirestoreSwift in Frameworks */,
+				DD099F722B2F284D001D18EC /* OneSignalInAppMessages in Frameworks */,
 				DD280D622B1DBE9100707971 /* FirebaseAppCheck in Frameworks */,
-				DD5B30802B285F7F005C2109 /* OneSignalInAppMessages in Frameworks */,
 				DD280D602B1DBE9100707971 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				DD280D662B1DBE9100707971 /* FirebaseAuth in Frameworks */,
 				DD280D6A2B1DBE9100707971 /* FirebaseCrashlytics in Frameworks */,
 				DD280D8A2B1DBE9100707971 /* FirebaseRemoteConfigSwift in Frameworks */,
+				DD099F6E2B2F284D001D18EC /* OneSignalExtension in Frameworks */,
 				DD280D7C2B1DBE9100707971 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				DD6A98882B20CBDE005ABF4F /* SDWebImageMapKit in Frameworks */,
-				DD5B307C2B285F7F005C2109 /* OneSignalExtension in Frameworks */,
 				DD280D6E2B1DBE9100707971 /* FirebaseDatabaseSwift in Frameworks */,
 				DD26640A2B2C543C0071CAFC /* AppsFlyerLib in Frameworks */,
 				DD280D782B1DBE9100707971 /* FirebaseFunctions in Frameworks */,
@@ -139,13 +138,14 @@
 				DD280D882B1DBE9100707971 /* FirebaseRemoteConfig in Frameworks */,
 				DD280D642B1DBE9100707971 /* FirebaseAppDistribution-Beta in Frameworks */,
 				DD280D682B1DBE9100707971 /* FirebaseAuthCombine-Community in Frameworks */,
+				DD099F742B2F284D001D18EC /* OneSignalLocation in Frameworks */,
 				DD280D862B1DBE9100707971 /* FirebasePerformance in Frameworks */,
 				DD280D7E2B1DBE9100707971 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
-				DD5B30822B285F7F005C2109 /* OneSignalLocation in Frameworks */,
 				DD280D8C2B1DBE9100707971 /* FirebaseStorage in Frameworks */,
 				DD280D702B1DBE9100707971 /* FirebaseDynamicLinks in Frameworks */,
 				DD280D742B1DBE9100707971 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				DD280D842B1DBE9100707971 /* FirebaseMessaging in Frameworks */,
+				DD099F702B2F284D001D18EC /* OneSignalFramework in Frameworks */,
 				DD280D802B1DBE9100707971 /* FirebaseInstallations in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,7 +228,7 @@
 				DD3413C42B1739D300A718E7 /* Map */,
 				DD921A5A2B17254500DDAFC5 /* Rating */,
 				DD921A552B15FB5300DDAFC5 /* MainList */,
-				DD921A542B15FAFA00DDAFC5 /* WebView */,
+				DD921A542B15FAFA00DDAFC5 /* AdLoadView */,
 				DD921A532B15FAE800DDAFC5 /* Loading */,
 				DD921A522B15FA9B00DDAFC5 /* Onboarding */,
 				DD921A342B14EDA000DDAFC5 /* AppDelegate.swift */,
@@ -259,12 +259,12 @@
 			path = Loading;
 			sourceTree = "<group>";
 		};
-		DD921A542B15FAFA00DDAFC5 /* WebView */ = {
+		DD921A542B15FAFA00DDAFC5 /* AdLoadView */ = {
 			isa = PBXGroup;
 			children = (
-				DD921A4E2B15EB5500DDAFC5 /* WebViewController.swift */,
+				DD921A4E2B15EB5500DDAFC5 /* AdLoadController.swift */,
 			);
-			path = WebView;
+			path = AdLoadView;
 			sourceTree = "<group>";
 		};
 		DD921A552B15FB5300DDAFC5 /* MainList */ = {
@@ -341,11 +341,11 @@
 				DDA0470B2B1F5023000AC929 /* Cosmos */,
 				DD6A98852B20CBDE005ABF4F /* SDWebImage */,
 				DD6A98872B20CBDE005ABF4F /* SDWebImageMapKit */,
-				DD5B307B2B285F7F005C2109 /* OneSignalExtension */,
-				DD5B307D2B285F7F005C2109 /* OneSignalFramework */,
-				DD5B307F2B285F7F005C2109 /* OneSignalInAppMessages */,
-				DD5B30812B285F7F005C2109 /* OneSignalLocation */,
 				DD2664092B2C543C0071CAFC /* AppsFlyerLib */,
+				DD099F6D2B2F284D001D18EC /* OneSignalExtension */,
+				DD099F6F2B2F284D001D18EC /* OneSignalFramework */,
+				DD099F712B2F284D001D18EC /* OneSignalInAppMessages */,
+				DD099F732B2F284D001D18EC /* OneSignalLocation */,
 			);
 			productName = 1;
 			productReference = DD921A312B14EDA000DDAFC5 /* WhereIsMyCasino?.app */;
@@ -424,7 +424,7 @@
 				DD280D502B1BAD7E00707971 /* StorageManager.swift in Sources */,
 				DD921A5E2B17260700DDAFC5 /* RatingListCustomCell.swift in Sources */,
 				DD280D552B1BB17E00707971 /* Extension.swift in Sources */,
-				DD921A4F2B15EB5500DDAFC5 /* WebViewController.swift in Sources */,
+				DD921A4F2B15EB5500DDAFC5 /* AdLoadController.swift in Sources */,
 				DD5B30782B28587F005C2109 /* CollectionViewNewsCell.swift in Sources */,
 				DD921A592B15FE6800DDAFC5 /* CustomListMainTableCell.swift in Sources */,
 				DD3413C62B175AAB00A718E7 /* MapViewController.swift in Sources */,
@@ -588,11 +588,12 @@
 				CODE_SIGN_ENTITLEMENTS = "WhereIsMyCasino?/WhereIsMyCasino?.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8NB6YD92C;
+				DEVELOPMENT_TEAM = GVUQN68G6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WhereIsMyCasino?/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Need Camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need micro";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Пожалуйста, предоставьте отслеживание";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -603,7 +604,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.mamba.-whereiscasino";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ancientstack.-whereiscasino";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -619,11 +620,12 @@
 				CODE_SIGN_ENTITLEMENTS = "WhereIsMyCasino?/WhereIsMyCasino?.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8NB6YD92C;
+				DEVELOPMENT_TEAM = GVUQN68G6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WhereIsMyCasino?/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Need Camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need micro";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Пожалуйста, предоставьте отслеживание";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -634,7 +636,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.mamba.-whereiscasino";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ancientstack.-whereiscasino";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -709,6 +711,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DD099F6D2B2F284D001D18EC /* OneSignalExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalExtension;
+		};
+		DD099F6F2B2F284D001D18EC /* OneSignalFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalFramework;
+		};
+		DD099F712B2F284D001D18EC /* OneSignalInAppMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalInAppMessages;
+		};
+		DD099F732B2F284D001D18EC /* OneSignalLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalLocation;
+		};
 		DD2664092B2C543C0071CAFC /* AppsFlyerLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DD2664082B2C543C0071CAFC /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
@@ -848,26 +870,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD280D582B1DBE9100707971 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
-		};
-		DD5B307B2B285F7F005C2109 /* OneSignalExtension */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
-			productName = OneSignalExtension;
-		};
-		DD5B307D2B285F7F005C2109 /* OneSignalFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
-			productName = OneSignalFramework;
-		};
-		DD5B307F2B285F7F005C2109 /* OneSignalInAppMessages */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
-			productName = OneSignalInAppMessages;
-		};
-		DD5B30812B285F7F005C2109 /* OneSignalLocation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
-			productName = OneSignalLocation;
 		};
 		DD6A98852B20CBDE005ABF4F /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;

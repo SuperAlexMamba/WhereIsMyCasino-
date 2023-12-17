@@ -13,7 +13,7 @@ class NetworkManager {
     
     private init() {}
     
-    func getCasinoList(completion: @escaping ([Casino]?) -> Void) {
+    func getCasinoList(completion: @escaping ([Venue]?) -> Void) {
         let dataBase = Database.database().reference()
         
         dataBase.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
@@ -26,7 +26,7 @@ class NetworkManager {
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: casinoData)
                 let decoder = JSONDecoder()
-                let casino = try decoder.decode([Casino].self, from: jsonData)
+                let casino = try decoder.decode([Venue].self, from: jsonData)
                 completion(casino)
 
                 

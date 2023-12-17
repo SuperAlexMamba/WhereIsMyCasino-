@@ -11,7 +11,7 @@ import SDWebImage
 
 class CurrentCasinoController: UITableViewController {
     
-    var casino: Casino?
+    var casino: Venue?
     
     @IBOutlet weak var goToReviewsButton: UIButton!
     

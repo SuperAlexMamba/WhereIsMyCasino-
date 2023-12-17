@@ -10,8 +10,6 @@
 	</array>
 	<key>NSAppDataUsageDescription</key>
 	<string>Need data usage</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Пожалуйста, предоставьте отслеживание</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

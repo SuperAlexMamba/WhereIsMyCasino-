@@ -1125,10 +1125,10 @@
             </objects>
             <point key="canvasLocation" x="-1757" y="792"/>
         </scene>
-        <!--Web View Controller-->
+        <!--Ad Load Controller-->
         <scene sceneID="xAc-3F-lX1">
             <objects>
-                <viewController storyboardIdentifier="WebView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H2w-gf-9tX" customClass="WebViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H2w-gf-9tX" customClass="AdLoadController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DWt-lP-i5u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

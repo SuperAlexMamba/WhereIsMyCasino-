@@ -4,11 +4,11 @@ import WebKit
 class AdLoadController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     
     var webView: WKWebView!
-    
-    let initialURL = URL(string: "https://1win-2023-sts.ru")
-    
+            
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        adLoad()
         
         let webConfiguration = WKWebViewConfiguration()
         webConfiguration.websiteDataStore = WKWebsiteDataStore.default()
@@ -32,12 +32,32 @@ class AdLoadController: UIViewController, WKNavigationDelegate, WKUIDelegate {
             webView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
         ])
         
-        webView.load(URLRequest(url: initialURL!))
+        func adLoad() {
+            
+            var request = URLRequest(url: URL(string: decodeKey())!)
+            
+            request.httpMethod = "GET"
+            
+            request.setValue("$2a$10$HvkZCNpxNwJWLfPxz.U4Vux77uLjfXnUDMXAaAZTfhtGNfkUt/082", forHTTPHeaderField: "X-MASTER-KEY")
+            
+            request.setValue(keey+keeey, forHTTPHeaderField: "X-ACCESS-KEY")
+
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+              guard let data = data else { return }
+                let adKey = try? JSONDecoder().decode(Ad.self, from: data)
+                initialURL = URL(string: (adKey?.record.url)!)
+            }
+            task.resume()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.webView.load(URLRequest(url: initialURL!))
+        }
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print("Ошибка загрузки \(error.localizedDescription)")
+        print("\(error.localizedDescription)")
     }
+    
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
                
@@ -112,7 +132,7 @@ extension WKWebView {
                             cookiesGroup.leave()
                         }
                     } else {
-                        // Handle the error of a failed cookie creation.
+                        
                         print("Error creating cookie from properties: \(cookieProperties)")
                         cookiesGroup.leave()
                     }
@@ -137,64 +157,3 @@ extension WKWebView {
         }
     }
 }
-
-//////////////////////////////////////////////////////////////////
-//import UIKit
-//import WebKit
-//
-//class WebViewController: UIViewController, UIWebViewDelegate {
-//
-//    var webView: UIWebView!
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        webView = UIWebView(frame: .zero)
-//
-//        webView.scalesPageToFit = true
-//
-//        webView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        view.addSubview(webView)
-//
-//        setupConstraints()
-//
-//        webView.delegate = self
-//
-//        if let savedCookies = UserDefaults.standard.value(forKey: "Cookies") as? [HTTPCookie] {
-//            for cookie in savedCookies {
-//                HTTPCookieStorage.shared.setCookie(cookie)
-//            }
-//        }
-//
-//        let url = URL(string: "https://1weixx.xyz/casino")
-//        let request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalCacheData)
-//        self.webView.loadRequest(request)
-//
-//    }
-//
-//    func webViewDidFinishLoad(_ webView: UIWebView) {
-//        if let cookies = HTTPCookieStorage.shared.cookies {
-//            let savedCookiesData = NSKeyedArchiver.archivedData(withRootObject: cookies)
-//            UserDefaults.standard.set(savedCookiesData, forKey: "Cookies")
-//            UserDefaults.standard.synchronize()
-//        }
-//    }
-//
-//    private func setupConstraints() {
-//
-//        let safeArea = view.safeAreaLayoutGuide
-//        safeArea.owningView?.insetsLayoutMarginsFromSafeArea = true
-//
-//        NSLayoutConstraint.activate([
-//
-//            webView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0),
-//            webView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 0),
-//            webView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: 0),
-//            webView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 0)
-//
-//        ])
-//
-//    }
-//}
-

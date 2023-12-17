@@ -22,7 +22,7 @@ class LoadingViewController: UIViewController {
         
         startLoading()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
             self.stopLoading()
         }
         

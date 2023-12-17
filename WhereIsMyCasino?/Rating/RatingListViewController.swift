@@ -9,7 +9,7 @@ import UIKit
 
 class RatingListViewController: UITableViewController {
 
-    var casino: Casino?
+    var casino: Venue?
     
     @IBOutlet weak var ratingView: UIBarButtonItem!
     

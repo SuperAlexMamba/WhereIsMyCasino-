@@ -10,7 +10,7 @@ import SDWebImage
 
 class MainListTableViewController: UICollectionViewController {
         
-    var casino: [Casino]?
+    var casino: [Venue]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +49,19 @@ class MainListTableViewController: UICollectionViewController {
         return cell
     }
     
+     
+        
+        func collectionView(
+            _ collectionView: UICollectionView,
+            layout collectionViewLayout: UICollectionViewLayout,
+            sizeForItemAt indexPath: IndexPath
+        ) -> CGSize {
+
+            return .init(width: collectionView.bounds.width, height: 128)
+        }
     
     
-    func setupCell(_ cell: CustomListMainTableCell, with item: Casino, at indexPath: IndexPath) {
+    func setupCell(_ cell: CustomListMainTableCell, with item: Venue, at indexPath: IndexPath) {
         
         cell.titleLabel.text = item.title
         cell.locationLabel.text = "\(item.location.city),\(item.location.country)"
@@ -117,7 +127,7 @@ class MainListTableViewController: UICollectionViewController {
 
         if segue.identifier == "ToCurrentVC" {
             if let destination = segue.destination as? CurrentCasinoController {
-                destination.casino = sender as? Casino
+                destination.casino = sender as? Venue
             }
         }
     }

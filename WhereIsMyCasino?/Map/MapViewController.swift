@@ -11,7 +11,7 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     var selectedRegion: Region?
     var selectedCity: String?
-    var casinosInCity: [Casino] = []
+    var casinosInCity: [Venue] = []
 
     @IBOutlet weak var mapView: MKMapView!
 
@@ -40,7 +40,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             geocoder.geocodeAddressString(addressString) { (placemarks, error) in
                 if let error = error {
                     print("Ошибка геокодра: \(error.localizedDescription)")
-                    showAlert(in: self)
                     return
                 }
                 

@@ -13,7 +13,7 @@ class StorageManager {
     
     private init() {}
     
-    func saveCasinosToFile(casinos: [Casino]) {
+    func saveCasinosToFile(casinos: [Venue]) {
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentsURL.appendingPathComponent("casinosData.json")
@@ -27,7 +27,7 @@ class StorageManager {
         }
     }
 
-    func loadCasinosFromFile() -> [Casino]? {
+    func loadCasinosFromFile() -> [Venue]? {
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentsURL.appendingPathComponent("casinosData.json")
@@ -35,7 +35,7 @@ class StorageManager {
         do {
             let decoder = JSONDecoder()
             let data = try Data(contentsOf: fileURL)
-            let loadedCasinos = try decoder.decode([Casino].self, from: data)
+            let loadedCasinos = try decoder.decode([Venue].self, from: data)
             return loadedCasinos
         } catch {
             print("Ошибка при загрузке данных из файла: \(error)")

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Casino: Codable {
+class Venue: Codable {
     let title: String?
     let location: Location
     let contact: Contact?
@@ -115,7 +115,7 @@ class CasinoModel {
     
     private init() {}
 
-    var casinosArray: [Casino] = []
+    var casinosArray: [Venue] = []
     
     var imagesArray: [UIImage] = []
     
