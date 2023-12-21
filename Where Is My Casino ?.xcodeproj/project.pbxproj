@@ -90,7 +90,7 @@
 		DD6A988C2B221A6D005ABF4F /* Open-Sans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open-Sans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		DD6A988F2B221C2E005ABF4F /* Open-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open-Sans-Regular.ttf"; sourceTree = "<group>"; };
 		DD877A3A2B18CEEA000253A7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		DD921A312B14EDA000DDAFC5 /* WhereIsMyCasino?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WhereIsMyCasino?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD921A312B14EDA000DDAFC5 /* Where IsMy Casino ?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Where IsMy Casino ?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD921A342B14EDA000DDAFC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD921A362B14EDA000DDAFC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD921A3B2B14EDA000DDAFC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 		DD921A322B14EDA000DDAFC5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD921A312B14EDA000DDAFC5 /* WhereIsMyCasino?.app */,
+				DD921A312B14EDA000DDAFC5 /* Where IsMy Casino ?.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -297,9 +297,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD921A302B14EDA000DDAFC5 /* WhereIsMyCasino? */ = {
+		DD921A302B14EDA000DDAFC5 /* Where IsMy Casino ? */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD921A452B14EDA300DDAFC5 /* Build configuration list for PBXNativeTarget "WhereIsMyCasino?" */;
+			buildConfigurationList = DD921A452B14EDA300DDAFC5 /* Build configuration list for PBXNativeTarget "Where IsMy Casino ?" */;
 			buildPhases = (
 				DD921A2D2B14EDA000DDAFC5 /* Sources */,
 				DD921A2E2B14EDA000DDAFC5 /* Frameworks */,
@@ -309,7 +309,7 @@
 			);
 			dependencies = (
 			);
-			name = "WhereIsMyCasino?";
+			name = "Where IsMy Casino ?";
 			packageProductDependencies = (
 				DD280D592B1DBE9100707971 /* FirebaseAnalytics */,
 				DD280D5B2B1DBE9100707971 /* FirebaseAnalyticsOnDeviceConversion */,
@@ -348,7 +348,7 @@
 				DD099F732B2F284D001D18EC /* OneSignalLocation */,
 			);
 			productName = 1;
-			productReference = DD921A312B14EDA000DDAFC5 /* WhereIsMyCasino?.app */;
+			productReference = DD921A312B14EDA000DDAFC5 /* Where IsMy Casino ?.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -366,7 +366,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DD921A2C2B14EDA000DDAFC5 /* Build configuration list for PBXProject "WhereIsMyCasino?" */;
+			buildConfigurationList = DD921A2C2B14EDA000DDAFC5 /* Build configuration list for PBXProject "Where IsMy Casino ?" */;
 			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -387,7 +387,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD921A302B14EDA000DDAFC5 /* WhereIsMyCasino? */,
+				DD921A302B14EDA000DDAFC5 /* Where IsMy Casino ? */,
 			);
 		};
 /* End PBXProject section */
@@ -599,6 +599,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,6 +632,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -647,7 +649,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DD921A2C2B14EDA000DDAFC5 /* Build configuration list for PBXProject "WhereIsMyCasino?" */ = {
+		DD921A2C2B14EDA000DDAFC5 /* Build configuration list for PBXProject "Where IsMy Casino ?" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD921A432B14EDA300DDAFC5 /* Debug */,
@@ -656,7 +658,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD921A452B14EDA300DDAFC5 /* Build configuration list for PBXNativeTarget "WhereIsMyCasino?" */ = {
+		DD921A452B14EDA300DDAFC5 /* Build configuration list for PBXNativeTarget "Where IsMy Casino ?" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD921A462B14EDA300DDAFC5 /* Debug */,

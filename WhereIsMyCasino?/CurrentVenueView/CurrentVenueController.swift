@@ -1,5 +1,5 @@
 //
-//  CurrentCasinoController.swift
+//  CurrentVenueController.swift
 //  WhereIsMyCasino?
 //
 //  Created by Слава Орлов on 29.11.2023.
@@ -9,29 +9,29 @@ import UIKit
 import Cosmos
 import SDWebImage
 
-class CurrentCasinoController: UITableViewController {
+class CurrentVenueController: UITableViewController {
     
-    var casino: Venue?
+    var venue: Venue?
     
     @IBOutlet weak var goToReviewsButton: UIButton!
     
     @IBOutlet weak var ratingView: UIView!
     
-    @IBOutlet weak var titleOfCasino: UILabel!
+    @IBOutlet weak var titleOfVenue: UILabel!
     
     @IBOutlet weak var basedOnLabel: UILabel!
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    @IBOutlet weak var descriptionOfCasino: UILabel!
+    @IBOutlet weak var descriptionOfVenue: UILabel!
         
-    @IBOutlet weak var imageOfCasino: UIImageView!
+    @IBOutlet weak var imageOfVenue: UIImageView!
     
-    @IBOutlet weak var ratingOfCasino: UILabel!
+    @IBOutlet weak var ratingOfVenue: UILabel!
     
-    @IBOutlet weak var telephoneNumberOfCasino: UILabel!
+    @IBOutlet weak var telephoneNumberOfVenue: UILabel!
     
-    @IBOutlet weak var webSiteOfCasino: UILabel!
+    @IBOutlet weak var webSiteOfVenue: UILabel!
     
     @IBOutlet weak var locationLabel: UILabel!
     
@@ -56,7 +56,7 @@ class CurrentCasinoController: UITableViewController {
         
         guard let ratingListVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RatingList") as? RatingListViewController else { return }
         
-        ratingListVC.casino = self.casino
+        ratingListVC.venue = self.venue
         
         self.navigationController?.pushViewController(ratingListVC, animated: true)
         
@@ -64,37 +64,37 @@ class CurrentCasinoController: UITableViewController {
     
     private func setupView() {
                 
-        if casino?.feed_backs == nil {
+        if venue?.feed_backs == nil {
             basedOnLabel.text = "No reviews"
             goToReviewsButton.isEnabled = false
         }
-        imageOfCasino.layer.cornerRadius = 8
+        imageOfVenue.layer.cornerRadius = 8
         ratingView.layer.cornerRadius = 10
         ratingView.clipsToBounds = true
-        imageOfCasino.clipsToBounds = true
+        imageOfVenue.clipsToBounds = true
         
-        title = casino?.title
-        titleOfCasino.text = title
-        if casino?.description == nil {
-            descriptionOfCasino.numberOfLines = 0
-            descriptionOfCasino.lineBreakMode = .byWordWrapping
-            descriptionOfCasino.text = "No description"
+        title = venue?.title
+        titleOfVenue.text = title
+        if venue?.description == nil {
+            descriptionOfVenue.numberOfLines = 0
+            descriptionOfVenue.lineBreakMode = .byWordWrapping
+            descriptionOfVenue.text = "No description"
             
         }
         else {
-            descriptionOfCasino.text = casino?.description
+            descriptionOfVenue.text = venue?.description
         }
-        ratingOfCasino.text = "\(casino?.rating ?? 0.0)"
-        telephoneNumberOfCasino.text = casino?.contact?.phone ?? "No telephone"
-        webSiteOfCasino.text = casino?.contact?.site ?? "No website"
-        locationLabel.text = "\(casino?.location.country ?? ""),\(casino?.location.city ?? "")"
-        basedOnLabel.text = "Based on \(casino?.feed_backs?.count ?? 0) views"
-        starsView.rating = casino?.rating ?? 0
+        ratingOfVenue.text = "\(venue?.rating ?? 0.0)"
+        telephoneNumberOfVenue.text = venue?.contact?.phone ?? "No telephone"
+        webSiteOfVenue.text = venue?.contact?.site ?? "No website"
+        locationLabel.text = "\(venue?.location.country ?? ""),\(venue?.location.city ?? "")"
+        basedOnLabel.text = "Based on \(venue?.feed_backs?.count ?? 0) views"
+        starsView.rating = venue?.rating ?? 0
         starsView.isUserInteractionEnabled = false
         
-        if let url = casino?.photo_url {
+        if let url = venue?.photo_url {
             
-            imageOfCasino.sd_setImage(with: URL(string: url))
+            imageOfVenue.sd_setImage(with: URL(string: url))
             
         }
     }
