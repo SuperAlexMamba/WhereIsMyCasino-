@@ -22,7 +22,7 @@ class LoadingViewController: UIViewController {
         
         startLoading()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 33) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 23) {
             self.stopLoading()
         }
         
@@ -42,6 +42,7 @@ class LoadingViewController: UIViewController {
                 StorageManager.shared.saveVenuesToFile(items: self.modelView.venuesArray)
                 
                 UserDefaults().set(true, forKey: "Loaded")
+                
             }
         }
         

@@ -125,13 +125,13 @@ class Initialize {
             
             switch result {
             case .succsess:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 33) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
                     window?.rootViewController = self.tabBarController
                     window?.makeKeyAndVisible()
                 }
                 
             case .adload:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 33) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
                     window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdView")
                     
                     window?.makeKeyAndVisible()
