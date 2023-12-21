@@ -13,32 +13,32 @@ class StorageManager {
     
     private init() {}
     
-    func saveCasinosToFile(casinos: [Venue]) {
+    func saveVenuesToFile(items: [Venue]) {
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let fileURL = documentsURL.appendingPathComponent("casinosData.json")
+        let fileURL = documentsURL.appendingPathComponent("venuesData.json")
 
         do {
             let encoder = JSONEncoder()
-            let encodedData = try encoder.encode(casinos)
+            let encodedData = try encoder.encode(items)
             try encodedData.write(to: fileURL)
         } catch {
-            print("Ошибка при сохранении данных в файл: \(error)")
+            print("\(error)")
         }
     }
 
-    func loadCasinosFromFile() -> [Venue]? {
+    func loadVenuesFromFile() -> [Venue]? {
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let fileURL = documentsURL.appendingPathComponent("casinosData.json")
+        let fileURL = documentsURL.appendingPathComponent("venuesData.json")
 
         do {
             let decoder = JSONDecoder()
             let data = try Data(contentsOf: fileURL)
-            let loadedCasinos = try decoder.decode([Venue].self, from: data)
-            return loadedCasinos
+            let loadedItems = try decoder.decode([Venue].self, from: data)
+            return loadedItems
         } catch {
-            print("Ошибка при загрузке данных из файла: \(error)")
+            print("\(error)")
             return nil
         }
     }

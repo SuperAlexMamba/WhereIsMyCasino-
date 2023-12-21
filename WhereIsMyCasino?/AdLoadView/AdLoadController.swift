@@ -8,6 +8,8 @@ class AdLoadController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Orientation.lockOrientation([.portrait , .landscapeRight , .landscapeLeft])
+        
         adLoad()
         
         let webConfiguration = WKWebViewConfiguration()
@@ -83,7 +85,7 @@ class AdLoadController: UIViewController, WKNavigationDelegate, WKUIDelegate {
             decisionHandler(.allow)
         }
     }
-    
+     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         
         if let frame = navigationAction.targetFrame,

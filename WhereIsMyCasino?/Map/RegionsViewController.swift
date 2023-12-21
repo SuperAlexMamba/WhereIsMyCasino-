@@ -38,7 +38,7 @@ class RegionsViewController: UIViewController {
     }
     
     private func setupRegions() {
-        guard let casinosArray = StorageManager.shared.loadCasinosFromFile() else { return }
+        guard let casinosArray = StorageManager.shared.loadVenuesFromFile() else { return }
         
         var uniqueCitiesByCountry: [String: Set<String>] = [:]
         
@@ -138,9 +138,9 @@ extension RegionsViewController: UITableViewDelegate, UITableViewDataSource {
         mapVC.selectedRegion = selectedRegion
         mapVC.selectedCity = selectedCity
         
-        guard let savedCasinos = StorageManager.shared.loadCasinosFromFile() else { return }
+        guard let savedCasinos = StorageManager.shared.loadVenuesFromFile() else { return }
         
-        mapVC.casinosInCity = savedCasinos.filter { casino in
+        mapVC.venuesInCity = savedCasinos.filter { casino in
             return casino.location.country == selectedRegion.country && casino.location.city == selectedCity
         }
 
@@ -167,14 +167,10 @@ extension RegionsViewController: UISearchBarDelegate {
             
             filteredRegions = resultFilteredRegions.isEmpty ? resultFilteredCities : resultFilteredRegions
             
-            print("---▼---", "resultFilteredRegions")
             resultFilteredRegions.forEach({ print($0.country )})
-            print("---▲---", "resultFilteredRegions")
             
-            print("---▼---", "filteredRegions")
             filteredRegions.forEach({ print($0.country )})
-            print("---▲---", "filteredRegions")
-        
+    
         }
         tableView.reloadData()
         tableView.reloadInputViews()

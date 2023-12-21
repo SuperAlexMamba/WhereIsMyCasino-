@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD099F6E2B2F284D001D18EC /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = DD099F6D2B2F284D001D18EC /* OneSignalExtension */; };
-		DD099F702B2F284D001D18EC /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = DD099F6F2B2F284D001D18EC /* OneSignalFramework */; };
-		DD099F722B2F284D001D18EC /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = DD099F712B2F284D001D18EC /* OneSignalInAppMessages */; };
-		DD099F742B2F284D001D18EC /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = DD099F732B2F284D001D18EC /* OneSignalLocation */; };
 		DD26640A2B2C543C0071CAFC /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = DD2664092B2C543C0071CAFC /* AppsFlyerLib */; };
 		DD280D4E2B1B9EEE00707971 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD280D4D2B1B9EEE00707971 /* Model.swift */; };
 		DD280D502B1BAD7E00707971 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD280D4F2B1BAD7E00707971 /* StorageManager.swift */; };
@@ -45,7 +41,7 @@
 		DD280D8E2B1DBE9100707971 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = DD280D8D2B1DBE9100707971 /* FirebaseStorageCombine-Community */; };
 		DD3413C32B1739CD00A718E7 /* RegionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413C22B1739CD00A718E7 /* RegionsViewController.swift */; };
 		DD3413C62B175AAB00A718E7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413C52B175AAB00A718E7 /* MapViewController.swift */; };
-		DD3413C92B1767B000A718E7 /* CurrentCasinoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413C82B1767B000A718E7 /* CurrentCasinoController.swift */; };
+		DD3413C92B1767B000A718E7 /* CurrentVenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413C82B1767B000A718E7 /* CurrentVenueController.swift */; };
 		DD3413CC2B176EBA00A718E7 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413CB2B176EBA00A718E7 /* NewsListViewController.swift */; };
 		DD3413CE2B176EFC00A718E7 /* NewsListCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413CD2B176EFC00A718E7 /* NewsListCustomCell.swift */; };
 		DD3413D02B17896700A718E7 /* CurrentNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3413CF2B17896700A718E7 /* CurrentNewViewController.swift */; };
@@ -56,6 +52,12 @@
 		DD6A988D2B221A6E005ABF4F /* Open-Sans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD6A988B2B221A6D005ABF4F /* Open-Sans-Semibold.ttf */; };
 		DD6A988E2B221A6E005ABF4F /* Open-Sans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD6A988C2B221A6D005ABF4F /* Open-Sans-ExtraBold.ttf */; };
 		DD6A98902B221C2E005ABF4F /* Open-Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD6A988F2B221C2E005ABF4F /* Open-Sans-Regular.ttf */; };
+		DD6B382C2B32F1BD00E06E58 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = DD6B382B2B32F1BD00E06E58 /* OneSignalExtension */; };
+		DD6B382E2B32F1BD00E06E58 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = DD6B382D2B32F1BD00E06E58 /* OneSignalFramework */; };
+		DD6B38302B32F1BD00E06E58 /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = DD6B382F2B32F1BD00E06E58 /* OneSignalInAppMessages */; };
+		DD6B38322B32F1BD00E06E58 /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = DD6B38312B32F1BD00E06E58 /* OneSignalLocation */; };
+		DD6B383A2B32F42100E06E58 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6B38392B32F42100E06E58 /* NotificationService.swift */; };
+		DD6B383E2B32F42100E06E58 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DD6B38372B32F42100E06E58 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DD877A3B2B18CEEA000253A7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD877A3A2B18CEEA000253A7 /* TabBarViewController.swift */; };
 		DD921A352B14EDA000DDAFC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A342B14EDA000DDAFC5 /* AppDelegate.swift */; };
 		DD921A372B14EDA000DDAFC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD921A362B14EDA000DDAFC5 /* SceneDelegate.swift */; };
@@ -73,6 +75,30 @@
 		DDE541222B29F97A0091DB2C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DDE541212B29F97A0091DB2C /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DD6B383C2B32F42100E06E58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD921A292B14EDA000DDAFC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD6B38362B32F42100E06E58;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD6B38422B32F42100E06E58 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DD6B383E2B32F42100E06E58 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DD280D4D2B1B9EEE00707971 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DD280D4F2B1BAD7E00707971 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -80,7 +106,7 @@
 		DD280D562B1DBDD500707971 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD3413C22B1739CD00A718E7 /* RegionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsViewController.swift; sourceTree = "<group>"; };
 		DD3413C52B175AAB00A718E7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		DD3413C82B1767B000A718E7 /* CurrentCasinoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCasinoController.swift; sourceTree = "<group>"; };
+		DD3413C82B1767B000A718E7 /* CurrentVenueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentVenueController.swift; sourceTree = "<group>"; };
 		DD3413CB2B176EBA00A718E7 /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		DD3413CD2B176EFC00A718E7 /* NewsListCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListCustomCell.swift; sourceTree = "<group>"; };
 		DD3413CF2B17896700A718E7 /* CurrentNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentNewViewController.swift; sourceTree = "<group>"; };
@@ -89,8 +115,12 @@
 		DD6A988B2B221A6D005ABF4F /* Open-Sans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open-Sans-Semibold.ttf"; sourceTree = "<group>"; };
 		DD6A988C2B221A6D005ABF4F /* Open-Sans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open-Sans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		DD6A988F2B221C2E005ABF4F /* Open-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open-Sans-Regular.ttf"; sourceTree = "<group>"; };
+		DD6B38372B32F42100E06E58 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD6B38392B32F42100E06E58 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		DD6B383B2B32F42100E06E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD6B38432B32F55500E06E58 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		DD877A3A2B18CEEA000253A7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		DD921A312B14EDA000DDAFC5 /* Where IsMy Casino ?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Where IsMy Casino ?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD921A312B14EDA000DDAFC5 /* Where Is My Casino ?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Where Is My Casino ?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD921A342B14EDA000DDAFC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD921A362B14EDA000DDAFC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD921A3B2B14EDA000DDAFC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,6 +138,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DD6B38342B32F42100E06E58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD921A2E2B14EDA000DDAFC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,13 +159,13 @@
 				DD6A98862B20CBDE005ABF4F /* SDWebImage in Frameworks */,
 				DD280D822B1DBE9100707971 /* FirebaseMLModelDownloader in Frameworks */,
 				DD280D762B1DBE9100707971 /* FirebaseFirestoreSwift in Frameworks */,
-				DD099F722B2F284D001D18EC /* OneSignalInAppMessages in Frameworks */,
+				DD6B38302B32F1BD00E06E58 /* OneSignalInAppMessages in Frameworks */,
 				DD280D622B1DBE9100707971 /* FirebaseAppCheck in Frameworks */,
 				DD280D602B1DBE9100707971 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				DD280D662B1DBE9100707971 /* FirebaseAuth in Frameworks */,
 				DD280D6A2B1DBE9100707971 /* FirebaseCrashlytics in Frameworks */,
 				DD280D8A2B1DBE9100707971 /* FirebaseRemoteConfigSwift in Frameworks */,
-				DD099F6E2B2F284D001D18EC /* OneSignalExtension in Frameworks */,
+				DD6B382C2B32F1BD00E06E58 /* OneSignalExtension in Frameworks */,
 				DD280D7C2B1DBE9100707971 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				DD6A98882B20CBDE005ABF4F /* SDWebImageMapKit in Frameworks */,
 				DD280D6E2B1DBE9100707971 /* FirebaseDatabaseSwift in Frameworks */,
@@ -138,14 +175,14 @@
 				DD280D882B1DBE9100707971 /* FirebaseRemoteConfig in Frameworks */,
 				DD280D642B1DBE9100707971 /* FirebaseAppDistribution-Beta in Frameworks */,
 				DD280D682B1DBE9100707971 /* FirebaseAuthCombine-Community in Frameworks */,
-				DD099F742B2F284D001D18EC /* OneSignalLocation in Frameworks */,
+				DD6B38322B32F1BD00E06E58 /* OneSignalLocation in Frameworks */,
 				DD280D862B1DBE9100707971 /* FirebasePerformance in Frameworks */,
 				DD280D7E2B1DBE9100707971 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				DD280D8C2B1DBE9100707971 /* FirebaseStorage in Frameworks */,
 				DD280D702B1DBE9100707971 /* FirebaseDynamicLinks in Frameworks */,
 				DD280D742B1DBE9100707971 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				DD280D842B1DBE9100707971 /* FirebaseMessaging in Frameworks */,
-				DD099F702B2F284D001D18EC /* OneSignalFramework in Frameworks */,
+				DD6B382E2B32F1BD00E06E58 /* OneSignalFramework in Frameworks */,
 				DD280D802B1DBE9100707971 /* FirebaseInstallations in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,12 +199,12 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		DD3413C72B17677B00A718E7 /* CurrentCasinoView */ = {
+		DD3413C72B17677B00A718E7 /* CurrentVenueView */ = {
 			isa = PBXGroup;
 			children = (
-				DD3413C82B1767B000A718E7 /* CurrentCasinoController.swift */,
+				DD3413C82B1767B000A718E7 /* CurrentVenueController.swift */,
 			);
-			path = CurrentCasinoView;
+			path = CurrentVenueView;
 			sourceTree = "<group>";
 		};
 		DD3413CA2B176EAA00A718E7 /* News */ = {
@@ -201,10 +238,21 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		DD6B38382B32F42100E06E58 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DD6B38432B32F55500E06E58 /* OneSignalNotificationServiceExtension.entitlements */,
+				DD6B38392B32F42100E06E58 /* NotificationService.swift */,
+				DD6B383B2B32F42100E06E58 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 		DD921A282B14EDA000DDAFC5 = {
 			isa = PBXGroup;
 			children = (
 				DD921A332B14EDA000DDAFC5 /* WhereIsMyCasino? */,
+				DD6B38382B32F42100E06E58 /* OneSignalNotificationServiceExtension */,
 				DD921A322B14EDA000DDAFC5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -212,7 +260,8 @@
 		DD921A322B14EDA000DDAFC5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD921A312B14EDA000DDAFC5 /* Where IsMy Casino ?.app */,
+				DD921A312B14EDA000DDAFC5 /* Where Is My Casino ?.app */,
+				DD6B38372B32F42100E06E58 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,7 +273,7 @@
 				DD6A98912B221C53005ABF4F /* Fonts */,
 				DD3413D12B18721600A718E7 /* Managers */,
 				DD3413CA2B176EAA00A718E7 /* News */,
-				DD3413C72B17677B00A718E7 /* CurrentCasinoView */,
+				DD3413C72B17677B00A718E7 /* CurrentVenueView */,
 				DD3413C42B1739D300A718E7 /* Map */,
 				DD921A5A2B17254500DDAFC5 /* Rating */,
 				DD921A552B15FB5300DDAFC5 /* MainList */,
@@ -297,19 +346,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD921A302B14EDA000DDAFC5 /* Where IsMy Casino ? */ = {
+		DD6B38362B32F42100E06E58 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD921A452B14EDA300DDAFC5 /* Build configuration list for PBXNativeTarget "Where IsMy Casino ?" */;
+			buildConfigurationList = DD6B383F2B32F42100E06E58 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
 			buildPhases = (
-				DD921A2D2B14EDA000DDAFC5 /* Sources */,
-				DD921A2E2B14EDA000DDAFC5 /* Frameworks */,
-				DD921A2F2B14EDA000DDAFC5 /* Resources */,
+				DD6B38332B32F42100E06E58 /* Sources */,
+				DD6B38342B32F42100E06E58 /* Frameworks */,
+				DD6B38352B32F42100E06E58 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Where IsMy Casino ?";
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = DD6B38372B32F42100E06E58 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		DD921A302B14EDA000DDAFC5 /* Where Is My Casino ? */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD921A452B14EDA300DDAFC5 /* Build configuration list for PBXNativeTarget "Where Is My Casino ?" */;
+			buildPhases = (
+				DD921A2D2B14EDA000DDAFC5 /* Sources */,
+				DD921A2E2B14EDA000DDAFC5 /* Frameworks */,
+				DD921A2F2B14EDA000DDAFC5 /* Resources */,
+				DD6B38422B32F42100E06E58 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD6B383D2B32F42100E06E58 /* PBXTargetDependency */,
+			);
+			name = "Where Is My Casino ?";
 			packageProductDependencies = (
 				DD280D592B1DBE9100707971 /* FirebaseAnalytics */,
 				DD280D5B2B1DBE9100707971 /* FirebaseAnalyticsOnDeviceConversion */,
@@ -342,13 +410,13 @@
 				DD6A98852B20CBDE005ABF4F /* SDWebImage */,
 				DD6A98872B20CBDE005ABF4F /* SDWebImageMapKit */,
 				DD2664092B2C543C0071CAFC /* AppsFlyerLib */,
-				DD099F6D2B2F284D001D18EC /* OneSignalExtension */,
-				DD099F6F2B2F284D001D18EC /* OneSignalFramework */,
-				DD099F712B2F284D001D18EC /* OneSignalInAppMessages */,
-				DD099F732B2F284D001D18EC /* OneSignalLocation */,
+				DD6B382B2B32F1BD00E06E58 /* OneSignalExtension */,
+				DD6B382D2B32F1BD00E06E58 /* OneSignalFramework */,
+				DD6B382F2B32F1BD00E06E58 /* OneSignalInAppMessages */,
+				DD6B38312B32F1BD00E06E58 /* OneSignalLocation */,
 			);
 			productName = 1;
-			productReference = DD921A312B14EDA000DDAFC5 /* Where IsMy Casino ?.app */;
+			productReference = DD921A312B14EDA000DDAFC5 /* Where Is My Casino ?.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -361,12 +429,15 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					DD6B38362B32F42100E06E58 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					DD921A302B14EDA000DDAFC5 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
-			buildConfigurationList = DD921A2C2B14EDA000DDAFC5 /* Build configuration list for PBXProject "Where IsMy Casino ?" */;
+			buildConfigurationList = DD921A2C2B14EDA000DDAFC5 /* Build configuration list for PBXProject "Where Is My Casino ?" */;
 			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -380,19 +451,27 @@
 				DD280D582B1DBE9100707971 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				DDA0470A2B1F5023000AC929 /* XCRemoteSwiftPackageReference "Cosmos" */,
 				DD6A98842B20CBDE005ABF4F /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 				DD2664082B2C543C0071CAFC /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+				DD6B382A2B32F1BD00E06E58 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 			);
 			productRefGroup = DD921A322B14EDA000DDAFC5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD921A302B14EDA000DDAFC5 /* Where IsMy Casino ? */,
+				DD921A302B14EDA000DDAFC5 /* Where Is My Casino ? */,
+				DD6B38362B32F42100E06E58 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DD6B38352B32F42100E06E58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD921A2F2B14EDA000DDAFC5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,6 +490,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DD6B38332B32F42100E06E58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD6B383A2B32F42100E06E58 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD921A2D2B14EDA000DDAFC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,7 +519,7 @@
 				DD921A352B14EDA000DDAFC5 /* AppDelegate.swift in Sources */,
 				DD3413CE2B176EFC00A718E7 /* NewsListCustomCell.swift in Sources */,
 				DD921A372B14EDA000DDAFC5 /* SceneDelegate.swift in Sources */,
-				DD3413C92B1767B000A718E7 /* CurrentCasinoController.swift in Sources */,
+				DD3413C92B1767B000A718E7 /* CurrentVenueController.swift in Sources */,
 				DD280D4E2B1B9EEE00707971 /* Model.swift in Sources */,
 				DD921A5C2B17255F00DDAFC5 /* RatingListViewController.swift in Sources */,
 				DD921A492B15DC8700DDAFC5 /* OnboardingViewController.swift in Sources */,
@@ -440,6 +527,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD6B383D2B32F42100E06E58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD6B38362B32F42100E06E58 /* OneSignalNotificationServiceExtension */;
+			targetProxy = DD6B383C2B32F42100E06E58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DD921A3A2B14EDA000DDAFC5 /* Main.storyboard */ = {
@@ -461,6 +556,60 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DD6B38402B32F42100E06E58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GVUQN68G6B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whereismycasino.whereisapp.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD6B38412B32F42100E06E58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GVUQN68G6B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whereismycasino.whereisapp.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DD921A432B14EDA300DDAFC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -513,7 +662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -570,7 +719,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -583,29 +732,33 @@
 		DD921A462B14EDA300DDAFC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "WhereIsMyCasino?/WhereIsMyCasino?.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = GVUQN68G6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WhereIsMyCasino?/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Need Camera";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need micro";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Пожалуйста, предоставьте отслеживание";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please provide access to your camera";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Please provide access to your geolocation data";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please provide access to your microphone";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please confirm getting data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ancientstack.-whereiscasino";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whereismycasino.whereisapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -616,29 +769,33 @@
 		DD921A472B14EDA300DDAFC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "WhereIsMyCasino?/WhereIsMyCasino?.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = GVUQN68G6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WhereIsMyCasino?/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Need Camera";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need micro";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Пожалуйста, предоставьте отслеживание";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please provide access to your camera";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Please provide access to your geolocation data";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please provide access to your microphone";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please confirm getting data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ancientstack.-whereiscasino";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whereismycasino.whereisapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -649,7 +806,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DD921A2C2B14EDA000DDAFC5 /* Build configuration list for PBXProject "Where IsMy Casino ?" */ = {
+		DD6B383F2B32F42100E06E58 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD6B38402B32F42100E06E58 /* Debug */,
+				DD6B38412B32F42100E06E58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD921A2C2B14EDA000DDAFC5 /* Build configuration list for PBXProject "Where Is My Casino ?" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD921A432B14EDA300DDAFC5 /* Debug */,
@@ -658,7 +824,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD921A452B14EDA300DDAFC5 /* Build configuration list for PBXNativeTarget "Where IsMy Casino ?" */ = {
+		DD921A452B14EDA300DDAFC5 /* Build configuration list for PBXNativeTarget "Where Is My Casino ?" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD921A462B14EDA300DDAFC5 /* Debug */,
@@ -686,20 +852,20 @@
 				minimumVersion = 10.18.0;
 			};
 		};
-		DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.5;
-			};
-		};
 		DD6A98842B20CBDE005ABF4F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.18.6;
+			};
+		};
+		DD6B382A2B32F1BD00E06E58 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.5;
 			};
 		};
 		DDA0470A2B1F5023000AC929 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
@@ -713,26 +879,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DD099F6D2B2F284D001D18EC /* OneSignalExtension */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
-			productName = OneSignalExtension;
-		};
-		DD099F6F2B2F284D001D18EC /* OneSignalFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
-			productName = OneSignalFramework;
-		};
-		DD099F712B2F284D001D18EC /* OneSignalInAppMessages */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
-			productName = OneSignalInAppMessages;
-		};
-		DD099F732B2F284D001D18EC /* OneSignalLocation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD5B307A2B285F7F005C2109 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
-			productName = OneSignalLocation;
-		};
 		DD2664092B2C543C0071CAFC /* AppsFlyerLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DD2664082B2C543C0071CAFC /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
@@ -882,6 +1028,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD6A98842B20CBDE005ABF4F /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		DD6B382B2B32F1BD00E06E58 /* OneSignalExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD6B382A2B32F1BD00E06E58 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalExtension;
+		};
+		DD6B382D2B32F1BD00E06E58 /* OneSignalFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD6B382A2B32F1BD00E06E58 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalFramework;
+		};
+		DD6B382F2B32F1BD00E06E58 /* OneSignalInAppMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD6B382A2B32F1BD00E06E58 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalInAppMessages;
+		};
+		DD6B38312B32F1BD00E06E58 /* OneSignalLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD6B382A2B32F1BD00E06E58 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalLocation;
 		};
 		DDA0470B2B1F5023000AC929 /* Cosmos */ = {
 			isa = XCSwiftPackageProductDependency;

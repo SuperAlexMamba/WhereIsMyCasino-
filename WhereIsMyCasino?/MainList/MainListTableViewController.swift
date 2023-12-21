@@ -10,64 +10,54 @@ import SDWebImage
 
 class MainListTableViewController: UICollectionViewController {
         
-    var casino: [Venue]?
+    var venue: [Venue]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        casino = StorageManager.shared.loadCasinosFromFile()
+        venue = StorageManager.shared.loadVenuesFromFile()
         
-        self.title = "Casino"
+        setupView()
+
     }
     // MARK: - Collectionview data source
-                
+         
+        
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return casino?.count ?? 0
+        return venue?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let selectedCasino = casino?[indexPath.row]
+        let selectedCasino = venue?[indexPath.row]
         
-        guard let currentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrentCasino") as? CurrentCasinoController else { return }
+        guard let currentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrentVenue") as? CurrentVenueController else { return }
         
-        currentVC.casino = selectedCasino
+        currentVC.venue = selectedCasino
         
         self.navigationController?.pushViewController(currentVC, animated: true)
     }
-    
+        
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CustomListMainTableCell
         
         cell.layer.cornerRadius = 10
         cell.clipsToBounds = true
         
-        if let item = casino?[indexPath.row] {
+        if let item = venue?[indexPath.row] {
             setupCell(cell, with: item, at: indexPath)
         }
         
         return cell
     }
-    
-     
-        
-        func collectionView(
-            _ collectionView: UICollectionView,
-            layout collectionViewLayout: UICollectionViewLayout,
-            sizeForItemAt indexPath: IndexPath
-        ) -> CGSize {
 
-            return .init(width: collectionView.bounds.width, height: 128)
-        }
-    
-    
     func setupCell(_ cell: CustomListMainTableCell, with item: Venue, at indexPath: IndexPath) {
         
         cell.titleLabel.text = item.title
         cell.locationLabel.text = "\(item.location.city),\(item.location.country)"
         cell.ratingLabel.text = String(item.rating!)
                 
-        cell.imageOfCasino.image = nil
+        cell.imageOfVenue.image = nil
         
         cell.typesStackView.arrangedSubviews.forEach { view in
             cell.typesStackView.removeArrangedSubview(view)
@@ -82,19 +72,19 @@ class MainListTableViewController: UICollectionViewController {
             let cellIdentifire = "\(indexPath.section)-\(indexPath.row)-\(photo_url)"
             cell.tag = cellIdentifire.hash
             
-            cell.imageOfCasino.image = nil
+            cell.imageOfVenue.image = nil
             cell.activityView.startAnimating()
             
             if let url = URL(string: photo_url) {
                 
-                cell.imageOfCasino.sd_setImage(with: url) { image, error, cashetype, url in
+                cell.imageOfVenue.sd_setImage(with: url) { image, error, cashetype, url in
                     
                     if let error = error {
                         print("Ошибка загрузки \(error.localizedDescription)")
                         
                         if error.localizedDescription.contains("404") {
                             DispatchQueue.main.async {
-                                cell.imageOfCasino.image = UIImage(named: "ImageCasino")
+                                cell.imageOfVenue.image = UIImage(named: "ImageCasino")
                                 cell.activityView.stopAnimating()
                                 print("404")
                             }
@@ -108,17 +98,33 @@ class MainListTableViewController: UICollectionViewController {
             }
             
             else {
-                cell.imageOfCasino.image = UIImage(named: "ImageCasino")
+                cell.imageOfVenue.image = UIImage(named: "ImageCasino")
                 cell.setupStack(types: item.types_games ?? [])
                 cell.setNeedsLayout()
             }
         }
         
         else {
-            cell.imageOfCasino.image = UIImage(named: "ImageCasino")
+            cell.imageOfVenue.image = UIImage(named: "ImageCasino")
             cell.setupStack(types: item.types_games ?? [])
             cell.setNeedsLayout()
         }
+    }
+    
+    private func setupView() {
+        
+        self.title = "Casino"
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        layout.minimumInteritemSpacing = 16
+        layout.minimumLineSpacing = 16
+
+        let width = collectionView.frame.size.width
+
+        layout.itemSize = CGSize(width: width, height: 121)
+        collectionView.collectionViewLayout = layout
+        
     }
     
     // MARK: - Navigation
@@ -126,8 +132,8 @@ class MainListTableViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "ToCurrentVC" {
-            if let destination = segue.destination as? CurrentCasinoController {
-                destination.casino = sender as? Venue
+            if let destination = segue.destination as? CurrentVenueController {
+                destination.venue = sender as? Venue
             }
         }
     }

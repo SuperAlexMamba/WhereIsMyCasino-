@@ -105,7 +105,7 @@ extension NewsListViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.titleLabel.text = item.title
         cell.dateLabel.text = item.daysAgo
-        cell.casinoImage.image = item.image
+        cell.venueImage.image = item.image
         
         return cell
     }

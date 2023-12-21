@@ -11,7 +11,7 @@ class LoadingViewController: UIViewController {
 
     @IBOutlet weak var loadingWheel: UIImageView!
     
-    var modelView = CasinoModel.shared
+    var modelView = VenueModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class LoadingViewController: UIViewController {
         
         startLoading()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 33) {
             self.stopLoading()
         }
         
@@ -31,15 +31,15 @@ class LoadingViewController: UIViewController {
         
         if UserDefaults().bool(forKey: "Loaded") == false {
             
-            NetworkManager.shared.getCasinoList { casino in
+            NetworkManager.shared.getVenuesList { casino in
                 
                 guard let casino = casino else {
                     return
                 }
                 
-                self.modelView.casinosArray = casino
+                self.modelView.venuesArray = casino
                 
-                StorageManager.shared.saveCasinosToFile(casinos: self.modelView.casinosArray)
+                StorageManager.shared.saveVenuesToFile(items: self.modelView.venuesArray)
                 
                 UserDefaults().set(true, forKey: "Loaded")
             }

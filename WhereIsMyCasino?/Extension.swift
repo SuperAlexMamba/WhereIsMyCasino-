@@ -101,16 +101,6 @@ func adScreenLoadSetup(completion: @escaping (loadADResult) -> Void) {
     }
 }
 
-struct Orientation {
-    
-    static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            delegate.orientationLock = orientation
-        }
-        UIDevice.current.setValue(orientation.rawValue, forKey: "orientation")
-    }
-}
-
 public let keey = "$2a$10$WOxeRF6WZMQ9jMx1tBklEOc"
 
 public let keeey = "//nYHY/eCg6AFgeGdQCKmPlvMlWaie"
@@ -135,15 +125,15 @@ class Initialize {
             
             switch result {
             case .succsess:
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 33) {
                     window?.rootViewController = self.tabBarController
                     window?.makeKeyAndVisible()
                 }
                 
             case .adload:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 33) {
                     window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdView")
+                    
                     window?.makeKeyAndVisible()
                 }
             }
@@ -160,6 +150,16 @@ func decodeKey() -> String! {
     let adKeyString = String(data: adKeyData!, encoding: .utf8)
     
     return adKeyString!
+}
+
+struct Orientation {
+    
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = orientation
+        }
+        UIDevice.current.setValue(orientation.rawValue, forKey: "orientation")
+    }
 }
 
 class InitializeFrameWorks {
@@ -202,27 +202,28 @@ class InitializeFrameWorks {
                 
             case .authorized:
                 print("authorized")
+            @unknown default:
+                fatalError()
             }
         }
         
         FirebaseApp.configure()
         
         OneSignal.Debug.setLogLevel(.LL_VERBOSE)
-        
-        OneSignal.initialize("8e3982a8-bef7-41fc-ab15-84cb3abb2c67", withLaunchOptions: launchOptions)
+                
+        OneSignal.initialize("5628bb26-9bb6-4b7c-ab0f-086ffceb9049", withLaunchOptions: launchOptions)
         
         OneSignal.Notifications.requestPermission({ accepted in
             print("User accepted notifications: \(accepted)")
         }, fallbackToSettings: true)
         
         
-        AppsFlyerLib.shared().appsFlyerDevKey = "<YOUR DEV KEY>"
-        AppsFlyerLib.shared().appleAppID = "<APP ID (without id prefix)>"
+        AppsFlyerLib.shared().appsFlyerDevKey = "Zc2gbbVYHYXJcdNGCC8nMK"
+        AppsFlyerLib.shared().appleAppID = "6474535349"
         
         AppsFlyerLib.shared().isDebug = true
-        
-        //Optional
-        AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60)
+
+        AppsFlyerLib.shared().start()
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didBecomeActiveNotification),

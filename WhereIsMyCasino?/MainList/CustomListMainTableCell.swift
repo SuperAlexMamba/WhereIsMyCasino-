@@ -13,7 +13,7 @@ class CustomListMainTableCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var imageOfCasino: UIImageView!
+    @IBOutlet weak var imageOfVenue: UIImageView!
     
     @IBOutlet weak var locationLabel: UILabel!
     
@@ -27,22 +27,8 @@ class CustomListMainTableCell: UICollectionViewCell {
         super.awakeFromNib()
         
         self.heightAnchor.constraint(equalToConstant: 121).isActive = true
-        self.widthAnchor.constraint(equalToConstant: 342).isActive = true
-        
-        typesStackView.frame.size = typesStackView.intrinsicContentSize
-        typesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        typesStackView.spacing = 5
-        
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = 20
-        ratingView.layer.cornerRadius = 5
-        ratingView.clipsToBounds = true
-        
-        imageOfCasino.layer.cornerRadius = 8
-        imageOfCasino.clipsToBounds = true
-        
-        titleLabel.makeOpenSansSemiBold(size: 20)
-        
+//        self.widthAnchor.constraint(equalToConstant: 342).isActive = true
+                
     }
     
     override func prepareForReuse() {
@@ -98,5 +84,23 @@ class CustomListMainTableCell: UICollectionViewCell {
         moreLabel.text = "+\(count)"
     
         return moreLabel
+    }
+    
+    private func setupView() {
+        
+        typesStackView.frame.size = typesStackView.intrinsicContentSize
+        typesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        typesStackView.spacing = 5
+        
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 20
+        ratingView.layer.cornerRadius = 5
+        ratingView.clipsToBounds = true
+        
+        imageOfVenue.layer.cornerRadius = 8
+        imageOfVenue.clipsToBounds = true
+        
+        titleLabel.makeOpenSansSemiBold(size: 20)
+        
     }
 }

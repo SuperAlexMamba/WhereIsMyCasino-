@@ -13,21 +13,21 @@ class NetworkManager {
     
     private init() {}
     
-    func getCasinoList(completion: @escaping ([Venue]?) -> Void) {
+    func getVenuesList(completion: @escaping ([Venue]?) -> Void) {
         let dataBase = Database.database().reference()
         
         dataBase.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
             
-            guard let casinoData = snapshot.value as? NSArray else {
+            guard let itemData = snapshot.value as? NSArray else {
                 completion(nil)
                 return
             }
             
             do {
-                let jsonData = try JSONSerialization.data(withJSONObject: casinoData)
+                let jsonData = try JSONSerialization.data(withJSONObject: itemData)
                 let decoder = JSONDecoder()
-                let casino = try decoder.decode([Venue].self, from: jsonData)
-                completion(casino)
+                let venue = try decoder.decode([Venue].self, from: jsonData)
+                completion(venue)
 
                 
             } catch {

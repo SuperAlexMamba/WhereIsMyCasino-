@@ -9,7 +9,7 @@ import UIKit
 
 class NewsListCustomCell: UITableViewCell {
     
-    lazy var casinoImage: UIImageView = {
+    lazy var venueImage: UIImageView = {
         
         let image = UIImageView()
         
@@ -66,7 +66,7 @@ class NewsListCustomCell: UITableViewCell {
         
         self.frame.size.height = 100
         
-        addSubview(casinoImage)
+        addSubview(venueImage)
         addSubview(titleLabel)
         addSubview(dateLabel)
         
@@ -80,20 +80,20 @@ class NewsListCustomCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
         
-            casinoImage.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 0),
-            casinoImage.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 12),
-            casinoImage.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 12),
-            casinoImage.widthAnchor.constraint(equalToConstant: 100),
-            casinoImage.heightAnchor.constraint(equalToConstant: 75),
+            venueImage.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 0),
+            venueImage.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 12),
+            venueImage.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 12),
+            venueImage.widthAnchor.constraint(equalToConstant: 100),
+            venueImage.heightAnchor.constraint(equalToConstant: 75),
             
             titleLabel.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: 0),
             titleLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 12),
-            titleLabel.leftAnchor.constraint(equalTo: casinoImage.rightAnchor, constant: 12),
+            titleLabel.leftAnchor.constraint(equalTo: venueImage.rightAnchor, constant: 12),
             
             dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
             dateLabel.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 18),
             dateLabel.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: 0),
-            dateLabel.leftAnchor.constraint(equalTo: casinoImage.rightAnchor, constant: 12)
+            dateLabel.leftAnchor.constraint(equalTo: venueImage.rightAnchor, constant: 12)
                     
         ])
     }

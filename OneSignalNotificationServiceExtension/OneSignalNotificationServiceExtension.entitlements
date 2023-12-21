@@ -3,6 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>com.apple.security.application-groups</key>
-	<array/>
+	<array>
+		<string>group.com.whereismycasino.whereisapp</string>
+		<string>group.com.whereismycasino.whereisapp.onesignal</string>
+	</array>
 </dict>
 </plist>

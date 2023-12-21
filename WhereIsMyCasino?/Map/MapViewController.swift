@@ -11,7 +11,7 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     var selectedRegion: Region?
     var selectedCity: String?
-    var casinosInCity: [Venue] = []
+    var venuesInCity: [Venue] = []
 
     @IBOutlet weak var mapView: MKMapView!
 
@@ -26,7 +26,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             return
         }
 
-        let filteredCasinos = casinosInCity.filter { casino in
+        let filteredCasinos = venuesInCity.filter { casino in
             return casino.location.country == region.country && casino.location.city == city
         }
 

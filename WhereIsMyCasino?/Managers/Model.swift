@@ -109,13 +109,13 @@ class News {
     
 }
 
-class CasinoModel {
+class VenueModel {
     
-    static let shared = CasinoModel()
+    static let shared = VenueModel()
     
     private init() {}
 
-    var casinosArray: [Venue] = []
+    var venuesArray: [Venue] = []
     
     var imagesArray: [UIImage] = []
     

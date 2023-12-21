@@ -5,6 +5,9 @@
 	<key>aps-environment</key>
 	<string>development</string>
 	<key>com.apple.security.application-groups</key>
-	<array/>
+	<array>
+		<string>group.com.whereismycasino.whereisapp</string>
+		<string>group.com.whereismycasino.whereisapp.onesignal</string>
+	</array>
 </dict>
 </plist>

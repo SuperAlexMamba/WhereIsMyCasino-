@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H2w-gf-9tX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -26,7 +27,7 @@
         <!--Les Croupiers Casino Cardiff-->
         <scene sceneID="brf-nG-rjO">
             <objects>
-                <tableViewController storyboardIdentifier="CurrentCasino" useStoryboardIdentifierAsRestorationIdentifier="YES" id="daH-2c-5Zy" customClass="CurrentCasinoController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CurrentVenue" useStoryboardIdentifierAsRestorationIdentifier="YES" id="daH-2c-5Zy" customClass="CurrentVenueController" customModule="Where_Is_My_Casino__" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="hED-kj-1Lc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -466,16 +467,16 @@
                     <connections>
                         <outlet property="basedOnLabel" destination="fXu-uI-Ucr" id="4UE-If-HbJ"/>
                         <outlet property="descriptionLabel" destination="aF5-8b-dyA" id="c9u-5H-bXa"/>
-                        <outlet property="descriptionOfCasino" destination="7DO-Wh-Zux" id="FRu-xI-oCN"/>
+                        <outlet property="descriptionOfVenue" destination="7DO-Wh-Zux" id="FRu-xI-oCN"/>
                         <outlet property="goToReviewsButton" destination="RGr-EN-CDD" id="Pbv-LP-Ax7"/>
-                        <outlet property="imageOfCasino" destination="suH-wL-7lP" id="PTn-3v-EV4"/>
+                        <outlet property="imageOfVenue" destination="suH-wL-7lP" id="PTn-3v-EV4"/>
                         <outlet property="locationLabel" destination="bse-rH-ekY" id="AtF-Ba-tHa"/>
-                        <outlet property="ratingOfCasino" destination="8qO-TX-Ofn" id="TVh-vd-af6"/>
+                        <outlet property="ratingOfVenue" destination="8qO-TX-Ofn" id="TVh-vd-af6"/>
                         <outlet property="ratingView" destination="b98-hV-nSk" id="qSZ-an-Rnx"/>
                         <outlet property="starsView" destination="ndL-Hs-FjX" id="ckx-f3-ngr"/>
-                        <outlet property="telephoneNumberOfCasino" destination="Kzg-zk-EEi" id="dYZ-pN-R0r"/>
-                        <outlet property="titleOfCasino" destination="Vqc-7E-Aj6" id="7lH-Ph-HkJ"/>
-                        <outlet property="webSiteOfCasino" destination="46e-3S-Txo" id="BUM-b6-YFA"/>
+                        <outlet property="telephoneNumberOfVenue" destination="Kzg-zk-EEi" id="dYZ-pN-R0r"/>
+                        <outlet property="titleOfVenue" destination="Vqc-7E-Aj6" id="7lH-Ph-HkJ"/>
+                        <outlet property="webSiteOfVenue" destination="46e-3S-Txo" id="BUM-b6-YFA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssQ-8a-o6B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -485,13 +486,13 @@
         <!--Reviews-->
         <scene sceneID="gfQ-ad-zBL">
             <objects>
-                <tableViewController storyboardIdentifier="RatingList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Geb-Sr-fth" customClass="RatingListViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RatingList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Geb-Sr-fth" customClass="RatingListViewController" customModule="Where_Is_My_Casino__" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="8pd-YT-ZBO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="194" id="EQF-lj-4P2" customClass="RatingListCustomCell" customModule="WhereIsMyCasino_" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="194" id="EQF-lj-4P2" customClass="RatingListCustomCell" customModule="Where_Is_My_Casino__" customModuleProvider="target">
                                 <rect key="frame" x="20" y="55.5" width="374" height="194"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EQF-lj-4P2" id="MKn-aN-rkt">
@@ -633,7 +634,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Onboarding" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="OnboardingViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="OnboardingViewController" customModule="Where_Is_My_Casino__" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -734,7 +735,7 @@
         <!--Hot News-->
         <scene sceneID="B63-Hs-Kgm">
             <objects>
-                <viewController id="4V8-eM-vzh" customClass="NewsListViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4V8-eM-vzh" customClass="NewsListViewController" customModule="Where_Is_My_Casino__" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fot-Ao-gNF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -756,7 +757,7 @@
                                 <rect key="frame" x="20" y="382" width="374" height="431"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="143" id="IHZ-on-30l" customClass="NewsListCustomCell" customModule="WhereIsMyCasino_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="143" id="IHZ-on-30l" customClass="NewsListCustomCell" customModule="Where_Is_My_Casino__" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="374" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IHZ-on-30l" id="eM7-im-ACx">
@@ -781,14 +782,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="r7A-q9-ZgV" customClass="CollectionViewNewsCell" customModule="WhereIsMyCasino_" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="r7A-q9-ZgV" customClass="CollectionViewNewsCell" customModule="Where_Is_My_Casino__" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="425" height="205"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="itk-f2-iVD">
                                             <rect key="frame" x="0.0" y="0.0" width="425" height="205"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New8" translatesAutoresizingMaskIntoConstraints="NO" id="nNa-O9-Km2">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New8" translatesAutoresizingMaskIntoConstraints="NO" id="nNa-O9-Km2">
                                                     <rect key="frame" x="8" y="0.0" width="409" height="205"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the USA, a nun who stole $800 thousand from a school for a casino was sent to prison" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vih-cJ-AAk">
@@ -796,9 +797,11 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="72" id="Nlw-W5-W2i"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Extrabold" family="Open Sans Extrabold" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="3" height="1"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -854,7 +857,7 @@
         <!--Current New View Controller-->
         <scene sceneID="tlO-CO-Zer">
             <objects>
-                <tableViewController storyboardIdentifier="CurrentNew" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KvD-hx-F5g" customClass="CurrentNewViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CurrentNew" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KvD-hx-F5g" customClass="CurrentNewViewController" customModule="Where_Is_My_Casino__" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="uoM-4i-i8L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -943,7 +946,7 @@
         <!--Casino-->
         <scene sceneID="X0D-gD-iE7">
             <objects>
-                <collectionViewController storyboardIdentifier="MainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="geP-1i-l0g" customClass="MainListTableViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="MainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="geP-1i-l0g" customClass="MainListTableViewController" customModule="Where_Is_My_Casino__" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Fwc-sO-Rqy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -952,10 +955,10 @@
                             <size key="itemSize" width="414" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gT5-bC-CNC" customClass="CustomListMainTableCell" customModule="WhereIsMyCasino_" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gT5-bC-CNC" customClass="CustomListMainTableCell" customModule="Where_Is_My_Casino__" customModuleProvider="target">
                                 <rect key="frame" x="36" y="0.0" width="342" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Fft-Ao-KO6">
@@ -1061,7 +1064,7 @@
                                 <size key="customSize" width="342" height="121"/>
                                 <connections>
                                     <outlet property="activityView" destination="EOG-xh-k0A" id="3Z9-Gi-Xmt"/>
-                                    <outlet property="imageOfCasino" destination="LkQ-eK-T5H" id="7P0-mn-3da"/>
+                                    <outlet property="imageOfVenue" destination="LkQ-eK-T5H" id="7P0-mn-3da"/>
                                     <outlet property="locationLabel" destination="Rxp-Me-hbx" id="ee5-iL-Ml5"/>
                                     <outlet property="ratingLabel" destination="eGC-Em-qrT" id="JCC-W0-e6N"/>
                                     <outlet property="ratingView" destination="dhH-l5-1i7" id="bx7-z7-oJf"/>
@@ -1084,13 +1087,17 @@
         <!--Loading View Controller-->
         <scene sceneID="CuS-ce-7iA">
             <objects>
-                <viewController storyboardIdentifier="Loading" useStoryboardIdentifierAsRestorationIdentifier="YES" id="16h-tZ-8JM" customClass="LoadingViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Loading" useStoryboardIdentifierAsRestorationIdentifier="YES" id="16h-tZ-8JM" customClass="LoadingViewController" customModule="Where_Is_My_Casino__" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Ua-jX-mfq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="pEF-Wj-RsE">
                                 <rect key="frame" x="40" y="48" width="334" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="7ga-nh-e6F"/>
+                                    <constraint firstAttribute="width" constant="334" id="cx8-UQ-kDU"/>
+                                </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="Picture" translatesAutoresizingMaskIntoConstraints="NO" id="YuB-SL-Jkv">
                                 <rect key="frame" x="0.0" y="174" width="414" height="722"/>
@@ -1128,7 +1135,7 @@
         <!--Ad Load Controller-->
         <scene sceneID="xAc-3F-lX1">
             <objects>
-                <viewController storyboardIdentifier="AdView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H2w-gf-9tX" customClass="AdLoadController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H2w-gf-9tX" customClass="AdLoadController" customModule="Where_Is_My_Casino__" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DWt-lP-i5u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1144,7 +1151,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="SmG-WN-28D">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8dx-Vd-Bfs" customClass="TabBarViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8dx-Vd-Bfs" customClass="TabBarViewController" customModule="Where_Is_My_Casino__" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="FQN-v3-Rrf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1169,7 +1176,7 @@
         <!--Choose A Location-->
         <scene sceneID="KEv-1V-Xif">
             <objects>
-                <viewController id="gt9-PP-xD9" customClass="RegionsViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gt9-PP-xD9" customClass="RegionsViewController" customModule="Where_Is_My_Casino__" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CSR-SK-7fn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1237,7 +1244,7 @@
         <!--Minsk-->
         <scene sceneID="Amm-e0-zac">
             <objects>
-                <viewController storyboardIdentifier="MapVIewController" id="Q5m-Iw-zep" customClass="MapViewController" customModule="WhereIsMyCasino_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapVIewController" id="Q5m-Iw-zep" customClass="MapViewController" customModule="Where_Is_My_Casino__" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SaG-uy-46l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

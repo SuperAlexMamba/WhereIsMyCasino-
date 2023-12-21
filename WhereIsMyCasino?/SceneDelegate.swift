@@ -20,9 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         Initialize.shared.loadControllers(in: window)
         
         self.window = window
-        
-        Orientation.lockOrientation(.all)
-        
+                
         window.makeKeyAndVisible()
     }
     

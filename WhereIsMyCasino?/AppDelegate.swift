@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        return self.orientationLock
-    }
+          return self.orientationLock
+      }
+
 }
 
